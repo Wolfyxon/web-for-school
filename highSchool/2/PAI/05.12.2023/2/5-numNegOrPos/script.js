@@ -1,6 +1,6 @@
 window.addEventListener("load",() => {
     const liczba = 4;
-    const disp = document.getElementById("text");
+    const disp = document.getElementById("opis");
 
     disp.innerText = liczba.toString() + " -"
     if(liczba > 0) disp.innerText += " Liczba dodatnia";
