@@ -44,3 +44,9 @@ nav a:hover {
     background-color: #DDDDDD;
 }
 
+.separator {
+    background-color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 4px;
+}
