@@ -80,6 +80,10 @@ button, input[type="submit"], input[type="reset"] {
     font-weight: bold;
 }
 
+#form-error {
+    color: red;
+}
+
 .separator {
     background-color: gray;
     margin-top: 10px;
