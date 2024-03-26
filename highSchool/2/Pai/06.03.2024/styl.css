@@ -8,12 +8,22 @@ body {
     margin-right: auto;
     color: navy;
     width: 90%;
+    position: relative;
 }
 
 header, footer {
-    position: relative;
     height: 100px;
     background-color: lightblue;
+}
+
+footer {
+    color: black;
+    text-align: right;
+    padding: 1%;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 1;
 }
 
 header img {
@@ -51,6 +61,10 @@ button, input[type="submit"], input[type="reset"] {
     height: 200px;
     width: 100%;
     background-color: #DDDDDD;
+}
+
+#author {
+    font-weight: bold;
 }
 
 .separator {
