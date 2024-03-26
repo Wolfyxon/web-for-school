@@ -30,6 +30,8 @@ nav {
 }
 
 nav a {
+    display: inline-block;
+    margin-top: 8px;
     text-decoration: none;
     font-weight: bold;
     color: navy;
