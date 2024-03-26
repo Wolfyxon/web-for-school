@@ -10,6 +10,9 @@
             // I really hate that the task requires the script to be embedded here instead using a separate file
 
             window.addEventListener("load", () => {
+                const results = document.getElementById("form-results");
+                const err = document.getElementById("form-error");
+
                 const chkAgree = document.getElementById("agree");
                 const inputName = document.getElementById("name");
                 const inputSecondName = document.getElementById("second-name");
@@ -22,8 +25,13 @@
                     e.preventDefault();
 
                     if(!chkAgree.checked) {
+                        results.style.display = "none";
+                        err.style.display = "";
                         return;
                     }
+
+                    results.style.display = "";
+                    err.style.display = "none";
 
                     outName.innerText = `${inputName.value.toUpperCase()} ${inputSecondName.value.toUpperCase()}`;
                     outSubmission.innerText = inputSubmission.value;
@@ -122,7 +130,7 @@
                 <div id="form-error" style="display: none;">
                     Musisz zapoznać się z regulaminem
                 </div>
-                
+
                 <div id="form-results">
                     <div id="form-name">
                         FIRSTNAME SECONDNAME
