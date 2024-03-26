@@ -18,83 +18,86 @@
             </header>
             <img src="img/animacja.gif" id="banner">
 
-            <h2>Kontakt</h2>
-            <form>
-                <table>
-
-                    <!-- Imię / First name -->
-                    <tr>
-                        <td>
-                            <label for="imie">Imię:</label>
-                        </td>
-
-                        <td>
-                            <input type="text" name="imie">     
-                        </td>
-                    </tr>
-
-                    <!-- Nazwisko / Second name -->
-                    <tr>
-                        <td>
-                            <label for="nazwisko">Nazwisko:</label>
-                        </td>
-                        
-                        <td>
-                            <input type="text" name="nazwisko">     
-                        </td>
-                    </tr>
-
-                    <!-- E-Mail -->
-                    <tr>
-                        <td>
-                            <label for="email">E-Mail:</label>
-                        </td>
-                        
-                        <td>
-                            <input type="email" name="email">     
-                        </td>
-                    </tr>
-
-                    <!-- Zgłoszenie / Submission -->
-                    <tr>
-                        <td>
-                            <label for="zgloszenie">Zgłoszenie:</label>
-                        </td>
-                        <td>
-                            <textarea name="zgloszenie" rows="10" cols="40"></textarea>
-                        </td>
-                    </tr>
-
-
-                    <!-- Controls -->
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="checkbox" name="agree">
-                            <label for="agree">Zapoznałem się z regulaminem.</label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="reset" value="Resetuj">
-                            <input type="submit" value="Prześlij">
-                        </td>
-                    </tr>
+            <div id="page-content">
                     
-                </table>
-            </form>
+                <h2>Kontakt</h2>
+                <form>
+                    <table>
 
-            <div class="separator"></div>
+                        <!-- Imię / First name -->
+                        <tr>
+                            <td>
+                                <label for="imie">Imię:</label>
+                            </td>
 
-            <div id="form-results">
-                <div id="form-name">
-                    FIRSTNAME SECONDNAME
-                </div>
+                            <td>
+                                <input type="text" name="imie">     
+                            </td>
+                        </tr>
 
-                <div>
-                    Treść twojej sprawy: <span id="form-content">Submission text</span>
+                        <!-- Nazwisko / Second name -->
+                        <tr>
+                            <td>
+                                <label for="nazwisko">Nazwisko:</label>
+                            </td>
+                            
+                            <td>
+                                <input type="text" name="nazwisko">     
+                            </td>
+                        </tr>
+
+                        <!-- E-Mail -->
+                        <tr>
+                            <td>
+                                <label for="email">E-Mail:</label>
+                            </td>
+                            
+                            <td>
+                                <input type="email" name="email">     
+                            </td>
+                        </tr>
+
+                        <!-- Zgłoszenie / Submission -->
+                        <tr>
+                            <td>
+                                <label for="zgloszenie">Zgłoszenie:</label>
+                            </td>
+                            <td>
+                                <textarea name="zgloszenie" rows="10" cols="40"></textarea>
+                            </td>
+                        </tr>
+
+
+                        <!-- Controls -->
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="checkbox" name="agree">
+                                <label for="agree">Zapoznałem się z regulaminem.</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="reset" value="Resetuj">
+                                <input type="submit" value="Prześlij">
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </form>
+
+                <div class="separator"></div>
+
+                <div id="form-results">
+                    <div id="form-name">
+                        FIRSTNAME SECONDNAME
+                    </div>
+
+                    <div>
+                        Treść twojej sprawy: <span id="form-content">Submission text</span>
+                    </div>
                 </div>
             </div>
 

@@ -63,6 +63,13 @@ button, input[type="submit"], input[type="reset"] {
     background-color: #DDDDDD;
 }
 
+#page-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin: 1%;
+}
+
 #author {
     font-weight: bold;
 }
