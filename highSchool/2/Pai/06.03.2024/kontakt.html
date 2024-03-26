@@ -5,6 +5,35 @@
         <link rel="stylesheet" href="styl.css">
         <link rel="icon" type="image/x-icon" href="img/logo.png">
         <title>Firma IT</title>
+
+        <script type="text/javascript">
+            // I really hate that the task requires the script to be embedded here instead using a separate file
+
+            window.addEventListener("load", () => {
+                const chkAgree = document.getElementById("agree");
+                const inputName = document.getElementById("name");
+                const inputSecondName = document.getElementById("second-name");
+                const inputSubmission = document.getElementById("submission");
+
+                const outName = document.getElementById("form-name");
+                const outSubmission = document.getElementById("form-content");
+
+                document.querySelector("form").addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    if(!chkAgree.checked) {
+                        return;
+                    }
+
+                    outName.innerText = `${inputName.value.toUpperCase()} ${inputSecondName.value.toUpperCase()}`;
+                    outSubmission.innerText = inputSubmission.value;
+
+                });
+
+            });
+
+        </script>
+
     </head>
     <body>
         <div id="main">
