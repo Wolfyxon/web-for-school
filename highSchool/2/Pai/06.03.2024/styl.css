@@ -39,6 +39,11 @@ nav a:hover {
     outline: 1px navy solid;
 }
 
+button, input[type="submit"], input[type="reset"] {
+    background-color: lightblue;
+    color: navy;
+}
+
 #banner {
     height: 200px;
     width: 100%;
