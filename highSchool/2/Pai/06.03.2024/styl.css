@@ -1,0 +1,46 @@
+body {
+    background-color: #EEEEEE;
+}
+
+#main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+header, footer {
+    position: relative;
+    height: 100px;
+    background-color: lightblue;
+}
+
+header img {
+    height: 100%;
+    display: inline-block;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: navy;
+    font-size: 150%;
+}
+
+nav a:hover {
+    outline: 1px navy solid;
+}
+
+#banner {
+    height: 200px;
+    width: 100%;
+    background-color: #DDDDDD;
+}
+
