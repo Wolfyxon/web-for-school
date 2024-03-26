@@ -17,15 +17,17 @@ body {
 }
 
 header, footer {
-    height: 100px;
     background-color: lightblue;
+}
+
+header {
+    height: 100px;
 }
 
 footer {
     color: black;
     text-align: right;
     padding: 1%;
-    height: 50px;
     width: 100%;
 }
 
