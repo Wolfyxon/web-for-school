@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: palevioletred;
+    color: yellowgreen;
+}
+
+header, footer {
+    color: white;
+    background-color: maroon;
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+header {
+    font-size: 200%;
+}
+
+#main-container {
+    height: 70%;
+}
+
+#doc-download {
+    display: inline-block;
+}
+
+#symbols {
+    display: inline-block;
+    width: 50%;
+}
+
+#symbols img {
+    padding: 0 5%;
+    width: 20%;
+}
+
+#horizontal-container {
+    height: 100%;
+    width: 100%;
+}
+
+#horizontal-container img {
+    object-fit: contain;
+    width: 40%;
+    height: 40%;
+    margin-top: 100px;
+    margin-left: 5%;
+}
+
+#horizontal-container > * {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 48%;
+}
+
+#form {
+    background-color: white;
+    padding: 1%;
+}
+
+#form > * {
+    display: block;
+}
