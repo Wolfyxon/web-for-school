@@ -1,3 +1,8 @@
+/*
+Fragment strony (patrz poniżej), która pozwala skonfigurować zamówienie w barze szybkiej obsługi. 
+Wybranie danej opcji, powoduje wyświetlenie poniżej np. Ostatnio wybrano:woda
+*/
+
 window.addEventListener("load", () => {
     const options = document.getElementById("options");
 
