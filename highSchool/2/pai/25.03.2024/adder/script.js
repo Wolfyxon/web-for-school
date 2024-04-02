@@ -12,6 +12,6 @@ window.addEventListener("load", () => {
     const result = document.getElementById("result");
 
     document.getElementById("btn-sum").addEventListener("click", () => {
-        result.innerText = num1.value + num2.value;
+        result.innerText = parseFloat(num1.value) + parseFloat(num2.value);
     });
 });
