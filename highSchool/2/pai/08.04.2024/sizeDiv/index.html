@@ -1,0 +1,22 @@
+<!--
+Utwórz stronę wg. wzoru. 
+Suwak ma umożliwiać zmianę rozmiaru div-a w zakresie od 0 do 500. 
+Wartość początkowa 300. Obok suwaka ma się wyświetlać informacja o aktualnym rozmiarze div-a.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <span>Rozmiar kwadratu: 0</span>
+        <input type="range" id="size-input" min="0" max="500" value="300">
+        <span>500 - aktualnie</span>
+        <span id="size-display">???</span>
+
+        <div id="size-div"></div>
+    </body>
+</html>
