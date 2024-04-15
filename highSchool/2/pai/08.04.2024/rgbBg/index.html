@@ -1,0 +1,28 @@
+<!--
+Wstaw 3 suwaki odpowiedzialne za 3 składowe koloru (patrz zrzut poniżej), zmiana położenia ma zmieniać daną składową. 
+Wyświetlana ma być aktualnie zmieniana wartość. Wartości początkowe - 255 - kolor biały.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <h2 id="currently-changed">?</h2>
+        <div>
+            <span>R:</span>
+            <input type="range" id="input-red" min="0" max="255" value="255">
+        </div>
+        <div>
+            <span>G:</span>
+            <input type="range" id="input-green" min="0" max="255" value="255">
+        </div>
+        <div>
+            <span>B:</span>
+            <input type="range" id="input-blue" min="0" max="255" value="255">
+        </div>
+        
+    </body>
+</html>
