@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
         const g = 0;
         const b = 0;
 
-        document.body.style.backgroundColor = `rgb(${r}, ${g}, ${g})`
+        document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
     }
 
     update();
