@@ -35,6 +35,11 @@ if [ ! -d ${TEMPLATE_DIR} ]; then
   exit
 fi
 
+if [ -z "$(ls -A ${TEMPLATE_DIR})" ]; then
+   echo "error: Template directory is empty!"
+   exit
+fi
+
 # Copying
 
 echo "Copying contents of '${TEMPLATE_DIR}' to '${DIR}'"
