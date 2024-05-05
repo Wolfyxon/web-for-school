@@ -3,3 +3,5 @@
 function funkcja() {
     console.log("Funkcja działa");
 }
+
+funkcja();
