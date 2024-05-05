@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     const div = document.getElementById("result");
 
     /**
-     * @argument {...number} parametry
+     * @param {...number} parametry
      */
     function sumator() {
         let txt = "";
