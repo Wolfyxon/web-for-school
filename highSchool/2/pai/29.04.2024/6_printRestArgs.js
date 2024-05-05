@@ -3,10 +3,10 @@
 */
 
 /**
- * @param  {...number} args 
+ * @param  {...number} argumenty 
  */
-function funkcja(...args) {
-    for(const arg of args) {
+function funkcja(...argumenty) {
+    for(const arg of argumenty) {
         console.log(arg);
     }
 }
