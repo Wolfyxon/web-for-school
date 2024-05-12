@@ -84,13 +84,13 @@ window.addEventListener("load", () => {
     
     function updateEditState() {
         if(currentlyEdited) {
-            form.title.innerText = "Edytuj ofertę";
-            form.edit.style.display = "";
-            form.btnAdd.style.display = "none";
+            form.title.innerText        = "Edytuj ofertę";
+            form.edit.style.display     = "";
+            form.btnAdd.style.display   = "none";
         } else {
-            form.title.innerText = "Dodaj ofertę";
-            form.edit.style.display = "none";
-            form.btnAdd.style.display = "";
+            form.title.innerText        = "Dodaj ofertę";
+            form.edit.style.display     = "none";
+            form.btnAdd.style.display   = "";
         }
     }
 
@@ -116,11 +116,11 @@ window.addEventListener("load", () => {
      * @param {HTMLDivElement} elm 
      */
     function updateOfferElement(offer, elm) {
-        elm.getElementsByClassName("marka")[0].innerText = offer.marka;
-        elm.getElementsByClassName("model")[0].innerText = offer.model;
+        elm.getElementsByClassName("marka")[0].innerText    = offer.marka;
+        elm.getElementsByClassName("model")[0].innerText    = offer.model;
 
         elm.getElementsByClassName("rocznik")[0].innerText  = offer.rocznik;
-        elm.getElementsByClassName("wiek")[0].innerText  = offer.wiekSamochodu();
+        elm.getElementsByClassName("wiek")[0].innerText     = offer.wiekSamochodu();
         elm.getElementsByClassName("spalanie")[0].innerText = offer.spalanie;
         elm.getElementsByClassName("cena")[0].innerText     = offer.cena;
     }
