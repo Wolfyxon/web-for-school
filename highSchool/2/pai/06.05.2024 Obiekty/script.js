@@ -207,7 +207,7 @@ window.addEventListener("load", () => {
     */
     function wypiszWszystkieOferty() {
         for(const offer of offers) {
-            wypiszOferte(offer.id);
+            console.log(wypiszOferte(offer.id));
         }
     }
 
