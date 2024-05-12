@@ -5,6 +5,44 @@
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
+        <div id="spisofert">
+            <div>
+                <div>Marka: <span class="marka">?</span></div>
+                <div>Model: <span class="model">?</span></div>
+                <div>Rocznik: <span class="rocznik">?</span></div>
+                <div>Spalanie: <span class="spalanie">?</span></div>
+                <div>Cena: <span class="cena">?</span></div>
+                
+                <div class="offer-controls">
+                    <button class="btn-del">Usuń</button>
+                    <button class="btn-edit">Edycja</button>
+                </div>
+            </div>
+        </div>
+        <div id="form">
+            <div>
+                <label for="input-marka">Marka:</label>
+                <input type="text" id="input-marka">
+    
+                <label for="input-model">Model:</label>
+                <input type="text" id="input-model">
+            </div>
 
+            <div>
+                <label for="input-rocznik">Rocznik:</label>
+                <input type="number" id="input-rocznik" value="2000">
+
+                <label for="input-spalanie">Spalanie:</label>
+                <input type="number" id="input-spalanie">
+
+                <label for="input-spalanie">Cena:</label>
+                <input type="number" id="input-spalanie">
+            </div>
+            
+            <div id="form-controls">
+                <button id="btn-add">Dodaj</button>
+                <button id="btn-apply">Zatwierdź edycję</button>
+            </div>
+        </div>
     </body>
 </html>
