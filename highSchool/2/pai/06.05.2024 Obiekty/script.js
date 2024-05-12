@@ -34,11 +34,11 @@ class Oferta {
     id;
     
     constructor(marka, model, cena, spalanie, rocznik) {
-        this.marka = marka;
-        this.model = model;
-        this.cena = cena;
+        this.marka    = marka;
+        this.model    = model;
+        this.cena     = cena;
         this.spalanie = spalanie;
-        this.rocznik = rocznik;
+        this.rocznik  = rocznik;
     }
 
     koszt100km() {
@@ -62,17 +62,17 @@ window.addEventListener("load", () => {
     const offerList = document.getElementById("spisofert");
 
     const form = {
-        edit: document.getElementById("form-controls-edit"),
+        edit:       document.getElementById("form-controls-edit"),
 
-        btnAdd: document.getElementById("btn-add"),
-        btnApply: document.getElementById("btn-apply"),
-        btnCancel: document.getElementById("btn-cancel"),
+        btnAdd:     document.getElementById("btn-add"),
+        btnApply:   document.getElementById("btn-apply"),
+        btnCancel:  document.getElementById("btn-cancel"),
 
-        marka: document.getElementById("input-marka"),
-        model: document.getElementById("input-model"),
-        rocznik: document.getElementById("input-rocznik"),
-        spalanie: document.getElementById("input-spalanie"),
-        cena: document.getElementById("input-cena")
+        marka:      document.getElementById("input-marka"),
+        model:      document.getElementById("input-model"),
+        rocznik:    document.getElementById("input-rocznik"),
+        spalanie:   document.getElementById("input-spalanie"),
+        cena:       document.getElementById("input-cena")
     };
 
 
@@ -115,9 +115,9 @@ window.addEventListener("load", () => {
         elm.getElementsByClassName("marka")[0].innerText = offer.marka;
         elm.getElementsByClassName("model")[0].innerText = offer.model;
 
-        elm.getElementsByClassName("rocznik")[0].innerText = offer.rocznik;
+        elm.getElementsByClassName("rocznik")[0].innerText  = offer.rocznik;
         elm.getElementsByClassName("spalanie")[0].innerText = offer.spalanie;
-        elm.getElementsByClassName("cena")[0].innerText = offer.cena;
+        elm.getElementsByClassName("cena")[0].innerText     = offer.cena;
     }
 
     /**
@@ -144,11 +144,11 @@ window.addEventListener("load", () => {
         });
 
         elm.getElementsByClassName("btn-edit")[0].addEventListener("click", () => {
-            form.marka.value = offer.marka;
-            form.model.value = offer.model;
-            form.rocznik.value = offer.rocznik;
+            form.marka.value    = offer.marka;
+            form.model.value    = offer.model;
+            form.rocznik.value  = offer.rocznik;
             form.spalanie.value = offer.spalanie;
-            form.cena = offer.cena;
+            form.cena           = offer.cena;
 
             currentlyEdited = id;
             updateEditState();
