@@ -47,9 +47,10 @@ class Oferta {
 
     wiekSamochodu() {
         const offset = new Date().getFullYear() - this.rocznik;
-        
+        const lastDg = offset % 10;
+
         if(offset === 1) return "1 rok";
-        if(offset <= 4) return `${offset} lat`;
+        if(lastDg <= 4) return `${offset} lata`;
 
         return `${offset} lat`;
     }
