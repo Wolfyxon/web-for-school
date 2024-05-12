@@ -60,6 +60,18 @@ button:active {
     background-color: rgb(37, 37, 37);
 }
 
+#spisofert > * > * {
+    margin-top: 5px;
+}
+
+#spisofert > * span {
+    font-weight: bold;
+}
+
+.cena-container {
+    font-size: 150%;
+}
+
 .btn-edit {
     background-color: var(--color-edit);
     border-color: var(--outline-color-edit);
