@@ -1,0 +1,104 @@
+:root {
+    --color-edit: rgb(255, 138, 29);
+    --outline-color-edit: rgb(255, 189, 114);
+
+    --color-add: rgb(2, 177, 2);
+    --outline-color-add: rgb(4, 230, 4);
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(32, 32, 34);
+    color: white;
+}
+
+button {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 0.5%;
+    transition: 0.1s;
+    min-width: 70px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transition: 0.1s;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+#main > * {
+    vertical-align: top;
+    display: inline-block;
+    background-color: rgb(46, 46, 48);
+    width: 49%;
+    height: 100%;
+}
+
+#main {
+    height: 100%;
+}
+
+#spisofert {
+    overflow: scroll;
+}
+
+#spisofert > * {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    padding: 3%;
+    width: 90%;
+    border-radius: 5px;
+    border-left: 2px rgb(255, 187, 0) solid;
+    background-color: rgb(37, 37, 37);
+}
+
+.btn-edit {
+    background-color: var(--color-edit);
+    border-color: var(--outline-color-edit);
+}
+
+.btn-del {
+    background-color: rgb(236, 63, 63);
+    border-color: rgb(255, 126, 126);
+}
+
+#form * {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#form label {
+    margin-top: 10px;
+}
+
+#form-controls {
+    text-align: center;
+    padding: 3%;
+    margin-top: 20px;
+}
+
+#form-controls > * {
+    display: inline-block;
+    width: 40%;
+}
+
+#btn-add {
+    background-color: var(--color-add);
+    border-color: var(--outline-color-add);
+
+}
+
+#btn-apply {
+    background-color: var(--color-edit);
+    border-color: var(--outline-color-edit);
+}
