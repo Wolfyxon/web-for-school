@@ -31,6 +31,7 @@ class Oferta {
     cena;
     spalanie;
     rocznik;
+    id;
     
     constructor(marka, model, cena, spalanie, rocznik) {
         this.marka = marka;
@@ -56,3 +57,122 @@ class Oferta {
 
 const oferta1 = new Oferta("Kia", "Carens", 60000, 8, 2000);
 console.log(oferta1);
+
+window.addEventListener("load", () => {
+    const offerList = document.getElementById("spisofert");
+
+    const form = {
+        btnAdd: document.getElementById("btn-add"),
+        btnApply: document.getElementById("btn-apply")
+    };
+
+
+    let offerCounter = 0;
+    let offers = [];
+    
+    function getOffer(id) {
+        for(const offer of offers) {
+            if(offer.id === id) return offer;
+        }
+    }
+
+    function getOfferElement(id) {
+        for(const offerElm of offerList.children) {
+            if(offerElm.getAttribute("offer-id") == id) return offerElm;
+        }
+    }
+
+    /**
+     * @param {Oferta} offer 
+     * @param {HTMLDivElement} elm 
+     */
+    function updateOfferElement(offer, elm) {
+        elm.getElementsByClassName("marka")[0].innerText = offer.marka;
+        elm.getElementsByClassName("model")[0].innerText = offer.model;
+
+        elm.getElementsByClassName("rocznik")[0].innerText = offer.rocznik;
+        elm.getElementsByClassName("spalanie")[0].innerText = offer.spalanie;
+        elm.getElementsByClassName("cena")[0].innerText = offer.cena;
+    }
+
+    /**
+     * Zdefiniuj funkcję dodajOferte(marka, model, przebieg, spalanie, rocznik). 
+     * Klucz - identyfikator ogłoszenia - ma być definiowany ręcznie. 
+     * @param {Oferta} offer 
+     */
+    function dodajOferte(offer) {
+        const id = offer.id || offerCounter;
+        offerCounter++;
+
+        offer.id = id;
+        if(!offers.includes(offer)) offers.push(offer);
+
+        const elm = document.getElementById("offer-template").cloneNode(true);
+        elm.setAttribute("offer-id", id);
+        elm.style.display = null;
+        elm.id = null;
+
+        updateOfferElement(offer, elm);
+        
+        elm.getElementsByClassName("btn-del")[0].addEventListener("click", () => {
+            usunOferte(id);
+        });
+
+        offerList.appendChild(elm);
+    }
+
+    /**
+     * Zdefiniuj funkcję zmienOferte(idOferty, marka, model, cena, spalanie, rocznik). Wypisz w konsoli ogłosznie po zmianie danych.
+     * @param {number} id 
+     * @param {Offer} offer 
+     */
+    function zmienOferte(offer) {
+        if(!offer.id) throw "Obiekt oferty nie zawiera ID";
+
+        const elm = getOfferElement(offer.id);
+        updateOfferElement(offer, elm);
+
+        console.log(`Zaktualizowano ofertę o ID: ${id}`);
+    }
+
+    /**
+     * 12. Zdefiniuj funkcję usunOferte(idOferty), ma ona usuwać obiekt - ofertę - z podanym identyfikatorem.
+     * @param {number} id 
+     */
+    function usunOferte(id) {
+        const offer = getOffer(id);
+        if(!offer) throw "Nieznana oferta";
+
+        offers.slice(offers.indexOf(offer), 1);
+        getOfferElement(id).remove();
+    }
+
+    /**
+     * 11. Zdefiniuj funkcję wypiszOferte(idOferty), ma ona w miejscu wywołania zwracać kod HTML ofertę. 
+     * Funkcja ma być wywołana w pętli przez funkcję wypiszWszystkieOferty(). 
+     * @param {number} id 
+     * @returns 
+     */
+    function wypiszOferte(id) {
+        const elm = getOfferElement(id)
+        if(!elm) throw "Nieznana oferta";
+
+        return elm.innerHTML;
+    }
+
+    /**
+     * 11. Zdefiniuj funkcję wypiszOferte(idOferty), ma ona w miejscu wywołania zwracać kod HTML ofertę. 
+     * Funkcja ma być wywołana w pętli przez funkcję wypiszWszystkieOferty(). 
+    */
+    function wypiszWszystkieOferty() {
+        for(const offer of offers) {
+            wypiszOferte(offer.id);
+        }
+    }
+
+    dodajOferte(oferta1);
+    dodajOferte(new Oferta("Suzuki", "Viara", 80500, 9, 2019));
+
+    wypiszWszystkieOferty();
+
+});
