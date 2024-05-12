@@ -54,4 +54,4 @@ class Oferta {
     }
 }
 
-const oferta = new Oferta("Kia", "Carens", 60000, 8);
+const oferta = new Oferta("Kia", "Carens", 60000, 8, 2000);
