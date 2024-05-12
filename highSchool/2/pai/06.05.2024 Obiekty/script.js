@@ -63,7 +63,13 @@ window.addEventListener("load", () => {
 
     const form = {
         btnAdd: document.getElementById("btn-add"),
-        btnApply: document.getElementById("btn-apply")
+        btnApply: document.getElementById("btn-apply"),
+
+        marka: document.getElementById("input-marka"),
+        model: document.getElementById("input-model"),
+        rocznik: document.getElementById("input-rocznik"),
+        spalanie: document.getElementById("input-spalanie"),
+        cena: document.getElementById("input-cena")
     };
 
 
@@ -169,6 +175,18 @@ window.addEventListener("load", () => {
             wypiszOferte(offer.id);
         }
     }
+
+    form.btnAdd.addEventListener("click", () => {
+        const offer = new Oferta(
+                        form.marka.value,
+                        form.model.value,
+            parseInt(   form.rocznik.value),
+            parseFloat( form.spalanie.value),
+            parseFloat( form.cena)
+        );
+
+        dodajOferte(offer);
+    });
 
     dodajOferte(oferta1);
     dodajOferte(new Oferta("Suzuki", "Viara", 80500, 9, 2019));
