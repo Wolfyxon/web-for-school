@@ -55,3 +55,4 @@ class Oferta {
 }
 
 const oferta = new Oferta("Kia", "Carens", 60000, 8, 2000);
+console.log(oferta);
