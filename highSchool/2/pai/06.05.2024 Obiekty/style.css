@@ -4,6 +4,9 @@
 
     --color-add: rgb(2, 177, 2);
     --outline-color-add: rgb(4, 230, 4);
+
+    --color-danger: rgb(236, 63, 63);
+    --outline-color-danger: rgb(255, 126, 126)
 }
 
 body, html {
@@ -78,8 +81,8 @@ button:active {
 }
 
 .btn-del {
-    background-color: rgb(236, 63, 63);
-    border-color: rgb(255, 126, 126);
+    background-color: var(--color-danger);
+    border-color: var(--outline-color-danger);
 }
 
 #form * {
