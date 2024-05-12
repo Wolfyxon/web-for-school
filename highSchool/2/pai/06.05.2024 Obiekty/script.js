@@ -62,6 +62,7 @@ window.addEventListener("load", () => {
     const offerList = document.getElementById("spisofert");
 
     const form = {
+        title:      document.getElementById("form-title"),
         edit:       document.getElementById("form-controls-edit"),
 
         btnAdd:     document.getElementById("btn-add"),
@@ -82,9 +83,11 @@ window.addEventListener("load", () => {
     
     function updateEditState() {
         if(currentlyEdited) {
+            form.title.innerText = "Edytuj ofertę";
             form.edit.style.display = "";
             form.btnAdd.style.display = "none";
         } else {
+            form.title.innerText = "Dodaj ofertę";
             form.edit.style.display = "none";
             form.btnAdd.style.display = "";
         }
