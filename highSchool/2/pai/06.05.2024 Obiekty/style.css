@@ -1,14 +1,3 @@
-:root {
-    --color-edit: rgb(255, 138, 29);
-    --outline-color-edit: rgb(255, 189, 114);
-
-    --color-add: rgb(2, 177, 2);
-    --outline-color-add: rgb(4, 230, 4);
-
-    --color-danger: rgb(236, 63, 63);
-    --outline-color-danger: rgb(255, 126, 126);
-}
-
 body, html {
     height: 100%;
 }
@@ -34,6 +23,21 @@ button:hover {
 
 button:active {
     opacity: 0.8;
+}
+
+.btn-green {
+    background-color: rgb(2, 177, 2);
+    border-color: rgb(4, 230, 4);
+}
+
+.btn-orange {
+    background-color: rgb(255, 138, 29);
+    border-color: rgb(255, 189, 114);
+}
+
+.btn-red {
+    background-color: rgb(236, 63, 63);
+    border-color: rgb(255, 126, 126);
 }
 
 #main > * {
@@ -75,16 +79,6 @@ button:active {
     font-size: 150%;
 }
 
-.btn-edit {
-    background-color: var(--color-edit);
-    border-color: var(--outline-color-edit);
-}
-
-.btn-del {
-    background-color: var(--color-danger);
-    border-color: var(--outline-color-danger);
-}
-
 #form * {
     display: block;
     margin-left: auto;
@@ -105,20 +99,4 @@ button:active {
 #form-controls button {
     display: inline-block;
     width: 40%;
-}
-
-#btn-add {
-    background-color: var(--color-add);
-    border-color: var(--outline-color-add);
-
-}
-
-#btn-apply {
-    background-color: var(--color-edit);
-    border-color: var(--outline-color-edit);
-}
-
-#btn-cancel {
-    background-color: var(--color-danger);
-    border-color: var(--outline-color-danger);
 }
