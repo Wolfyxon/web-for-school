@@ -119,6 +119,7 @@ window.addEventListener("load", () => {
         elm.getElementsByClassName("model")[0].innerText = offer.model;
 
         elm.getElementsByClassName("rocznik")[0].innerText  = offer.rocznik;
+        elm.getElementsByClassName("wiek")[0].innerText  = offer.wiekSamochodu();
         elm.getElementsByClassName("spalanie")[0].innerText = offer.spalanie;
         elm.getElementsByClassName("cena")[0].innerText     = offer.cena;
     }
