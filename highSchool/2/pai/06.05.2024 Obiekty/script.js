@@ -215,9 +215,9 @@ window.addEventListener("load", () => {
         const offer = new Oferta(
                         form.marka.value,
                         form.model.value,
-            parseInt(   form.rocznik.value),
+            parseFloat( form.cena.value),
             parseFloat( form.spalanie.value),
-            parseFloat( form.cena)
+            parseInt(   form.rocznik.value)
         );
 
         dodajOferte(offer);
