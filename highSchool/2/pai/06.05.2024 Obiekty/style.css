@@ -102,7 +102,7 @@ button:active {
     margin-top: 20px;
 }
 
-#form-controls > * {
+#form-controls button {
     display: inline-block;
     width: 40%;
 }
@@ -116,4 +116,9 @@ button:active {
 #btn-apply {
     background-color: var(--color-edit);
     border-color: var(--outline-color-edit);
+}
+
+#btn-cancel {
+    background-color: var(--color-danger);
+    border-color: var(--outline-color-danger);
 }
