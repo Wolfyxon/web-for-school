@@ -62,8 +62,11 @@ window.addEventListener("load", () => {
     const offerList = document.getElementById("spisofert");
 
     const form = {
+        edit: document.getElementById("form-controls-edit"),
+
         btnAdd: document.getElementById("btn-add"),
         btnApply: document.getElementById("btn-apply"),
+        btnCancel: document.getElementById("btn-cancel"),
 
         marka: document.getElementById("input-marka"),
         model: document.getElementById("input-model"),
@@ -73,9 +76,25 @@ window.addEventListener("load", () => {
     };
 
 
-    let offerCounter = 0;
+    let offerCounter = 1;
+    let currentlyEdited = null;
     let offers = [];
     
+    function updateEditState() {
+        if(currentlyEdited) {
+            form.edit.style.display = "";
+            form.btnAdd.style.display = "none";
+        } else {
+            form.edit.style.display = "none";
+            form.btnAdd.style.display = "";
+        }
+    }
+
+    function cancelEdit() {
+        currentlyEdited = null;
+        updateEditState();
+    }
+
     function getOffer(id) {
         for(const offer of offers) {
             if(offer.id === id) return offer;
@@ -122,6 +141,17 @@ window.addEventListener("load", () => {
         
         elm.getElementsByClassName("btn-del")[0].addEventListener("click", () => {
             usunOferte(id);
+        });
+
+        elm.getElementsByClassName("btn-edit")[0].addEventListener("click", () => {
+            form.marka.value = offer.marka;
+            form.model.value = offer.model;
+            form.rocznik.value = offer.rocznik;
+            form.spalanie.value = offer.spalanie;
+            form.cena = offer.cena;
+
+            currentlyEdited = id;
+            updateEditState();
         });
 
         offerList.appendChild(elm);
@@ -188,9 +218,31 @@ window.addEventListener("load", () => {
         dodajOferte(offer);
     });
 
+    form.btnCancel.addEventListener("click", () => {
+        currentlyEdited = null;
+        updateEditState();
+    });
+
+    form.btnApply.addEventListener("click", () => {
+        const offer = getOffer(currentlyEdited);
+        if(!offer) return;
+
+        const elm = getOfferElement(currentlyEdited);
+        if(!elm) return;
+
+        offer.marka     =                form.marka.value;
+        offer.model     =                form.model.value;
+        offer.rocznik   =    parseInt(   form.rocznik.value);
+        offer.spalanie  =    parseFloat( form.spalanie.value);
+        offer.cena      =    parseFloat( form.cena);
+
+        updateOfferElement(offer, elm);
+        cancelEdit();
+    });
+
     dodajOferte(oferta1);
     dodajOferte(new Oferta("Suzuki", "Viara", 80500, 9, 2019));
 
     wypiszWszystkieOferty();
-
+    updateEditState();
 });
