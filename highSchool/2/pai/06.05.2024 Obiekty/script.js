@@ -274,7 +274,7 @@ window.addEventListener("load", () => {
         offer.model     =                form.model.value;
         offer.rocznik   =    parseInt(   form.rocznik.value);
         offer.spalanie  =    parseFloat( form.spalanie.value);
-        offer.cena      =    parseFloat( form.cena);
+        offer.cena      =    parseFloat( form.cena.value);
 
         updateOfferElement(offer, elm);
         cancelEdit();
