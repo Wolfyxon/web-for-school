@@ -92,6 +92,14 @@ window.addEventListener("load", () => {
             form.edit.style.display     = "none";
             form.btnAdd.style.display   = "";
         }
+
+        for(const elm of offerList.children) {
+            if(currentlyEdited && elm.getAttribute("offer-id") == currentlyEdited) {
+                elm.style.backgroundColor = "#312E4D";
+            } else {
+                elm.style.backgroundColor = null;
+            }
+        }
     }
 
     function cancelEdit() {
