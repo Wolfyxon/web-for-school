@@ -65,6 +65,7 @@ button:active {
     border-radius: 5px;
     border-left: 2px rgb(255, 187, 0) solid;
     background-color: rgb(37, 37, 37);
+    transition: 0.1s;
 }
 
 #spisofert > * > * {
