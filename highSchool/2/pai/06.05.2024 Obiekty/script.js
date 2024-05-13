@@ -99,12 +99,20 @@ window.addEventListener("load", () => {
         updateEditState();
     }
 
+    /**
+     * @param {number} id 
+     * @returns {HTMLDivElement|null}
+     */
     function getOffer(id) {
         for(const offer of offers) {
             if(offer.id === id) return offer;
         }
     }
 
+    /**
+     * @param {number} id 
+     * @returns {HTMLDivElement|null}
+     */
     function getOfferElement(id) {
         for(const offerElm of offerList.children) {
             if(offerElm.getAttribute("offer-id") == id) return offerElm;
