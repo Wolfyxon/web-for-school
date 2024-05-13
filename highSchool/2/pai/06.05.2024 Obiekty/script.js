@@ -63,6 +63,8 @@ window.addEventListener("load", () => {
     const offerList = document.getElementById("spisofert");
 
     const form = {
+        form:       document.getElementById("form"),
+
         title:      document.getElementById("form-title"),
         edit:       document.getElementById("form-controls-edit"),
 
@@ -105,6 +107,19 @@ window.addEventListener("load", () => {
     function cancelEdit() {
         currentlyEdited = null;
         updateEditState();
+    }
+
+    function isFormFilled() {
+        for(const container of form.form.children) {
+            for(const input of container.children) {
+                
+                if(input instanceof HTMLInputElement) {
+                    if(input.value === "") return false;
+                }
+
+            }
+        }
+        return true;
     }
 
     /**
@@ -228,6 +243,8 @@ window.addEventListener("load", () => {
     }
 
     form.btnAdd.addEventListener("click", () => {
+        if(!isFormFilled()) return;
+
         const offer = new Oferta(
                         form.marka.value,
                         form.model.value,
@@ -245,6 +262,8 @@ window.addEventListener("load", () => {
     });
 
     form.btnApply.addEventListener("click", () => {
+        if(!isFormFilled()) return;
+
         const offer = getOffer(currentlyEdited);
         if(!offer) return;
 
