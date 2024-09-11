@@ -1,4 +1,4 @@
-# Pracownia aplikacji internetowych
+# Pracownia aplikacji internetowych (pai)
 Internet Application Laboratory
 
 ## NOTE

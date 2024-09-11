@@ -1,2 +1,2 @@
-# Programowanie aplikacji internetowych
+# Programowanie aplikacji internetowych (Pai)
 Internet application programming
