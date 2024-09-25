@@ -1,7 +1,5 @@
-module.exports.showGreeting = () => {
+module.exports.showGreeting = (callback) => {
     console.log("Callback powitalny działa");
 
-    setTimeout(() => {
-        console.log("Witaj użytkowniku");
-    }, 3 * 1000);
+    setTimeout(callback, 3 * 1000);
 }

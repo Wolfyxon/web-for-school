@@ -1,3 +1,5 @@
 const callback = require("./callback.js");
 
-callback.showGreeting();
+callback.showGreeting(() => {
+    console.log("Witaj użytkowniku");
+});
