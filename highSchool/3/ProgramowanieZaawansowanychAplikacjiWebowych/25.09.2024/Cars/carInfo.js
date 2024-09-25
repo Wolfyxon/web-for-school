@@ -27,15 +27,15 @@ class Car {
         );
     }
 
-    print() {
-        console.log(this.toString());
-    }
-
     /**
      * @returns {string}
      */
     toString() {
         return `${this.brand} ${this.model} ${this.productionYear}`;
+    }
+
+    print() {
+        console.log(this.toString());
     }
 }
 
