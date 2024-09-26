@@ -1,0 +1,18 @@
+#form {
+    text-align: center;
+}
+
+#form * {
+    display: block;
+    margin: 0 auto;
+}
+
+#res-container {
+    padding: 1%;
+    display: block;
+}
+
+.error {
+    color: red;
+    margin-left: 4px;
+}
