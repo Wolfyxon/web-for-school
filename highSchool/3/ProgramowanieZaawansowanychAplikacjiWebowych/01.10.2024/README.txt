@@ -8,4 +8,4 @@ Informacje zwracane w console.log() z modułów DaneUcznia i OcenyUcznia mają b
 wartości przekazywane w typie string muszą być przedzielone znakiem \n
 
 Wszystkie komponenty mają być zaimportowane do komponentu App.js
-Wywołanie komponentów ma zwracać dane wszystkie dane ucznia
+Wywołanie komponentów ma zwracać wszystkie dane ucznia
