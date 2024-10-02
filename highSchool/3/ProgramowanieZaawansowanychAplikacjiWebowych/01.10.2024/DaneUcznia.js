@@ -4,7 +4,7 @@ const data = {
     "Klasa": "πŻ"
 }
 
-function printData() {
+module.exports = () => {
     let str = "";
     const entries = Object.entries(data);
 
@@ -14,6 +14,4 @@ function printData() {
     });
 
     console.log(str);
-}
-
-module.exports = printData;
+};

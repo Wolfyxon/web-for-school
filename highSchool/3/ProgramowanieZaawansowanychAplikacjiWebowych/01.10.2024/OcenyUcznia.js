@@ -4,7 +4,7 @@ const grades = {
     "Historia": 3
 }
 
-function printGrades() {
+module.exports = () => {
     let str = "";
     const entries = Object.entries(grades);
 
@@ -14,6 +14,4 @@ function printGrades() {
     });
 
     console.log(str);
-}
-
-module.exports = printGrades;
+};
