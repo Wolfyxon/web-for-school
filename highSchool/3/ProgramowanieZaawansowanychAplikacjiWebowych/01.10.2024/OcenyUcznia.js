@@ -5,9 +5,15 @@ const grades = {
 }
 
 function printGrades() {
-    Object.entries(grades).forEach((entry, i) => {
-       console.log(`${entry[0]} - ${entry[1]}`); 
+    let str = "";
+    const entries = Object.entries(grades);
+
+    entries.forEach((entry, i) => {
+       str += `${entry[0]} - ${entry[1]}`;
+       if(i != entries.length - 1) str += "\n";
     });
+
+    console.log(str);
 }
 
 module.exports = printGrades;
