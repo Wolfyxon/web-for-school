@@ -4,7 +4,6 @@ const legitymacja = require("./Legitymacja.js");
 const religia = require("./Religia.js");
 
 /**
- * 
  * @param {string} title 
  * @param {function} func 
  */
