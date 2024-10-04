@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+form div {
+    padding: 5px;
+}
+
+.error-label {
+    color: red;
+    display: block;
+}
+
+.invalid {
+    background-color: red;
+    color: white;
+}
+
+.valid {
+    background-color: rgb(0, 192, 0);
+    color: white;
+}
