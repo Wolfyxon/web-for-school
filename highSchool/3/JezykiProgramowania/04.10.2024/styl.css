@@ -50,3 +50,12 @@ ul {
     text-align: right;
     padding: 10px;
 }
+
+input[type="reset"], input[type="submit"] {
+    background-color: #00838F;
+    color: white;
+}
+
+input[type="reset"]:hover, input[type="submit"]:hover {
+    background-color: #80DEEA;
+}
