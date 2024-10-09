@@ -44,6 +44,10 @@ ul {
     text-align: left;
 }
 
+#form > * {
+    margin: 0 auto;
+}
+
 #footer {
     background-color: #006064;
     color: white;
