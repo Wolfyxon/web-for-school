@@ -1,8 +1,8 @@
 const { Product } = require("./product.js");
 
-const { laptopy } = require("./laptopy.js")
-const { tvs } = require("./tv.js")
+const { laptopy } = require("./laptopy.js");
 const { lodowki } = require("./lodowki.js");
+const { tvs } = require("./tv.js");
 
 /**
  * @param {Product} products 
