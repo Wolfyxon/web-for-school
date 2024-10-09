@@ -6,7 +6,15 @@ window.addEventListener("load", () => {
     const emailInput = document.getElementById("email-input");
     const reportDropdown = document.getElementById("report-dropdown");
 
+    const nameOutput = document.getElementById("data-name");
+    const emailOutput = document.getElementById("data-email");
+    const serviceOutput = document.getElementById("data-service");
+    
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+
+        nameOutput.innerText = nameInput.value + " " + lastNameInput.value;
+        emailOutput.innerText = emailInput.value.toLowerCase();
+        serviceOutput.innerText = "Usługa: " + reportDropdown.value;
     });
 });
