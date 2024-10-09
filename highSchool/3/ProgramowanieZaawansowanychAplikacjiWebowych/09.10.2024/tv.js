@@ -24,4 +24,4 @@ module.exports = {
         new TV("LG", "Epic", 20),
         new TV("Smasnug", "Real", 25)
     ]
-};
+}
