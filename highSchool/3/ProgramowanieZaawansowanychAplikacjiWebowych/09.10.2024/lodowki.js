@@ -21,9 +21,9 @@ class Lodowka extends Product {
 const lodowki = [
     new Lodowka("Samsung", "Cool", 2137),
     new Lodowka("Gru", "Freezeray", 999999999)
-];
+]
 
 module.exports = {
     Lodowka,
     lodowki
-};
+}

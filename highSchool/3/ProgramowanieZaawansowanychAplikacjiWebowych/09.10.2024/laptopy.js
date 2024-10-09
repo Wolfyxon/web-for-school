@@ -1,5 +1,5 @@
 const { PRODUCT_TYPE } = require("./product.js")
-const { TV } = require("./tv.js")
+const { TV } = require("./tv.js");
 const cena = require("./cena.js");
 
 class Laptop extends TV {
@@ -27,9 +27,9 @@ class Laptop extends TV {
 const laptopy = [
     new Laptop("Acer", "Nitro 5", 512, 8, 14),
     new Laptop("Lenovo", "Thinkpad", 256, 8, 7)
-];
+]
 
 module.exports = {
     Laptop,
     laptopy
-};
+}

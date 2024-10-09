@@ -1,4 +1,4 @@
-const { Product, PRODUCT_TYPE } = require("./product.js")
+const { Product, PRODUCT_TYPE } = require("./product.js");
 
 class ProductTag {
     /**
