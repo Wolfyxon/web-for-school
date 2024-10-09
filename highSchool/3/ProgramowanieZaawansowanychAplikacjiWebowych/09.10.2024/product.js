@@ -31,4 +31,7 @@ class Product {
     }
 }
 
-module.exports = {Product, PRODUCT_TYPE};
+module.exports = {
+    Product, 
+    PRODUCT_TYPE
+}
