@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     const nameInput = document.getElementById("name-input");
     const lastNameInput = document.getElementById("last-name-input");
     const emailInput = document.getElementById("email-input");
-    const reportDropdown = document.getElementById("report-dropdown");
+    const serviceDropdown = document.getElementById("service-dropdown");
 
     const nameOutput = document.getElementById("data-name");
     const emailOutput = document.getElementById("data-email");
@@ -15,6 +15,6 @@ window.addEventListener("load", () => {
 
         nameOutput.innerText = nameInput.value + " " + lastNameInput.value;
         emailOutput.innerText = emailInput.value.toLowerCase();
-        serviceOutput.innerText = "Usługa: " + reportDropdown.value;
+        serviceOutput.innerText = "Usługa: " + serviceDropdown.value;
     });
 });
