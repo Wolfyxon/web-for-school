@@ -1,3 +1,6 @@
+/**
+ * @enum {number}
+ */
 const PRODUCT_TYPE = {
     Laptop: 0,
     Lodowka: 1,
@@ -5,6 +8,11 @@ const PRODUCT_TYPE = {
 };
 
 class Product {
+    /**
+     * @param {string} brand 
+     * @param {string} name 
+     * @param {PRODUCT_TYPE} type
+     */
     constructor(brand, name, type) {
         this.brand = brand;
         this.name = name;

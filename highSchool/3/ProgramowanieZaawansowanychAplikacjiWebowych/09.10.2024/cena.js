@@ -1,6 +1,12 @@
 const { Product, PRODUCT_TYPE } = require("./product.js")
 
 class ProductTag {
+    /**
+     * @param {string} brand 
+     * @param {string} name 
+     * @param {PRODUCT_TYPE} type 
+     * @param {number} price 
+     */
     constructor(brand, name, type, price) {
         this.brand = brand;
         this.name = name;

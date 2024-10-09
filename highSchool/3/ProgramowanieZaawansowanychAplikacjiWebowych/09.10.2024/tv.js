@@ -2,6 +2,11 @@ const {Product, PRODUCT_TYPE} = require("./product.js")
 const cena = require("./cena.js");
 
 class TV extends Product {
+    /**
+     * @param {string} brand 
+     * @param {string} name  
+     * @param {number} screenSize 
+     */
     constructor(brand, name, screenSize) {
         super(brand, name, PRODUCT_TYPE.TV);
         this.screenSize = screenSize;

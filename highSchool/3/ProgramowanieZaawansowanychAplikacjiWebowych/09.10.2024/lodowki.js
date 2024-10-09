@@ -2,6 +2,11 @@ const {Product, PRODUCT_TYPE} = require("./product.js")
 const cena = require("./cena.js");
 
 class Lodowka extends Product {
+        /**
+     * @param {string} brand 
+     * @param {string} name
+     * @param {number} coolingPower
+     */
     constructor(brand, name, coolingPower) {
         super(brand, name, PRODUCT_TYPE.Lodowka);
         this.coolingPower = coolingPower;
