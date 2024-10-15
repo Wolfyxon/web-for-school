@@ -9,9 +9,7 @@ $(document).ready(() => {
     }
 
     $("#btn-change").click(() => {
-        for(const elm of $("body *")) {
-            if(elm.tagName != "P") continue;
-            
+        for(const elm of $("p")) {
             $(elm).css("color", randColor());
         }
     })
