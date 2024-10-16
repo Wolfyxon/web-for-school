@@ -163,6 +163,7 @@ window.addEventListener("load", () => {
 
     updateBases();
 
+    shapeDropdown.addEventListener("input", updateBases);
     baseDropdown.addEventListener("input", updateBaseInputs);
 
     form.addEventListener("submit", (e) => {
