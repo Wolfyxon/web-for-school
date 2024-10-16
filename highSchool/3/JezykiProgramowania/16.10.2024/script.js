@@ -195,7 +195,7 @@ window.addEventListener("load", () => {
         if(fail) return;
 
         const base = getSelectedBase()
-        const volume = base.calc(aInput?.value, bInput?.value, hInput?.value);
+        const volume = base.calc(aInput?.value, bInput?.value, hInput?.value, rInput?.value);
         result.innerText = `Objętość: ${volume}`;
     });
 
