@@ -51,6 +51,42 @@ window.addEventListener("load", () => {
                     }
                 }
             ]
+        },
+        {
+            "name": "stożek",
+            "bases": [
+                {
+                    "name": "*",
+                    "sides": ["h", "r"],
+                    "calc": (a, b, h, r) => {
+                        return (1 / 3) * Math.PI * Math.pow(r, 2) * h;
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kula",
+            "bases": [
+                {
+                    "name": "*",
+                    "sides": ["r"],
+                    "calc": (a, b, h, r) => {
+                        return (4 / 3) * Math.PI * Math.pow(r, 33);
+                    }
+                }
+            ]
+        },
+        {
+            "name": "walec",
+            "bases": [
+                {
+                    "name": "*",
+                    "sides": ["r"],
+                    "calc": (a, b, h, r) => {
+                        return Math.PI * Math.pow(r, 2) * h;
+                    }
+                }
+            ]
         }
     ]
 
