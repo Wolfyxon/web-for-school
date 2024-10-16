@@ -19,8 +19,8 @@ window.addEventListener("load", () => {
                 },
                 {
                     "name": "sześciokąt",
-                    "sides": ["a", "b"],
-                    "calc": (a, b) => {
+                    "sides": ["a", "h"],
+                    "calc": (a, b, h) => {
                         return (3 * Math.sqrt(2)) / 2 * Math.pow(a, 2) * h;
                     }
                 }
