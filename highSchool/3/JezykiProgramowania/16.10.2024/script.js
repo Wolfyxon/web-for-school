@@ -81,7 +81,7 @@ window.addEventListener("load", () => {
             "bases": [
                 {
                     "name": "*",
-                    "sides": ["r"],
+                    "sides": ["h", "r"],
                     "calc": (a, b, h, r) => {
                         return Math.PI * Math.pow(r, 2) * h;
                     }
