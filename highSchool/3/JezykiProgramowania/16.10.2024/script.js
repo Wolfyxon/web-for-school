@@ -12,11 +12,17 @@ window.addEventListener("load", () => {
                 },
                 {
                     "name": "czworokąt",
-                    "sides": ["a", "b", "h"]
+                    "sides": ["a", "b", "h"],
+                    "calc": (a, b, h) => {
+                        return a * b * h;
+                    }
                 },
                 {
                     "name": "sześciokąt",
-                    "sides": ["a", "b"]
+                    "sides": ["a", "b"],
+                    "calc": (a, b) => {
+                        return (3 * Math.sqrt(2)) / 2 * Math.pow(a, 2) * h;
+                    }
                 }
             ]
         }
