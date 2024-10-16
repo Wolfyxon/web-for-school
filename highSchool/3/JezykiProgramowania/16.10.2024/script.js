@@ -137,6 +137,7 @@ window.addEventListener("load", () => {
         const aInput = document.getElementById("a");
         const bInput = document.getElementById("b");
         const hInput = document.getElementById("h");
+        const rInput = document.getElementById("r");
 
         let fail = false;
 
@@ -152,6 +153,7 @@ window.addEventListener("load", () => {
         check(aInput);
         check(bInput);
         check(hInput);
+        check(rInput);
         
         if(fail) return;
 
