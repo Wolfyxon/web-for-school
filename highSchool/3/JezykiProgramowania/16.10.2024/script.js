@@ -25,6 +25,32 @@ window.addEventListener("load", () => {
                     }
                 }
             ]
+        },
+        {
+            "name": "ostrosłup",
+            "bases": [
+                {
+                    "name": "trójkąt",
+                    "sides": ["a", "b", "h"],
+                    "calc": (a, b, h) => {
+                        return (1 / 6) * a * b * h;
+                    }
+                },
+                {
+                    "name": "czworokąt",
+                    "sides": ["a", "b", "h"],
+                    "calc": (a, b, h) => {
+                        return (1 / 3) * a * b * h;
+                    }
+                },
+                {
+                    "name": "sześciokąt",
+                    "sides": ["a", "h"],
+                    "calc": (a, b, h) => {
+                        return (1 / 3) * (3 * Math.sqrt(3)) / 2 * Math.pow(a, 2) * h;
+                    }
+                }
+            ]
         }
     ]
 
