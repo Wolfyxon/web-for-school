@@ -1,3 +1,24 @@
+class Operator {
+    /**
+     * @param {string} char 
+     * @param {Operator~handler} handler 
+     */
+    constructor(char, handler) {
+        this.char = char;
+        this.handler = handler;
+    }
+
+    /**
+     * @callback
+     * @param {number} a 
+     * @param {number} b 
+     * @returns {number}
+     */
+    handler(a, b) {
+        throw "Not implemented";
+    }
+}
+
 /**
  * @param {string} query
  * @returns {string}
@@ -16,5 +37,5 @@ async function input(query) {
 
         process.stdin.on("data", callback);
     });
-    
+
 }
