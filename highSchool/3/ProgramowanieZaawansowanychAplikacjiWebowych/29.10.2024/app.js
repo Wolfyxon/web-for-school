@@ -19,6 +19,21 @@ class Operator {
     }
 }
 
+const operators = [
+    new Operator("+", (a, b) => {
+        return a + b;
+    }),
+    new Operator("-", (a, b) => {
+        return a - b;
+    }),
+    new Operator("*", (a, b) => {
+        return a * b;
+    }),
+    new Operator("/", (a, b) => {
+        return a / b;
+    })
+];
+
 /**
  * @param {string} query
  * @returns {string}
