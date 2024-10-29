@@ -56,3 +56,31 @@ async function input(query) {
     });
 
 }
+
+async function queryOperator() {
+    return new Promise(async (res) => {
+        const chr = await input("Podaj operator: ");
+
+        for(const op of operators) {
+            if(op.char == chr) {
+                res(op);
+            }
+        }
+
+        console.log("Nieznany operator.");
+
+        res(await queryOperator());
+    });
+}
+
+/////////////////////////////////////////////
+
+console.log("Operatory:\n");
+
+for(const op of operators) {
+    console.log(`   ${op.char} - ${op.name}`);
+}
+
+console.log();
+
+const op = await queryOperator();
