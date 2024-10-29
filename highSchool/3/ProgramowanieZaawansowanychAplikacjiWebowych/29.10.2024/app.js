@@ -52,6 +52,7 @@ async function input(query) {
             res(buf.toString().trim());
         };
 
+        process.stdin.resume();
         process.stdin.on("data", callback);
     });
 
