@@ -63,7 +63,7 @@ async function queryOperator() {
 
         for(const op of operators) {
             if(op.char == chr) {
-                res(op);
+                return res(op);
             }
         }
 
