@@ -74,6 +74,24 @@ async function queryOperator() {
     });
 }
 
+/**
+ * @param {string} name 
+ * @returns {number} 
+ */
+async function queryFloat(name) {
+    return new Promise(async (res) => {
+        const str = input(`Podaj liczbę ${name}`);
+        const num = parseFloat(str);
+
+        if(!isNaN(num)) {
+            res(num);
+        } else {
+            console.log("Niepoprawna liczba.");
+            res(await queryFloat(name));
+        }
+    });
+}
+
 /////////////////////////////////////////////
 
 async function main() {
