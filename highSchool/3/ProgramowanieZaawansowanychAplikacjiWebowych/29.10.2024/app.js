@@ -75,12 +75,16 @@ async function queryOperator() {
 
 /////////////////////////////////////////////
 
-console.log("Operatory:\n");
+async function main() {
+    console.log("Operatory:\n");
 
-for(const op of operators) {
-    console.log(`   ${op.char} - ${op.name}`);
+    for(const op of operators) {
+        console.log(`   ${op.char} - ${op.name}`);
+    }
+
+    console.log();
+
+    const op = await queryOperator();
 }
 
-console.log();
-
-const op = await queryOperator();
+main(); // node nie lubi awaitów w globalnym scopie
