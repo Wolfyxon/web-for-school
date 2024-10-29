@@ -104,6 +104,13 @@ async function main() {
     console.log();
 
     const op = await queryOperator();
+    const a  = await queryFloat("A");
+    const b  = await queryFloat("B");
+    
+    process.stdout.write(`Wykonywanie działania: ${op.name}\n`);
+    
+    const res = op.handler(a, b);
+    console.log(`${a} ${op.char} ${b} = ${res}`);
 }
 
 main(); // node nie lubi awaitów w globalnym scopie
