@@ -80,7 +80,7 @@ async function queryOperator() {
  */
 async function queryFloat(name) {
     return new Promise(async (res) => {
-        const str = input(`Podaj liczbę ${name}`);
+        const str = await input(`Podaj liczbę ${name}`);
         const num = parseFloat(str);
 
         if(!isNaN(num)) {
