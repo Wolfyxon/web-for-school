@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div id="display"></div>
+
+        <form id="form">
+            <div>
+                <label for="bg-color">Wybierz kolor tła</label>
+                <input type="color" id="bg-color">
+            </div>
+
+            <div>
+                <label for="border-color">Wybierz kolo obramowania</label>
+                <input type="color" id="border-color">
+            </div>
+
+            <div id="border-size-container">
+                <div>Szerokość obramowania</div>
+                <div>
+                    <div>
+                        <label>1px</label>
+                        <input type="radio" name="border-size" value="1px" checked>
+                    </div>
+                    <div>
+                        <label>5px</label>
+                        <input type="radio" name="border-size" value="5px">
+                    </div>
+                    <div>
+                        <label>10px</label>
+                        <input type="radio" name="border-size" value="10px">
+                    </div>
+                    
+                </div>
+            </div>
+
+            <input type="submit" value="Ustaw styl">
+        </form>
+    </body>
+</html>

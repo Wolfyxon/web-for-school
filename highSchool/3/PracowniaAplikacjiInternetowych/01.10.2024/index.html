@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form id="form">
+            <div>
+                <label>a = </label>
+                <input type="number" id="a-input">
+            </div>
+            <div>
+                <label>b = </label>
+                <input type="number" id="b-input">
+            </div>
+            <div>
+                <input type="radio" id="calc1" name="calc" checked>
+                <label for="calc1">a / (a - b)</label>
+
+                <input type="radio" id="calc2" name="calc">
+                <label for="calc2">a * b + b</label>
+            </div>
+            <div>
+                <label>Wynik = </label>
+                <input type="number" id="result" disabled>
+            </div>
+
+            <input type="submit" value="Oblicz">
+        </form>
+    </body>
+</html>
