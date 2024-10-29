@@ -1,10 +1,12 @@
 class Operator {
     /**
      * @param {string} char 
+     * @param {string} name
      * @param {Operator~handler} handler 
      */
-    constructor(char, handler) {
+    constructor(char, name, handler) {
         this.char = char;
+        this.name = name;
         this.handler = handler;
     }
 
@@ -20,16 +22,16 @@ class Operator {
 }
 
 const operators = [
-    new Operator("+", (a, b) => {
+    new Operator("+", "dodawanie", (a, b) => {
         return a + b;
     }),
-    new Operator("-", (a, b) => {
+    new Operator("-", "odejmowanie", (a, b) => {
         return a - b;
     }),
-    new Operator("*", (a, b) => {
+    new Operator("*", "mnożenie", (a, b) => {
         return a * b;
     }),
-    new Operator("/", (a, b) => {
+    new Operator("/", "dzielenie", (a, b) => {
         return a / b;
     })
 ];
