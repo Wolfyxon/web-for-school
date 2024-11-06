@@ -1,1 +1,1 @@
-# Programowanie Zaawansowanych Aplikacji Webowych (PrZaApWe)
+# Pracownia Zaawansowanych Aplikacji Webowych (PrZaApWe)
