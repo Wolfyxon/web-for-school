@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+#shapes {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+}
+
+#shapes > * {
+    flex: 1;
+    height: 100%;
+    display: inline-block;
+    margin: 5px;
+}
+
+#form {
+    margin-top: 10px;
+}
