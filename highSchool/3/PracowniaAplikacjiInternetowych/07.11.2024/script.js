@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
 
         const lbl = document.createElement("label");
         lbl.innerText = "Zdjęcie " + id;
+        lbl.for = chk.id;
 
         function updateSelf() {
             options[id] = chk.checked;
