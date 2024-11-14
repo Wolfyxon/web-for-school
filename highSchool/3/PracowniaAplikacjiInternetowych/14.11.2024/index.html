@@ -11,22 +11,32 @@
 			<img src='3.jpg' />
 		</div>
 		<form>
-			1. Wybierz kolor obramowania wszystkich zdjęć: 
-			<input type='color' id="img-border-color" />
-			<input type='button' value='Zmień kolor obramowania wszystkich zdjęć' id="btn-apply-border-color" />
-			<br /><br />
-			2. Wybierz zdjęcie: 
-			<select id="current-img">
-				<option>1.jpg</option>
-				<option>2.jpg</option>
-				<option>3.jpg</option>
-			</select>
-			Wpisz szerokość zdjęcia:
-			<input type='number' id="img-width" />
-			<input type='button' value='Zmień szerokość odpowiedniego zdjęcia' id="btn-update-width" />
-			<br /><br />
-			3. Kliknij aby usunąć obramowanie dolne zdjęć: 
-			<input type='button' value='Usuń obramowanie dolne wszystkich zdjęć' id="btn-rm-border" />
+			<div>
+				<label for="img-border-color">1. Wybierz kolor obramowania wszystkich zdjęć: </label>
+
+				<input type='color' id="img-border-color" />
+				<input type='button' value='Zmień kolor obramowania wszystkich zdjęć' id="btn-apply-border-color" />
+			</div>
+
+			<div>
+				<label for="current-img">2. Wybierz zdjęcie: </label>
+
+				<select id="current-img">
+					<option>1.jpg</option>
+					<option>2.jpg</option>
+					<option>3.jpg</option>
+				</select>
+
+				<label for="img-width">Wpisz szerokość zdjęcia:</label>
+
+				<input type='number' id="img-width" />
+				<input type='button' value='Zmień szerokość odpowiedniego zdjęcia' id="btn-update-width" />
+			</div>
+
+			<div>
+				<label for="btn-rm-border">3. Kliknij aby usunąć obramowanie dolne zdjęć: </label>
+				<input type='button' value='Usuń obramowanie dolne wszystkich zdjęć' id="btn-rm-border" />
+			</div>
 		</form>
 		<div id='instrukcja'>
 			<h2>Instrukcja do zadania</h2>
