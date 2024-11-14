@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
 		const img = getCurrentImg();
 
 		if(!px || isNaN(px) || !isFinite(px)) {
-			return alert("Niepoprawna liczba");
+			return alert("Wpisz szerokość");
 		}
 
 		if(!img) {
