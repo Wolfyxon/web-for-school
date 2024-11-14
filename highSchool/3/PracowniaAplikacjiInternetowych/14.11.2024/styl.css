@@ -25,6 +25,10 @@ form {
 	text-align: center;
 }
 
+form div {
+	padding: 5px;
+}
+
 #instrukcja{
 	margin: 30px auto 0 auto; 
 	width: 80%; 
