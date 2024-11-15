@@ -23,6 +23,10 @@ class X extends Component {
     constructor() {
         super("<span>x</span>")
     }
+
+    getClass() {
+        return "X";
+    }
 }
 
 class Operator extends Component {
