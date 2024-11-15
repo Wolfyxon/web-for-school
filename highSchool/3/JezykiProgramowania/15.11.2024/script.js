@@ -72,6 +72,15 @@ const functions = [
             "x1": (-v.b - dtSq) / (2 * v.a),
             "x2": (-v.b + dtSq) / (2 * v.a)
         }
+    }),
+
+    new Function("liniowa", [
+        new Value("a"),
+        new Value("x"),
+        new Operator("+"),
+        new Value("b")
+    ], (v) => {
+        // TODO
     })
 ]
 
