@@ -1,0 +1,146 @@
+class Component {
+    constructor(html) {
+        this.html = html;
+    }
+
+    getClass() {
+        throw "Virtual function not implemented"
+    }
+}
+
+class Value extends Component  {
+    constructor(id) {
+        super(`<input type="number" class="${id}" placeholder="${id}">`);
+        this.id = id;
+    }
+
+    getClass() {
+        return "Value";
+    }
+}
+
+class Operator extends Component {
+    constructor(operator, extra) {
+        const map = {
+            "^": `<sup>${extra}</sup>`
+        }
+
+        super(map[operator] ?? `<span>${operator}</span>`);
+    }
+
+    getClass() {
+        return "Operator";
+    }
+}
+
+class Function {
+    constructor(name, components, callback) {
+        this.name = name;
+        this.components = components;
+        this.callback = callback;
+    }
+
+    getValueComonents() {
+        const res = [];
+        
+        for(const comp of this.components) {
+            if(comp.getClass() == "Value") {
+                res.push(comp);
+            }
+        }
+
+        return res;
+    }
+}
+
+const functions = [
+    new Function("kwadratowa", [
+        new Value("a"),
+        new Value("x"),
+        new Operator("^", 2),
+        new Operator("+"),
+        new Value("b"),
+        new Value("x"),
+        new Operator("+"),
+        new Value("c")
+    ], (v) => {
+        const dt = v.b**2 - 4 * v.a * v.c;
+        const dtSq = Math.sqrt(dt);
+
+        return {
+            "Delta": dt,
+            "x1": (-v.b - dtSq) / (2 * v.a),
+            "x2": (-v.b + dtSq) / (2 * v.a)
+        }
+    })
+]
+
+$(window).ready(() => {
+    const canvas = $("canvas");
+    const ctx = canvas[0].getContext("2d");
+
+    const formula = $("#formula");
+    const funcTypeInp = $("#function-type");
+
+    const results = $("#results");
+
+    let currentFunc;
+
+    function loadFunc() {        
+        for(const func of functions) {
+            if(func.name != funcTypeInp.val()) continue;
+
+            for(const comp of func.components) {
+                const elm = $(comp.html);
+                
+                function update() {
+                     $("." + comp.id).val(elm.val());
+                    calc();
+                }
+
+                elm.keyup(update);
+                elm.change(update);
+
+                formula.append(elm);
+            }
+
+            currentFunc = func;
+        }
+    }
+
+    function calc() {
+        const values = {};
+
+        results.html("");
+        
+        for(const val of currentFunc.getValueComonents()) {
+            const input = $("." + val.id);
+            const parsed = parseFloat(input.val());
+
+            if(parsed == null || isNaN(parsed) || !isFinite(parsed)) return;
+
+            values[val.id] = parsed;
+        }
+
+        const res = currentFunc.callback(values);
+
+        for(const entry of Object.entries(res)) {
+            if(isNaN(entry[1])) continue;
+
+            const lbl = `<label>${entry[0]}</label>`;
+            const input = `<input type="number" value="${entry[1]}" disabled>`;
+
+            results.append(`<div>${lbl} ${input}</div>`);
+        }
+    }
+
+    for(const func of functions) {
+        const opt = $(`<option>${func.name}</option>`);
+        
+        funcTypeInp.append(opt);
+    }
+
+    funcTypeInp.change(loadFunc);
+
+    loadFunc();
+});
