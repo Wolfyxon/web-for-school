@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 #formula input {
     width: 40px;
 }
