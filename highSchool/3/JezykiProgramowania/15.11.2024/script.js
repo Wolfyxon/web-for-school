@@ -99,6 +99,7 @@ const functions = [
 $(window).ready(() => {
     const canvas = $("canvas");
     const ctx = canvas[0].getContext("2d");
+    const range = 32;
 
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
@@ -115,6 +116,7 @@ $(window).ready(() => {
 
             for(const comp of func.components) {
                 const elm = $(comp.html);
+                elm.val("1");
                 
                 function update() {
                      $("." + comp.id).val(elm.val());
@@ -157,6 +159,26 @@ $(window).ready(() => {
 
             results.append(`<div>${lbl} ${input}</div>`);
         }
+
+        const w = canvas.width();
+        const h = canvas.height();
+
+        ctx.clearRect(0, 0, w, h);
+
+        for(let x = -range; x <= range; x++) {
+            values.x = x;
+
+            const y = currentFunc.callback(values).y;
+            ctx.beginPath();
+            
+            ctx.arc(
+                (x / range) * w,
+                (y / range) * h,
+                1, 0, Math.PI * 2
+            );
+
+            ctx.fill();
+        }
     }
 
     for(const func of functions) {
@@ -168,4 +190,5 @@ $(window).ready(() => {
     funcTypeInp.change(loadFunc);
 
     loadFunc();
+    calc();
 });
