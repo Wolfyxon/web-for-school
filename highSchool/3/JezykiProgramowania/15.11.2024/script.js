@@ -50,7 +50,7 @@ class Function {
         this.callback = callback;
     }
 
-    getValueComonents() {
+    getValueComponents() {
         const res = [];
         
         for(const comp of this.components) {
@@ -134,7 +134,7 @@ $(window).ready(() => {
 
         results.html("");
         
-        for(const val of currentFunc.getValueComonents()) {
+        for(const val of currentFunc.getValueComponents()) {
             const input = $("." + val.id);
             const parsed = parseFloat(input.val());
 
