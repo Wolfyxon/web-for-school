@@ -44,10 +44,10 @@ class Operator extends Component {
 }
 
 class Function {
-    constructor(name, components, callback) {
+    constructor(name, components, propertiesCallback) {
         this.name = name;
         this.components = components;
-        this.callback = callback;
+        this.propertiesCallback = propertiesCallback;
     }
 
     getValueComponents() {
@@ -143,7 +143,7 @@ $(window).ready(() => {
             values[val.id] = parsed;
         }
 
-        const res = currentFunc.callback(values);
+        const res = currentFunc.propertiesCallback(values);
 
         for(const entry of Object.entries(res)) {
             if(isNaN(entry[1])) continue;
