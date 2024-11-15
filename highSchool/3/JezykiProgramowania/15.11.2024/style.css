@@ -5,3 +5,10 @@
 #results {
     margin-top: 5%;
 }
+
+canvas {
+    width: 50%;
+    height: 70vh;
+    background-color: #d4d4d4;
+    margin: 5px;
+}
