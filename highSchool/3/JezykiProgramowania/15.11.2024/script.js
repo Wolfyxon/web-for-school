@@ -80,7 +80,9 @@ const functions = [
         return {
             "Delta": dt,
             "x1": (-v.b - dtSq) / (2 * v.a),
-            "x2": (-v.b + dtSq) / (2 * v.a)
+            "x2": (-v.b + dtSq) / (2 * v.a),
+
+            "y": v.a * v.x**2 + v.b * v.x + v.c
         }
     }),
 
@@ -130,7 +132,9 @@ $(window).ready(() => {
     }
 
     function calc() {
-        const values = {};
+        const values = {
+            x: 0
+        };
 
         results.html("");
         
