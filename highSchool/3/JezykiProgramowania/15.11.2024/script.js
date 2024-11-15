@@ -44,11 +44,10 @@ class Operator extends Component {
 }
 
 class Function {
-    constructor(name, components, propertiesCallback, xCallback) {
+    constructor(name, components, propertiesCallback) {
         this.name = name;
         this.components = components;
         this.propertiesCallback = propertiesCallback;
-        this.xCallback = xCallback;
     }
 
     getValueComponents() {
