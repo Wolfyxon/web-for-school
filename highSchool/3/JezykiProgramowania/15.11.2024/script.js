@@ -95,7 +95,9 @@ $(window).ready(() => {
 
     let currentFunc;
 
-    function loadFunc() {        
+    function loadFunc() {
+        formula.html("");
+
         for(const func of functions) {
             if(func.name != funcTypeInp.val()) continue;
 
