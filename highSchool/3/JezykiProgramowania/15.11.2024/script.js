@@ -19,6 +19,12 @@ class Value extends Component  {
     }
 }
 
+class X extends Component {
+    constructor() {
+        super("<span>x</span>")
+    }
+}
+
 class Operator extends Component {
     constructor(operator, extra) {
         const map = {
@@ -56,11 +62,11 @@ class Function {
 const functions = [
     new Function("kwadratowa", [
         new Value("a"),
-        new Value("x"),
+        new X(),
         new Operator("^", 2),
         new Operator("+"),
         new Value("b"),
-        new Value("x"),
+        new X(),
         new Operator("+"),
         new Value("c")
     ], (v) => {
