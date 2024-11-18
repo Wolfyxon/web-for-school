@@ -20,6 +20,8 @@ class Car {
     }
 }
 
+console.log("-= Samochody =-");
+
 const cars = [
     new Car("Toyota", "Yaris", 2019),
     new Car("Mazda", "Miata", 2016),
@@ -33,3 +35,4 @@ for(const car of cars) {
 }
 
 fs.writeFileSync(dir + "marka.txt", content);
+console.log(content);
