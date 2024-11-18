@@ -36,3 +36,13 @@ for(const car of cars) {
 
 fs.writeFileSync(dir + "marka.txt", content);
 console.log(content);
+
+console.log("-= Zmiana nazwy =-");
+
+fs.rename(dir + "oferta.pdf", dir + "dane_do_ulotki.pdf", (err) => {
+    if(!err) {
+        console.log("Nazwa została zmieniona");
+    } else {
+        console.log("Nie można zmienić nazwy:", err.message);
+    }
+});
