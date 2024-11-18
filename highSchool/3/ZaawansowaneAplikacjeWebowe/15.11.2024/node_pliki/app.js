@@ -7,6 +7,11 @@ for (const sub of fs.readdirSync(".")) {
 }
 
 class Car {
+    /**
+     * @param {string} brand 
+     * @param {string} model 
+     * @param {number} year 
+     */
     constructor(brand, model, year) {
         this.brand = brand;
         this.model = model;
