@@ -19,6 +19,16 @@ class Value extends Component  {
     }
 }
 
+class X extends Component {
+    constructor() {
+        super("<span>x</span>")
+    }
+
+    getClass() {
+        return "X";
+    }
+}
+
 class Operator extends Component {
     constructor(operator, extra) {
         const map = {
@@ -40,7 +50,7 @@ class Function {
         this.callback = callback;
     }
 
-    getValueComonents() {
+    getValueComponents() {
         const res = [];
         
         for(const comp of this.components) {
@@ -56,11 +66,11 @@ class Function {
 const functions = [
     new Function("kwadratowa", [
         new Value("a"),
-        new Value("x"),
+        new X(),
         new Operator("^", 2),
         new Operator("+"),
         new Value("b"),
-        new Value("x"),
+        new X(),
         new Operator("+"),
         new Value("c")
     ], (v) => {
@@ -70,7 +80,9 @@ const functions = [
         return {
             "Delta": dt,
             "x1": (-v.b - dtSq) / (2 * v.a),
-            "x2": (-v.b + dtSq) / (2 * v.a)
+            "x2": (-v.b + dtSq) / (2 * v.a),
+
+            "y": v.a * v.x**2 + v.b * v.x + v.c
         }
     }),
 
@@ -87,6 +99,7 @@ const functions = [
 $(window).ready(() => {
     const canvas = $("canvas");
     const ctx = canvas[0].getContext("2d");
+    const range = 32;
 
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
@@ -95,12 +108,15 @@ $(window).ready(() => {
 
     let currentFunc;
 
-    function loadFunc() {        
+    function loadFunc() {
+        formula.html("");
+
         for(const func of functions) {
             if(func.name != funcTypeInp.val()) continue;
 
             for(const comp of func.components) {
                 const elm = $(comp.html);
+                elm.val("1");
                 
                 function update() {
                      $("." + comp.id).val(elm.val());
@@ -118,11 +134,13 @@ $(window).ready(() => {
     }
 
     function calc() {
-        const values = {};
+        const values = {
+            x: 0
+        };
 
         results.html("");
         
-        for(const val of currentFunc.getValueComonents()) {
+        for(const val of currentFunc.getValueComponents()) {
             const input = $("." + val.id);
             const parsed = parseFloat(input.val());
 
@@ -141,6 +159,26 @@ $(window).ready(() => {
 
             results.append(`<div>${lbl} ${input}</div>`);
         }
+
+        const w = canvas.width();
+        const h = canvas.height();
+
+        ctx.clearRect(0, 0, w, h);
+
+        for(let x = -range; x <= range; x++) {
+            values.x = x;
+
+            const y = currentFunc.callback(values).y;
+            ctx.beginPath();
+            
+            ctx.arc(
+                (x / range) * w,
+                (y / range) * h,
+                1, 0, Math.PI * 2
+            );
+
+            ctx.fill();
+        }
     }
 
     for(const func of functions) {
@@ -152,4 +190,5 @@ $(window).ready(() => {
     funcTypeInp.change(loadFunc);
 
     loadFunc();
+    calc();
 });

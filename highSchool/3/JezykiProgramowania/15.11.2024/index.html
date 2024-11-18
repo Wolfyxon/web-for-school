@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <p id="function-name">Wybierz funkcję</p>
+        <div>
+            <label for="function-type">Funkcja </label>
+            <select id="function-type"></select>
+        </div>
         
         <canvas></canvas>
 
@@ -15,8 +18,6 @@
                 <span>f(x) = </span>
                 <span id="formula"></span>
             </div>
-
-            <select id="function-type"></select>
         </div>
 
         <div id="results"></div>
