@@ -1,10 +1,8 @@
 const fs = require("fs");
 
-const dir = "node_pliki/";
+console.log(`-= Zawartość folderu: =-`);
 
-console.log(`-= Zawartość ${dir}: =-`);
-
-for (const sub of fs.readdirSync(dir)) {
+for (const sub of fs.readdirSync(".")) {
     console.log(" ", sub);
 }
 
@@ -34,12 +32,12 @@ for(const car of cars) {
     content += car + "\n";
 }
 
-fs.writeFileSync(dir + "marka.txt", content);
+fs.writeFileSync("marka.txt", content);
 console.log(content);
 
 console.log("-= Zmiana nazwy =-");
 
-fs.rename(dir + "oferta.pdf", dir + "dane_do_ulotki.pdf", (err) => {
+fs.rename("oferta.pdf", "dane_do_ulotki.pdf", (err) => {
     if(!err) {
         console.log("Nazwa została zmieniona");
     } else {
