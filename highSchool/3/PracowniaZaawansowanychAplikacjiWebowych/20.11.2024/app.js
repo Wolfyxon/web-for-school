@@ -12,18 +12,62 @@ async function input(query) {
     });
 }
 
+let dirStart;
+let fileStart;
+
+let dirFinal;
+let fileFinal;
+
+
+async function mkDir() {
+    dirStart = await input("Podaj początkową nazwę folderu");
+    
+    try {
+        fs.mkdirSync(dirStart);
+    } catch {
+        console.log("Nie można utworzyć folderu.");
+        await mkDir();
+    }
+}
+
+async function mkFile() {
+    fileStart = await input("Podaj nazwę pliku");
+    
+    try {
+        fs.writeFileSync(dirStart + "/" + fileStart, await input("Podaj treść pliku"));
+    } catch {
+        console.log("Nie można utworzyć pliku");
+        await mkFile();
+    }
+}
+
+async function renameDir() {
+    dirFinal = await input("Podaj nową nazwę folderu");
+    
+    try {
+        fs.renameSync(dirStart, dirFinal);
+    } catch {
+        console.log("Nie można zmienić nazwy");
+        await renameDir();
+    }
+}
+
+async function renameFile() {
+    fileFinal = await input("Podaj nową nazwę pliku");
+    
+    try {
+        fs.renameSync(dirFinal + "/" + fileStart, dirFinal + "/" + fileFinal);
+    } catch {
+        console.log("Nie można zmienić nazwy");
+        await renameFile();
+    }
+}
+
 async function main() {
-    const dirStart = await input("Podaj początkową nazwę folderu");
-    fs.mkdirSync(dirStart);
-
-    const fileStart = await input("Podaj nazwę pliku");
-    fs.writeFileSync(dirStart + "/" + fileStart, await input("Podaj treść pliku"));
-
-    const dirFinal = await input("Podaj nową nazwę folderu");
-    fs.renameSync(dirStart, dirFinal);
-
-    const fileFinal = await input("Podaj nową nazwę pliku");
-    fs.renameSync(dirFinal + "/" + fileStart, dirFinal + "/" + fileFinal);
+    await mkDir();
+    await mkFile();
+    await renameDir();
+    await renameFile();
 }
 
 main();
