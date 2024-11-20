@@ -1,5 +1,16 @@
 const fs = require("fs");
 
+async function input(query) {
+    return new Promise((res) => {
+        process.stdout.resume();
+
+        process.stdout.once("data", (buf) => {
+            res(buf.toString());
+            process.stdout.pause();
+        });
+    });
+}
+
 const dirStart = "C++";
 const dirFinal = "Python";
 
