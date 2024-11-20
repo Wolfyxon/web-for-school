@@ -97,8 +97,8 @@ const functions = [
 ]
 
 $(window).ready(() => {
-    const canvas = $("canvas");
-    const ctx = canvas[0].getContext("2d");
+    const canvas = $("canvas")[0];
+    const ctx = canvas.getContext("2d");
     const range = 32;
 
     const formula = $("#formula");
@@ -160,8 +160,8 @@ $(window).ready(() => {
             results.append(`<div>${lbl} ${input}</div>`);
         }
 
-        const w = canvas.width();
-        const h = canvas.height();
+        const w = canvas.width;
+        const h = canvas.height;
 
         ctx.clearRect(0, 0, w, h);
 
@@ -172,8 +172,8 @@ $(window).ready(() => {
             ctx.beginPath();
             
             ctx.arc(
-                (x / range) * w,
-                (y / range) * h,
+                w / 2 +(x / range) * w,
+                h / 2 + (y / range) * h,
                 1, 0, Math.PI * 2
             );
 
