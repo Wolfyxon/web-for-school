@@ -179,6 +179,16 @@ $(window).ready(() => {
 
         ctx.clearRect(0, 0, w, h);
 
+        ctx.strokeStyle = "gray";
+
+        ctx.moveTo(w / 2, 0);
+        ctx.lineTo(w / 2, h);
+        ctx.stroke();
+
+        ctx.moveTo(0, h / 2);
+        ctx.lineTo(w, h /2);
+        ctx.stroke();
+
         for(let x = -range; x <= range; x++) {
             values.x = x;
 
@@ -196,6 +206,7 @@ $(window).ready(() => {
         }
 
         ctx.beginPath();
+        ctx.strokeStyle = "red";
 
         let lastPoint;
 
@@ -224,8 +235,6 @@ $(window).ready(() => {
         
         funcTypeInp.append(opt);
     }
-
-    ctx.strokeStyle = "red";
 
     funcTypeInp.change(loadFunc);
 
