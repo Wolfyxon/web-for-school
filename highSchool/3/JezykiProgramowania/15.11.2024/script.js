@@ -181,10 +181,12 @@ $(window).ready(() => {
 
         ctx.strokeStyle = "gray";
 
+        ctx.beginPath();
         ctx.moveTo(w / 2, 0);
         ctx.lineTo(w / 2, h);
         ctx.stroke();
 
+        ctx.beginPath();
         ctx.moveTo(0, h / 2);
         ctx.lineTo(w, h /2);
         ctx.stroke();
