@@ -17,7 +17,7 @@ async function main() {
     fs.mkdirSync(dirStart);
 
     const fileStart = await input("Podaj nazwę pliku");
-    fs.writeFileSync(dirStart + "/" + fileStart, "");
+    fs.writeFileSync(dirStart + "/" + fileStart, await input("Podaj treść pliku"));
 
     const dirFinal = await input("Podaj nową nazwę folderu");
     fs.renameSync(dirStart, dirFinal);
