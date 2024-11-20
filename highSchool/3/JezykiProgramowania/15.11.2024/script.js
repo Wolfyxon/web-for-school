@@ -9,9 +9,11 @@ class Component {
 }
 
 class Value extends Component  {
-    constructor(id) {
+    constructor(id, defaultValue) {
         super(`<input type="number" class="${id}" placeholder="${id}">`);
+        
         this.id = id;
+        this.default = defaultValue;
     }
 
     getClass() {
@@ -65,7 +67,7 @@ class Function {
 
 const functions = [
     new Function("kwadratowa", [
-        new Value("a"),
+        new Value("a", 1),
         new X(),
         new Operator("^", 2),
         new Operator("+"),
@@ -125,7 +127,7 @@ $(window).ready(() => {
 
             for(const comp of func.components) {
                 const elm = $(comp.html);
-                elm.val("1");
+                elm.val(comp.default ?? "0");
                 
                 function update() {
                     const elm = $(comp.id);
