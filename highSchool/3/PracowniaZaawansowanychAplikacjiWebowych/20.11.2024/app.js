@@ -6,8 +6,8 @@ const dirFinal = "Python";
 const fileStart = "cpp_example.txt";
 const fileFinal = "Python_test.js"; // this is so cursed
 
-fs.mkdir(dirStart);
-fs.writeFile(dirStart + "/" + fileStart, "");
+fs.mkdirSync(dirStart);
+fs.writeFileSync(dirStart + "/" + fileStart, "");
 
-fs.rename(dirStart, dirFinal);
-fs.rename(dirFinal + "/" + fileStart, fileFinal);
+fs.renameSync(dirStart, dirFinal);
+fs.renameSync(dirFinal + "/" + fileStart, fileFinal);
