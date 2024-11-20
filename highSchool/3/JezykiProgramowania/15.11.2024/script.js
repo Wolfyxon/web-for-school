@@ -106,17 +106,17 @@ $(window).ready(() => {
     const canvas = $("canvas")[0];
     const ctx = canvas.getContext("2d");
 
-    const w = canvas.width;
-    const h = canvas.height;
-
-    const range = 512;
-    let zoom = 1;
-
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
 
     const results = $("#results");
 
+    const w = canvas.width;
+    const h = canvas.height;
+
+    const range = 512;
+
+    let zoom = 1;
     let currentFunc;
 
     function loadFunc() {
