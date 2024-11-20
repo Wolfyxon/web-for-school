@@ -146,7 +146,7 @@ $(window).ready(() => {
         return [
             w / 2 + (x / range) * w,
             h / 2 + (-y / range) * h
-        ]
+        ];
     }
 
     function calc() {
