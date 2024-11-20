@@ -176,7 +176,7 @@ $(window).ready(() => {
             
             ctx.arc(
                 w / 2 + (x / range) * w,
-                h / 2 + (y / range) * h,
+                h / 2 + (-y / range) * h,
                 1, 0, Math.PI * 2
             );
 
