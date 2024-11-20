@@ -9,6 +9,12 @@ canvas {
     margin: 5px;
 }
 
+#zoom {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
 #formula input {
     width: 40px;
 }
