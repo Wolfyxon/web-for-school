@@ -191,6 +191,7 @@ $(window).ready(() => {
         ctx.lineTo(w, h /2);
         ctx.stroke();
 
+        /*
         for(let x = -range; x <= range; x += 0.5) {
             values.x = x;
 
@@ -205,7 +206,7 @@ $(window).ready(() => {
             );
 
             ctx.fill();
-        }
+        }*/
 
         ctx.beginPath();
         ctx.strokeStyle = "red";
