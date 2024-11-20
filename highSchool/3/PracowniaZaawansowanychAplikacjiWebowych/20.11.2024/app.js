@@ -1,3 +1,4 @@
+const { error } = require("console");
 const fs = require("fs");
 
 async function input(query) {
@@ -11,14 +12,18 @@ async function input(query) {
     });
 }
 
-const dirStart = "C++";
-const dirFinal = "Python";
+async function main() {
+    const dirStart = await input("Podaj początkową nazwę folderu");
+    fs.mkdirSync(dirStart);
 
-const fileStart = "cpp_example.txt";
-const fileFinal = "Python_test.js"; // this is so cursed
+    const fileStart = await input("Podaj nazwę pliku");
+    fs.writeFileSync(dirStart + "/" + fileStart, "");
 
-fs.mkdirSync(dirStart);
-fs.writeFileSync(dirStart + "/" + fileStart, "");
+    const dirFinal = await input("Podaj nową nazwę folderu");
+    fs.renameSync(dirStart, dirFinal);
 
-fs.renameSync(dirStart, dirFinal);
-fs.renameSync(dirFinal + "/" + fileStart, dirFinal + "/" + fileFinal);
+    const fileFinal = await input("Podaj nową nazwę pliku");
+    fs.renameSync(dirFinal + "/" + fileStart, dirFinal + "/" + fileFinal);
+}
+
+main();
