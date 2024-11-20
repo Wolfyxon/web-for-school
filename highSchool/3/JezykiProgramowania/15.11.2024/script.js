@@ -150,8 +150,8 @@ $(window).ready(() => {
 
     function scaledPoint(x, y) {
         return [
-            w / 2 + (x / range) * w / zoom,
-            h / 2 + (-y / range) * h / zoom
+            w / 2 + (x / range) * w * zoom,
+            h / 2 + (-y / range) * h * zoom
         ];
     }
 
