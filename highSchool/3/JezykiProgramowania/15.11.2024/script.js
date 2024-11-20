@@ -223,6 +223,8 @@ $(window).ready(() => {
         funcTypeInp.append(opt);
     }
 
+    ctx.strokeStyle = "red";
+
     funcTypeInp.change(loadFunc);
 
     loadFunc();
