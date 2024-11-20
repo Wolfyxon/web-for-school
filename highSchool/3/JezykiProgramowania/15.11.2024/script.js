@@ -108,6 +108,7 @@ $(window).ready(() => {
     const h = canvas.height;
 
     const range = 512;
+    let zoom = 1;
 
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
@@ -147,8 +148,8 @@ $(window).ready(() => {
 
     function scaledPoint(x, y) {
         return [
-            w / 2 + (x / range) * w,
-            h / 2 + (-y / range) * h
+            w / 2 + (x / range) * w / zoom,
+            h / 2 + (-y / range) * h / zoom
         ];
     }
 
