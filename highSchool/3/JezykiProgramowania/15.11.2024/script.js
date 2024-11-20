@@ -127,7 +127,10 @@ $(window).ready(() => {
                 elm.val("1");
                 
                 function update() {
-                     $("." + comp.id).val(elm.val());
+                    const elm = $(comp.id);
+                    if(elm.is(":focus")) return;
+
+                    elm.val(elm.val());
                     calc();
                 }
 
