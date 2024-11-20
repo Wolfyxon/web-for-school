@@ -196,7 +196,7 @@ $(window).ready(() => {
 
             const y = currentFunc.callback(values).y;
             ctx.beginPath();
-            console.log(x, y)
+
             const point = scaledPoint(x, y);
 
             ctx.arc(
