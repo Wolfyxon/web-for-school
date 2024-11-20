@@ -7,7 +7,7 @@ async function input(query) {
         process.stdin.resume();
 
         process.stdin.once("data", (buf) => {
-            res(buf.toString());
+            res(buf.toString().trim());
             process.stdin.pause();
         });
     });
