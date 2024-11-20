@@ -79,6 +79,7 @@ const functions = [
 
         return {
             "Delta": dt,
+            "sqrtDelta": dtSq,
             "x1": (-v.b - dtSq) / (2 * v.a),
             "x2": (-v.b + dtSq) / (2 * v.a),
 
