@@ -156,6 +156,7 @@ $(window).ready(() => {
 
         for(const entry of Object.entries(res)) {
             if(isNaN(entry[1])) continue;
+            if(entry[0] == "y") continue;
 
             const lbl = `<label>${entry[0]}</label>`;
             const input = `<input type="number" value="${entry[1]}" disabled>`;
