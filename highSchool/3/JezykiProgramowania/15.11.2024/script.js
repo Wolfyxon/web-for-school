@@ -191,12 +191,12 @@ $(window).ready(() => {
         ctx.lineTo(w, h /2);
         ctx.stroke();
 
-        for(let x = -range; x <= range; x++) {
+        for(let x = -range; x <= range; x += 0.5) {
             values.x = x;
 
             const y = currentFunc.callback(values).y;
             ctx.beginPath();
-            
+            console.log(x, y)
             const point = scaledPoint(x, y);
 
             ctx.arc(
