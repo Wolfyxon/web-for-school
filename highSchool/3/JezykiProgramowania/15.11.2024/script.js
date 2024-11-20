@@ -107,7 +107,7 @@ $(window).ready(() => {
     const w = canvas.width;
     const h = canvas.height;
 
-    const range = 128;
+    const range = 512;
 
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
