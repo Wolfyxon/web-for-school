@@ -101,6 +101,10 @@ const functions = [
 $(window).ready(() => {
     const canvas = $("canvas")[0];
     const ctx = canvas.getContext("2d");
+
+    const w = canvas.width;
+    const h = canvas.height;
+
     const range = 32;
 
     const formula = $("#formula");
@@ -136,6 +140,13 @@ $(window).ready(() => {
         }
     }
 
+    function scaledPoint(x, y) {
+        return [
+            w / 2 + (x / range) * w,
+            h / 2 + (-y / range) * h
+        ]
+    }
+
     function calc() {
         const values = {
             x: 0
@@ -164,9 +175,6 @@ $(window).ready(() => {
             results.append(`<div>${lbl} ${input}</div>`);
         }
 
-        const w = canvas.width;
-        const h = canvas.height;
-
         ctx.clearRect(0, 0, w, h);
 
         for(let x = -range; x <= range; x++) {
@@ -175,9 +183,10 @@ $(window).ready(() => {
             const y = currentFunc.callback(values).y;
             ctx.beginPath();
             
+            const point = scaledPoint(x, y);
+
             ctx.arc(
-                w / 2 + (x / range) * w,
-                h / 2 + (-y / range) * h,
+                point[0], point[1],
                 1, 0, Math.PI * 2
             );
 
@@ -196,15 +205,11 @@ $(window).ready(() => {
                 lastPoint = [x, y];
             }
 
-            ctx.moveTo(
-                w / 2 + (x / range) * w, 
-                h / 2 + (-y / range) * h
-            );
+            const from = scaledPoint(x, y)
+            const to = scaledPoint(lastPoint[0], lastPoint[1]);
 
-            ctx.lineTo(
-                w / 2 + (lastPoint[0] / range) * w, 
-                h / 2 + (-lastPoint[1] / range) * h
-            );
+            ctx.moveTo(from[0], from[1]);
+            ctx.lineTo(to[0], to[1]);
 
             lastPoint = [x, y];
         }
