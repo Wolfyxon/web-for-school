@@ -109,6 +109,8 @@ $(window).ready(() => {
     const formula = $("#formula");
     const funcTypeInp = $("#function-type");
 
+    const zoomInp = $("#zoom");
+
     const results = $("#results");
 
     const w = canvas.width;
@@ -239,11 +241,19 @@ $(window).ready(() => {
         ctx.stroke();
     }
 
+    function updateZoom() {
+        zoom = parseFloat(zoomInp.val());
+        calc();
+    }
+
     for(const func of functions) {
         const opt = $(`<option>${func.name}</option>`);
         
         funcTypeInp.append(opt);
     }
+
+    zoomInp.change(updateZoom);
+    zoomInp.mousemove(updateZoom);
 
     funcTypeInp.change(loadFunc);
 
