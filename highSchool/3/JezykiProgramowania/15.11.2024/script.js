@@ -88,11 +88,13 @@ const functions = [
 
     new Function("liniowa", [
         new Value("a"),
-        new Value("x"),
+        new X(),
         new Operator("+"),
         new Value("b")
     ], (v) => {
-        // TODO
+        return {
+            "y": v.a * v.x + v.b
+        }
     })
 ]
 
