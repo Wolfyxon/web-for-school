@@ -10,4 +10,4 @@ fs.mkdirSync(dirStart);
 fs.writeFileSync(dirStart + "/" + fileStart, "");
 
 fs.renameSync(dirStart, dirFinal);
-fs.renameSync(dirFinal + "/" + fileStart, fileFinal);
+fs.renameSync(dirFinal + "/" + fileStart, dirFinal + "/" + fileFinal);
