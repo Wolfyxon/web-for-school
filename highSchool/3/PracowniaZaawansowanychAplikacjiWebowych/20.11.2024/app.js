@@ -3,11 +3,11 @@ const fs = require("fs");
 
 async function input(query) {
     return new Promise((res) => {
-        process.stdout.resume();
+        process.stdin.resume();
 
-        process.stdout.once("data", (buf) => {
+        process.stdin.once("data", (buf) => {
             res(buf.toString());
-            process.stdout.pause();
+            process.stdin.pause();
         });
     });
 }
