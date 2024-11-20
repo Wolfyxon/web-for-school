@@ -132,6 +132,7 @@ $(window).ready(() => {
             }
 
             currentFunc = func;
+            calc();
         }
     }
 
