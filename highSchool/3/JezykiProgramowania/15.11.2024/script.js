@@ -183,6 +183,33 @@ $(window).ready(() => {
 
             ctx.fill();
         }
+
+        ctx.beginPath();
+
+        let lastPoint;
+
+        for(let x = -range; x <= range; x++) {
+            values.x = x;
+            const y = currentFunc.callback(values).y;
+
+            if(!lastPoint) {
+                lastPoint = [x, y];
+            }
+
+            ctx.moveTo(
+                w / 2 + (x / range) * w, 
+                h / 2 + (-y / range) * h
+            );
+
+            ctx.lineTo(
+                w / 2 + (lastPoint[0] / range) * w, 
+                h / 2 + (-lastPoint[1] / range) * h
+            );
+
+            lastPoint = [x, y];
+        }
+
+        ctx.stroke();
     }
 
     for(const func of functions) {
