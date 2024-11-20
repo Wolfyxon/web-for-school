@@ -93,6 +93,7 @@ const functions = [
         new Value("b")
     ], (v) => {
         return {
+            "m 0": -(v.a / v.b),
             "y": v.a * v.x + v.b
         }
     })
