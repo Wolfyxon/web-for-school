@@ -9,10 +9,9 @@ window.addEventListener("load", () => {
 
         for(let i = 0; i < 2; i++) {
             const r = Math.floor(Math.random() * 6 + 1);
-            const src = `${r}.png`;
 
             points += r;
-            html += `<img src='img/${src}'>`;
+            html += `<img src='img/${r}.png'>`;
         }
 
         game.innerHTML = html;
