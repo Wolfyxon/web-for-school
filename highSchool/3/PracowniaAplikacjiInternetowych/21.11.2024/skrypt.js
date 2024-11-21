@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
             const src = `${r}.png`;
 
             points += r;
-            html += `<img src='${src}'>`;
+            html += `<img src='img/${src}'>`;
         }
 
         game.innerHTML = html;
