@@ -1,7 +1,7 @@
 #gra {
-    height: 100px;
+    height: fit-content;
 }
 
 #gra img {
-    height: 100%;
+    height: 100px;
 }
