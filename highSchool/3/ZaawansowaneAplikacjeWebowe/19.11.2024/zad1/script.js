@@ -5,6 +5,6 @@ $(window).ready(() => {
 
    $("button").click(() => {
         const color = `rgb(${r()}, ${r()}, ${r()})`;
-        $("body").css("background", color)
+        $("body").css("background", color);
    }); 
 });
