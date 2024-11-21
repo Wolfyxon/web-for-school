@@ -1,13 +1,17 @@
 window.addEventListener("load", () => {
     const game = document.getElementById("gra");
     const pointsDisp = document.getElementById("punkty");
-    const btn = document.querySelector("input");
+    const amountInp = document.getElementById("amount-inp");
+    const btn = document.getElementById("rand-btn");
 
     btn.addEventListener("click", () => {
+        const amt = parseInt(amountInp.value);
+        if(!amt) return;
+
         let html = "";
         let points = 0;
 
-        for(let i = 0; i < 2; i++) {
+        for(let i = 0; i < amt; i++) {
             const r = Math.floor(Math.random() * 6 + 1);
 
             points += r;
