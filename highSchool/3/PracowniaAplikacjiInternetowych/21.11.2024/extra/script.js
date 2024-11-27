@@ -8,6 +8,16 @@ window.addEventListener("load", () => {
         let individual = {};
 
         const amt = parseInt(throwsInp.value);
+
+        if(isNaN(amt)) {
+            throwsInp.style.animationName = "none";
+            throwsInp.offsetHeight; // this causes a reflow for some reason
+            
+            setTimeout(() => {
+                throwsInp.style.animationName = "error"; 
+            });
+            return;
+        }
         
         for(let i = 1; i <= 6; i++) {
             individual[i] = 0;

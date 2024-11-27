@@ -48,6 +48,21 @@ button {
     font-weight: bold;
 }
 
+@keyframes error {
+    from { 
+        background-color: red;
+        border-color: darkred; 
+    }
+    to { 
+        background-color: auto;
+        outline-color: auto; 
+    }
+}
+
+#throws {
+    animation-duration: 1s;
+}
+
 #score {
     font-size: 2em;
 }
