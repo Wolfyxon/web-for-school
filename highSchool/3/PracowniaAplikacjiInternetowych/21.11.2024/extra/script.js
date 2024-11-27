@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
 
     function doThrow() {
         let score = 0;
-        let individual = {}
+        let individual = {};
 
         const amt = parseInt(throwsInp.value);
         
