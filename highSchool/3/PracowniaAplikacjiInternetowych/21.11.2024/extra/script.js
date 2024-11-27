@@ -5,18 +5,14 @@ window.addEventListener("load", () => {
 
     function doThrow() {
         let score = 0;
-
-        let individual = {
-            1: 0,
-            2: 0,
-            3: 0,
-            4: 0,
-            5: 0,
-            6: 0,
-        };
+        let individual = {}
 
         const amt = parseInt(throwsInp.value);
         
+        for(let i = 1; i <= 6; i++) {
+            individual[i] = 0;
+        }
+
         for(let i = 0; i < amt; i++) {
             const n = Math.floor(Math.random() * 6 + 1);
             
