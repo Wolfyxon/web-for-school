@@ -1,6 +1,42 @@
 window.addEventListener("load", () => {
     const chart = document.getElementById("chart");
-    
+    const throwsInp = document.getElementById("throws");
+    const scoreDisp = document.getElementById("score");    
+
+    function doThrow() {
+        let score = 0;
+
+        let individual = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0,
+        };
+
+        const amt = parseInt(throwsInp.value);
+        
+        for(let i = 0; i < amt; i++) {
+            const n = Math.floor(Math.random() * 6 + 1);
+            
+            individual[n]++;
+            score += n;
+        }
+
+        for(let i = 1; i <= amt; i++) {
+            const throws = individual[i];
+
+            const bar = document.getElementById(`bar-${i}`);
+            const val = document.getElementById(`value-${i}`);
+            
+            bar.style.width = `${(throws / amt) * 100 }%`
+            val.innerText = throws;
+        }
+
+        scoreDisp.innerText = score;
+    }
+
     let chartHtml = "";
 
     for(let i = 1; i <= 6; i++) {
@@ -17,4 +53,7 @@ window.addEventListener("load", () => {
     }
 
     chart.innerHTML = chartHtml;
+
+    document.getElementById("btn-throw").addEventListener("click", doThrow);
+    doThrow();
 });
