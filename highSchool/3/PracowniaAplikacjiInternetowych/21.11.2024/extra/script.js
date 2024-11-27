@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
             score += n;
         }
 
-        for(let i = 1; i <= amt; i++) {
+        for(let i = 1; i <= 6; i++) {
             const throws = individual[i];
 
             const bar = document.getElementById(`bar-${i}`);
