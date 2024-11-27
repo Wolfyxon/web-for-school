@@ -1,4 +1,4 @@
-const { existsSync } = require("fs");
+const fs = require("fs");
 
 async function main() {
     // somehow I installed the wrong node lol
