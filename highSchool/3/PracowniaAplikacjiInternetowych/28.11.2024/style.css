@@ -27,7 +27,7 @@ html, body {
 #chat > * {
     height: fit-content;
     width: 98%;
-    margin: 0 auto;
+    margin: 2px auto;
     display: flex;
     background-color: rgb(39, 39, 43);
     padding: 5px;
