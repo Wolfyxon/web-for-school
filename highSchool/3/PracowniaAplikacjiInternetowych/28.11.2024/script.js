@@ -1,3 +1,26 @@
+const bots = [
+    {
+        name: "Florp",
+        icon: "img/florp.jpg"
+    },
+    {
+        name: "Gwab",
+        icon: "img/gwab.jpg"
+    },
+    {
+        name: "WepWep",
+        icon: "img/wepwep.jpg"
+    }
+];
+
+const responses = [
+    "wab wab",
+    "zip zip zip",
+    "florp blop gwob gwob",
+    "wawa",
+    "galanga"
+]
+
 window.addEventListener("load", () => {
     const input = document.getElementById("msg-input");
     const chat = document.getElementById("chat");
