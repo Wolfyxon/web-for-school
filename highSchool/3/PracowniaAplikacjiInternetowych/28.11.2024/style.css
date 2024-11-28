@@ -1,5 +1,9 @@
 html, body {
     height: 100%;
+    background-color: rgb(31, 31, 34);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
 }
 
 #main {
@@ -17,14 +21,17 @@ html, body {
 
 #chat {
     overflow-y: scroll;
-    height: 88%;
+    height: 93%;
 }
 
 #chat > * {
     height: fit-content;
-    width: 95%;
+    width: 98%;
     margin: 0 auto;
     display: flex;
+    background-color: rgb(39, 39, 43);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #chat > * > img {
@@ -45,9 +52,22 @@ html, body {
 #inputs {
     display: flex;
     margin: 0 auto;
-    height: 10%;
+    height: 5%;
 }
 
 #msg-input {
+    background-color: rgb(56, 56, 61);
+    color: white;
+    border-radius: 5px;
+    font-size: 1.3em;
+    border: none;
     flex-grow: 1;
+}
+
+#send-btn {
+    background-color: rgb(94, 94, 102);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-left: 2px;
 }
