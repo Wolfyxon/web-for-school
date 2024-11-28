@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
             const msg = randVal(responses);
 
             addMsg(bot.icon, bot.name, msg);
-        }, 200);
+        }, Math.random() * 2000);
     }
 
     input.addEventListener("keydown", (e) => {
