@@ -48,6 +48,13 @@ window.addEventListener("load", () => {
 
         addMsg("", "Ty", input.value);
         input.value = "";
+
+        setTimeout(() => {
+            const bot = randVal(bots);
+            const msg = randVal(responses);
+
+            addMsg(bot.icon, bot.name, msg);
+        }, 200);
     }
 
     input.addEventListener("keydown", (e) => {
