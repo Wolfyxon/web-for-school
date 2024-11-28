@@ -62,5 +62,5 @@ window.addEventListener("load", () => {
         if(e.key == "Enter") send();
     });
 
-    document.getElementById("send-btn", send);
+    document.getElementById("send-btn").addEventListener("click", send);
 });
