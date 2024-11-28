@@ -41,6 +41,7 @@ window.addEventListener("load", () => {
         `
 
         chat.append(msg);
+        msg.scrollIntoView();
     }
 
     function send() {
