@@ -19,7 +19,7 @@ const responses = [
     "florp blop gwob gwob",
     "wawa",
     "galanga"
-]
+];
 
 function randVal(array) {
     return array[Math.floor(Math.random() * (array.length - 1))];
@@ -38,7 +38,7 @@ window.addEventListener("load", () => {
                 <div class="msg-sender">${author}</div>
                 <div class="msg-content">${text}</div>
             </div>
-        `
+        `;
 
         chat.append(msg);
         msg.scrollIntoView();
