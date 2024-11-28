@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
     function send() {
         if(input.value.replace(" ", "") == "") return;
 
-        addMsg("", "Ty", input.value);
+        addMsg("img/you.png", "Ty", input.value);
         input.value = "";
 
         setTimeout(() => {
