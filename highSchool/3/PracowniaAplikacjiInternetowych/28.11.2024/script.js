@@ -21,6 +21,10 @@ const responses = [
     "galanga"
 ]
 
+function randVal(array) {
+    return array[Math.floor(Math.random() * (array.length - 1))];
+}
+
 window.addEventListener("load", () => {
     const input = document.getElementById("msg-input");
     const chat = document.getElementById("chat");
