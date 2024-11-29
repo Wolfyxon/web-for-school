@@ -15,7 +15,7 @@ function data($field) {
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>
+        <form>
             <p>Rejestracja przebiegła pomyślnie</p>
 
             <div>
@@ -58,6 +58,6 @@ function data($field) {
                 }
 
             ?>
-        </div>
+        </form>
     </body>
 </html>
