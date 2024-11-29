@@ -42,14 +42,15 @@ function data($field) {
             <p>Znajomość języków:</p>
             
             <?php
-                if(isset($_POST["langs"] && count($_POST["langs"]) != 0)) {
+                $langs = $_POST["langs"];
+                if($langs !== NULL && count($langs) != 0) {
                     echo "<ul>";
 
                     foreach ($_POST["langs"] as $k => $v) {
                         echo "<li>" . $v . "</li>";
                     }
     
-                    echo "</ul>"
+                    echo "</ul>";
                 }
 
             ?>
