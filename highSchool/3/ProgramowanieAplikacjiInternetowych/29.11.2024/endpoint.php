@@ -1,10 +1,12 @@
 <?php
 function data($field) {
-    if(!isset($_POST[$field])) {
+    $val = $_POST[$field];
+
+    if($val == NULL || empty($val)) {
         return "Brak";
     }
 
-    return $_POST[$field];
+    return $val;
 }
 ?>
 
