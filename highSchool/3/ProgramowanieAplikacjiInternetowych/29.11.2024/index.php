@@ -23,25 +23,25 @@
             <h2>Wykształcenie</h2>
             <div id="education-container">
                 <div>
-                    <input type="radio" name="education" id="edu-basic" value="basic">
+                    <input type="radio" name="education" id="edu-basic" value="Podstawowe">
                     <label for="edu-basic">Podstawowe</label>
                 </div>
                 <div>
-                    <input type="radio" name="education" id="edu-avg" value="average">
+                    <input type="radio" name="education" id="edu-avg" value="Średnie">
                     <label for="edu-avg">Średnie</label>
                 </div>
                 <div>
-                    <input type="radio" name="education" id="edu-high" value="high">
+                    <input type="radio" name="education" id="edu-high" value="Wyższe">
                     <label for="edu-high">Wyższe</label>
                 </div>
             </div>
 
             <h2>Wybór języka</h2>
             <select multiple name="langs[]">
-                <option value="en">Angielski</option>
-                <option value="de">Niemiecki</option>
-                <option value="fr">Francuski</option>
-                <option value="it">Włoski</option>
+                <option value="Angielski">Angielski</option>
+                <option value="Niemiecki">Niemiecki</option>
+                <option value="Francuski">Francuski</option>
+                <option value="Włoski">Włoski</option>
             </select>
 
             <div id="privacy-container">
