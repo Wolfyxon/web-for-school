@@ -1,13 +1,13 @@
 <?php
-function data($field) {
-    $val = $_POST[$field];
+    function data($field) {
+        $val = $_POST[$field];
 
-    if($val == NULL || empty($val)) {
-        return "Brak";
+        if($val == NULL || empty($val)) {
+            return "Brak";
+        }
+
+        return $val;
     }
-
-    return $val;
-}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +58,6 @@ function data($field) {
                 } else {
                     echo $name . " nie zna żadnych języków";
                 }
-
             ?>
         </form>
     </body>
