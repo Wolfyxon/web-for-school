@@ -1,0 +1,8 @@
+label {
+    display: block;
+}
+
+#education-container label,
+#privacy-container label {
+    display: inline-block;
+}
