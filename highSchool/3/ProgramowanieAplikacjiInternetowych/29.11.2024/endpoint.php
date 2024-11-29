@@ -43,6 +43,8 @@ function data($field) {
             
             <?php
                 $langs = $_POST["langs"];
+                $name = $_POST["secondName"] ?? "Anonim";
+
                 if($langs !== NULL && count($langs) != 0) {
                     echo "<ul>";
 
@@ -51,6 +53,8 @@ function data($field) {
                     }
     
                     echo "</ul>";
+                } else {
+                    echo $name . " nie zna żadnych języków";
                 }
 
             ?>
