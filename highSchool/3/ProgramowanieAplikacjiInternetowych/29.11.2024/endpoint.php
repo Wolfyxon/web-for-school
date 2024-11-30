@@ -50,7 +50,7 @@
                 if($langs !== NULL && count($langs) != 0) {
                     echo "<ul>";
 
-                    foreach ($_POST["langs"] as $k => $v) {
+                    foreach ($langs as $k => $v) {
                         echo "<li>" . $v . "</li>";
                     }
     
