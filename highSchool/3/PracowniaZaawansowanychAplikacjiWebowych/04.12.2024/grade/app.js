@@ -29,11 +29,11 @@ async function main() {
     await mkFile(file2)
     
     if(await fs.existsSync(file2Copy)) {
-        return console.log(`Plik ${file2Copy} już istnieje`);
+        console.log(`Plik ${file2Copy} już istnieje`);
+    } else {
+        await fs.copyFileSync(file2, file2Copy);
+        console.log(`Skopiowano ${file2} -> ${file2Copy}`);
     }
-    
-    await fs.copyFileSync(file2, file2Copy);
-    console.log(`Skopiowano ${file2} -> ${file2Copy}`);
 
     console.log("Jaka jest twoja ulubiona książka?:");
     
