@@ -16,6 +16,13 @@ async function main() {
     assert(await fs.existsSync(file), "Źródłowy plik nie istnieje");
     assert(await fs.existsSync(dir), "Folder docelowy nie istnieje");
     assert(!(await fs.existsSync(newPath)), "Plik już został skopiowany");
+
+    try {
+        await fs.copyFileSync(file, newPath);
+        console.log("Plik skopiowany");
+    } catch (e) {
+        console.log("Nie można skopiować", e);
+    }
 }
 
 main();
