@@ -2,9 +2,12 @@ const fs = require("fs");
 const path = require("path");
 
 const dir = "ksiegarnia";
+
 const file1 = "book1.txt";
+const file1Copy = path.join(dir, file1);
+
 const file2 = "book2.txt";
-const file2Copy = path.join(dir, file2); 
+const file2New = "newspaper.txt"; 
 
 async function mkFile(path) {
     if(await fs.existsSync(path)) {
@@ -28,11 +31,11 @@ async function main() {
     await mkFile(file1);
     await mkFile(file2)
     
-    if(await fs.existsSync(file2Copy)) {
-        console.log(`Plik ${file2Copy} już istnieje`);
+    if(await fs.existsSync(file1Copy)) {
+        console.log(`Plik ${file1Copy} już istnieje`);
     } else {
-        await fs.copyFileSync(file2, file2Copy);
-        console.log(`Skopiowano ${file2} -> ${file2Copy}`);
+        await fs.copyFileSync(file1, file1Copy);
+        console.log(`Skopiowano ${file1} -> ${file1Copy}`);
     }
 
     console.log("Jaka jest twoja ulubiona książka?:");
