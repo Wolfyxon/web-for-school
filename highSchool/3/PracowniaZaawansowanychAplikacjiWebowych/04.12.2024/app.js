@@ -3,7 +3,7 @@ const path = require("path");
 
 const file = "copy.txt";
 const dir = "dir";
-const newPath = path.join(file, dir);
+const newPath = path.join(dir, file);
 
 function assert(condition, message) {
     if(!condition) {
