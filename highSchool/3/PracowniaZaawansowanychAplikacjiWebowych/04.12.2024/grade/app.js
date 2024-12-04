@@ -35,7 +35,12 @@ async function main() {
     await fs.copyFileSync(file2, file2Copy);
     console.log(`Skopiowano ${file2} -> ${file2Copy}`);
 
+    console.log("Jaka jest twoja ulubiona książka?:");
     
+    process.stdin.on("data", (buf) => {
+        process.stdin.pause();
+        console.log(">", buf.toString().trimEnd());
+    });
 }
 
 main();
