@@ -38,6 +38,13 @@ async function main() {
         console.log(`Skopiowano ${file1} -> ${file1Copy}`);
     }
 
+    if(await fs.existsSync(file2New)) {
+        console.log(`Plik ${file2New} już istnieje`);
+    } else {
+        await fs.renameSync(file2, file2New);
+        console.log(`Zmieniono nazwę ${file2} -> ${file2New}`);
+    }
+
     console.log("Jaka jest twoja ulubiona książka?:");
     
     process.stdin.on("data", (buf) => {
