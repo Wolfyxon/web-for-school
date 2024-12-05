@@ -1,13 +1,24 @@
 window.addEventListener("load", () => {
     const table = document.getElementById("table");
 
-    function addRow(name, description) {
+    function addRow(name, description, args) {
         const tr = document.createElement("tr");
         
         let property = name;
 
         if(String.prototype[property]) {
-            property += "()";
+            argStr = "";
+
+            if(args) {
+                for(let i = 0; i < args.length; i++) {
+                    argStr += args[i];
+
+                    if(i < args.length - 1) {
+                        argStr += ", ";
+                    }
+                }
+            }
+            property += `(${argStr})`;
         }
 
         const code = `"Ala ma kota".${property}`;
