@@ -1,6 +1,6 @@
 table {
 	margin: auto;
-	border:1px solid black;
+	border: 1px solid black;
 	border-collapse: collapse;
 }
 
@@ -10,5 +10,5 @@ td, th {
 }
 
 h4 {
-	text-align:center;
+	text-align: center;
 }
