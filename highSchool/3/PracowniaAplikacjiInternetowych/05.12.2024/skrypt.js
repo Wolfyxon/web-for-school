@@ -1,12 +1,12 @@
 window.addEventListener("load", () => {
     const table = document.getElementById("table");
 
-    function addRow(name, description, args) {
+    function addRow(name, description, args, exampleString) {
         const tr = document.createElement("tr");
         
         let property = name;
-        let code = `"Ala ma kota".${property}`
-
+        let code = `"${exampleString ?? "Ala ma kota"}".${property}`
+        
         if(String.prototype[property]) {
             argStr = "";
 
@@ -44,6 +44,6 @@ window.addEventListener("load", () => {
     addRow("split", "Rozdziela ciąg", ["'a'"]);
     addRow("concat", "Łączy 2 ciągi", ["' bo tak'"]);
     addRow("replace", "Podmienia ciągi w ciągu na inne", ["'Ala'", "'Basia'"]);
-    addRow("trim", "Usuwa spacje i znak nowel linii na końcu ciągu"); // TODO: Separate example string
+    addRow("trim", "Usuwa spacje i znak nowel linii na końcu ciągu", [], "Ala ma kota ");
     addRow("charAt", "Zwraca znak na danym indeksie z ciągu", [4]);
 });
