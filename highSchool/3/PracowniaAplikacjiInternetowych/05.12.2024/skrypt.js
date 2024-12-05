@@ -36,4 +36,5 @@ window.addEventListener("load", () => {
     addRow("toLowerCase", "Zamienia wszystkie litery w ciagu znaków na małe");
     addRow("toUpperCase", "Zamienia wszystkie litery w ciagu znaków na duże");
     addRow("length", "Długość ciągu znaków");
+    addRow("indexOf", "Zwraca pierwszy indeks na którym znajduje się dany znak, lub -1 gdy nie istnieje", ["'l'"]);
 });
