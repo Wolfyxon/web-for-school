@@ -1,12 +1,19 @@
 window.addEventListener("load", () => {
     const table = document.getElementById("table");
 
-    function addRow(methodName, description) {
+    function addRow(name, description) {
         const tr = document.createElement("tr");
-        const code = `"Ala ma kota".${methodName}()`;
+        
+        let property = name;
+
+        if(String.prototype[property]) {
+            property += "()";
+        }
+
+        const code = `"Ala ma kota".${property}`;
 
         tr.innerHTML = `
-            <td>string.${methodName}()</td>
+            <td>string.${property}</td>
             <td>${description}</td>
             <td>${code}</td>
             <td>${eval(code)}</td>
@@ -17,6 +24,5 @@ window.addEventListener("load", () => {
 
     addRow("toLowerCase", "Zamienia wszystkie litery w ciagu znaków na małe");
     addRow("toUpperCase", "Zamienia wszystkie litery w ciagu znaków na duże");
-    
 
 });
