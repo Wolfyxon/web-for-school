@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
         const tr = document.createElement("tr");
         
         let property = name;
+        let code = `"Ala ma kota".${property}`
 
         if(String.prototype[property]) {
             argStr = "";
@@ -18,10 +19,10 @@ window.addEventListener("load", () => {
                     }
                 }
             }
-            property += `(${argStr})`;
-        }
 
-        const code = `"Ala ma kota".${property}`;
+            property += "()";
+            code += `(${argStr})`;
+        }
 
         tr.innerHTML = `
             <td>string.${property}</td>
@@ -37,4 +38,5 @@ window.addEventListener("load", () => {
     addRow("toUpperCase", "Zamienia wszystkie litery w ciagu znaków na duże");
     addRow("length", "Długość ciągu znaków");
     addRow("indexOf", "Zwraca pierwszy indeks na którym znajduje się dany znak, lub -1 gdy nie istnieje", ["'l'"]);
+    addRow("substr", "Zwraca wycinek ciągu znaków. Deprecated.", [1, 5]);
 });
