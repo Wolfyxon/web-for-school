@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
         const tr = document.createElement("tr");
         
         let property = name;
-        let code = `"${exampleString ?? "Ala ma kota"}".${property}`
+        let code = `"${exampleString ?? "Ala ma kota"}".${property}`;
         
         if(String.prototype[property]) {
             argStr = "";
