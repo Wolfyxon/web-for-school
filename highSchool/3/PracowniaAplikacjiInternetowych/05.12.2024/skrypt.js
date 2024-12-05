@@ -39,6 +39,7 @@ window.addEventListener("load", () => {
     addRow("length", "Długość ciągu znaków");
     addRow("indexOf", "Zwraca pierwszy indeks na którym znajduje się dany znak, lub -1 gdy nie istnieje", ["'l'"]);
     addRow("substr", "Zwraca wycinek ciągu znaków. Deprecated.", [1, 5]);
-    addRow("substring", "Zwraca wycinek ciągu znaków między 2 indeksami.", [1, 5]);
+    addRow("substring", "Zwraca wycinek ciągu znaków między 2 indeksami.", [1, 6]);
+    addRow("slice", "Działa podobnie do substring", [1, 6]);
     
 });
