@@ -15,4 +15,6 @@ window.addEventListener("load", () => {
         table.append(tr);
     }
 
+    addRow("toLowerCase", "Zamienia wszystkie litery w ciagu znaków na małe");
+
 });
