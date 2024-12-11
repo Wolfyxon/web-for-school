@@ -1,15 +1,3 @@
-<?php
-    function data($field) {
-        $val = $_POST[$field] ?? "Brak";
-
-        if(empty($val)) {
-            return "Brak";
-        }
-
-        return $val;
-    }
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,34 +6,32 @@
     </head>
     <body>
         <form>
-            <p>Rejestracja przebiegła pomyślnie</p>
-
-            <div>
-                <span>Nazwisko: </span> 
-                <span><?php echo data("secondName"); ?></span>
-            </div>
-            <div>
-                <span>Imię: </span> 
-                <span><?php echo data("firstName"); ?></span>
-            </div>
-            <div>
-                <span>Zawód: </span> 
-                <span><?php echo data("job"); ?></span>
-            </div>
-            <div>
-                <span>E-mail: </span> 
-                <span><?php echo data("email"); ?></span>
-            </div>
-            <div>
-                <span>Wykształcenie: </span> 
-                <span><?php echo data("education"); ?></span>
-            </div>
-
-            <p>Znajomość języków:</p>
-            
             <?php
                 $langs = $_POST["langs"] ?? [];
                 $name = $_POST["secondName"] ?? "Anonim";
+
+                function field($name, $displayName) {
+                    $val = $_POST[$name] ?? "Brak";
+
+                    if(empty($val)) {
+                        $val = "Brak";
+                    }
+                    
+                    echo "<div>";
+                    echo "<span>" . $displayName . ": </span>";
+                    echo "<span>" . $val . "</span>";
+                    echo "</div>";
+                }
+
+                echo "<p>Rejestracja przebiegła pomyślnie</p>";
+
+                field("secondName", "Nazwisko");
+                field("name", "Imię");
+                field("job", "Zawód");
+                field("email", "E-mail");
+                field("education", "Wykształcenie");
+
+                echo "<p>Znajomość języków:</p>";
 
                 if($langs !== NULL && count($langs) != 0) {
                     echo "<ul>";
