@@ -23,27 +23,33 @@
                     echo "</div>";
                 }
 
-                echo "<p>Rejestracja przebiegła pomyślnie</p>";
+                if($_POST["privacy"] ?? false) {
+                    echo "<p>Rejestracja przebiegła pomyślnie</p>";
 
-                field("secondName", "Nazwisko");
-                field("name", "Imię");
-                field("job", "Zawód");
-                field("email", "E-mail");
-                field("education", "Wykształcenie");
+                    field("secondName", "Nazwisko");
+                    field("name", "Imię");
+                    field("job", "Zawód");
+                    field("email", "E-mail");
+                    field("education", "Wykształcenie");
 
-                echo "<p>Znajomość języków:</p>";
+                    echo "<p>Znajomość języków:</p>";
 
-                if($langs !== NULL && count($langs) != 0) {
-                    echo "<ul>";
+                    if($langs !== NULL && count($langs) != 0) {
+                        echo "<ul>";
 
-                    foreach ($langs as $k => $v) {
-                        echo "<li>" . $v . "</li>";
+                        foreach ($langs as $k => $v) {
+                            echo "<li>" . $v . "</li>";
+                        }
+        
+                        echo "</ul>";
+                    } else {
+                        echo $name . " nie zna żadnych języków";
                     }
-    
-                    echo "</ul>";
                 } else {
-                    echo $name . " nie zna żadnych języków";
+                    echo "<p>Nie wyrażono zgody na przetwarzanie danych</p>";
+                    http_response_code(400);
                 }
+
             ?>
         </form>
     </body>
