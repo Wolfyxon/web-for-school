@@ -1,8 +1,8 @@
 <?php
     function data($field) {
-        $val = $_POST[$field];
+        $val = $_POST[$field] ?? "Brak";
 
-        if($val == NULL || empty($val)) {
+        if(empty($val)) {
             return "Brak";
         }
 
