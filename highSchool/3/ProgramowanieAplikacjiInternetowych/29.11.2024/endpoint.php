@@ -44,7 +44,7 @@
             <p>Znajomość języków:</p>
             
             <?php
-                $langs = $_POST["langs"];
+                $langs = $_POST["langs"] ?? [];
                 $name = $_POST["secondName"] ?? "Anonim";
 
                 if($langs !== NULL && count($langs) != 0) {
