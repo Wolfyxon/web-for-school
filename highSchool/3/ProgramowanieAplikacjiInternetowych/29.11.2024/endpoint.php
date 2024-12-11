@@ -34,7 +34,7 @@
 
                     echo "<p>Znajomość języków:</p>";
 
-                    if($langs !== NULL && count($langs) != 0) {
+                    if(count($langs) != 0) {
                         echo "<ul>";
 
                         foreach ($langs as $k => $v) {
