@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" type="text/javascript"></script>
     </head>
     <body>
         <form action="endpoint.php" method="post">
@@ -46,7 +47,7 @@
 
             <div id="privacy-container">
                 <input type="checkbox" name="privacy" id="privacy">
-                <label for="privacy">Zgadzam się na przetwarzanie moich danych osobowych</label>
+                <label for="privacy" id="privacy-label">Zgadzam się na przetwarzanie moich danych osobowych</label>
             </div>
 
             <div>
