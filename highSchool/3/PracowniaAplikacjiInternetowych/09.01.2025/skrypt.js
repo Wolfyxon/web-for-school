@@ -1,8 +1,8 @@
 window.addEventListener("load", () => {
 	const map = document.getElementById("mapa");
 
-	const mapW = 3;
-	const mapH = 3;
+	const mapW = 5;
+	const mapH = 5;
 
 	const emptyImg = "bialy.jpg"
 
