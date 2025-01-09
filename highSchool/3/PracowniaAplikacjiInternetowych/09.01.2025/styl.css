@@ -1,0 +1,21 @@
+img{
+	width:100px;
+	border:1px solid black;
+	border-radius:10px;
+	padding:5px;
+	background-color:white;
+	box-shadow:3px 3px 4px 0px #aaa;
+}
+table{
+	margin:20px auto 0 auto;
+	border-spacing:5px;
+}
+body{
+	background:linear-gradient(to right,#eee,#ccc);
+	font-family:sans-serif;
+}
+.info{
+	width:fit-content;
+	margin:20px auto 0 auto;
+	font-size:15px;
+}
