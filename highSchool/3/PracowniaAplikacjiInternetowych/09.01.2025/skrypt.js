@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
 		const img = "pacman.jpg";
 		
 		for(const tile of map.children) {
-			if(tile.src == img) {
+			if(tile.src && tile.src.indexOf(img)) {
 				tile.src = emptyImg;
 			}
 		}
