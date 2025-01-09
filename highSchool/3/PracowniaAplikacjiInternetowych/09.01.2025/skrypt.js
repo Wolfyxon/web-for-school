@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 
 		for(let y = 0; y < mapH; y++) {
 			for(let x = 0; x < mapW; x++) {
-				mapHtml += `<img src='${emptyImg}'>`;
+				mapHtml += `<img src='${emptyImg}' class='tile'>`;
 			}
 
 			mapHtml += "<br>";
@@ -25,14 +25,18 @@ window.addEventListener("load", () => {
 		map.innerHTML = mapHtml
 	}
 
+	function getTiles() {
+		return document.getElementsByClassName("tile");
+	}
+
 	function getTile(x, y) {
-		return map.children[y * mapW + x];
+		return getTiles()[y * mapW + x + 1];
 	}
 
 	function setPacman(x, y) {
 		const img = "pacman.jpg";
 		
-		for(const tile of map.children) {
+		for(const tile of getTiles()) {
 			if(tile.src && tile.src.indexOf(img)) {
 				tile.src = emptyImg;
 			}
