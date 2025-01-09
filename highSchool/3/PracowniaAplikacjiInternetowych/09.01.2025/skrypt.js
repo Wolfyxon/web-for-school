@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
 
 	function setPacman(x, y) {
 		for(const tile of getTiles()) {
-			if(tile.src && tile.src.indexOf(pacmanImg)) {
+			if(isSrc(tile, pacmanImg)) {
 				tile.src = emptyImg;
 			}
 		}
