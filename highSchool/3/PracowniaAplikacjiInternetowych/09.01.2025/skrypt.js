@@ -13,6 +13,10 @@ window.addEventListener("load", () => {
 		y: 0
 	};
 	
+	function isSrc(img, src) {
+		return img.src && img.src.indexOf(src);
+	}
+
 	function initMap() {
 		let mapHtml = "";
 
