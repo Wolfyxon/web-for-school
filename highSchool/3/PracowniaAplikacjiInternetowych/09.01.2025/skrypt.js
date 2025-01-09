@@ -44,6 +44,21 @@ window.addEventListener("load", () => {
 		pacman.y = y;
 	}
 
+	window.addEventListener("keydown", (e) => {
+		let dx = 0;
+		let dy = 0;
+		
+		if(dx != 0 || dy != 0) {
+			const x = pacman.x + dx;
+			const y = pacman.y + dy;
+			
+			if(x >= mapW || x < 0) return;
+			if(y >= mapH || y < 0) return;
+			
+			setPacman(x, y);
+		}
+	});
+
 	initMap();
 	setPacman(pacman.x, pacman.y);
 });
