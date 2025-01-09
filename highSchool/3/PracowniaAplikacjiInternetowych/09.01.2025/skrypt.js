@@ -18,5 +18,9 @@ window.addEventListener("load", () => {
 		map.innerHTML = mapHtml
 	}
 
+	function getTile(x, y) {
+		return map.children[y * mapW + x];
+	}
+
 	initMap();
 });
