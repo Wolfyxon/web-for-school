@@ -4,7 +4,9 @@ window.addEventListener("load", () => {
 	const mapW = 5;
 	const mapH = 5;
 
-	const emptyImg = "bialy.jpg"
+	const emptyImg = "bialy.jpg";
+	const cherryImg = "wisnie.jpg";
+	const pacmanImg = "pacman.jpg";
 
 	let pacman = {
 		x: 0,
@@ -34,18 +36,20 @@ window.addEventListener("load", () => {
 	}
 
 	function setPacman(x, y) {
-		const img = "pacman.jpg";
-		
 		for(const tile of getTiles()) {
-			if(tile.src && tile.src.indexOf(img)) {
+			if(tile.src && tile.src.indexOf(pacmanImg)) {
 				tile.src = emptyImg;
 			}
 		}
 
-		getTile(x, y).src = img;
+		getTile(x, y).src = pacmanImg;
 		
 		pacman.x = x;
 		pacman.y = y;
+	}
+
+	function setCherry(x, y) {
+		getTile(x, y).src = cherryImg;
 	}
 
 	window.addEventListener("keydown", (e) => {
