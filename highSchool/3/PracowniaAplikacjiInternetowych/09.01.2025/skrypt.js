@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
 	}
 
 	function getTile(x, y) {
-		return getTiles()[y * mapW + x + 1];
+		return getTiles()[y * mapW + x];
 	}
 
 	function setPacman(x, y) {
