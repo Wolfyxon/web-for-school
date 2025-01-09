@@ -48,6 +48,11 @@ window.addEventListener("load", () => {
 		let dx = 0;
 		let dy = 0;
 		
+		if(e.key == "ArrowLeft") dx = -1;
+		if(e.key == "ArrowRight") dx = 1;
+		if(e.key == "ArrowUp") dy = -1;
+		if(e.key == "ArrowDown") dy = 1;
+
 		if(dx != 0 || dy != 0) {
 			const x = pacman.x + dx;
 			const y = pacman.y + dy;
