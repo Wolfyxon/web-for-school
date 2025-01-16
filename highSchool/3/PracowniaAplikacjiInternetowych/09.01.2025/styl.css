@@ -1,3 +1,8 @@
+body {
+	background: linear-gradient(to right,#eee,#ccc);
+	font-family: sans-serif;
+}
+
 img {
 	width: 100px;
 	border: 1px solid black;
@@ -5,11 +10,6 @@ img {
 	padding: 5px;
 	background-color: white;
 	box-shadow: 3px 3px 4px 0px #aaa;
-}
-
-body {
-	background: linear-gradient(to right,#eee,#ccc);
-	font-family: sans-serif;
 }
 
 #mapa {
