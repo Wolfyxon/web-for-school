@@ -43,6 +43,18 @@ window.addEventListener("load", () => {
 		return document.getElementsByClassName("tile");
 	}
 
+	function getFreeTiles() {
+		const res = [];
+
+		for(const img of getTiles()) {
+			if(isSrc(img, "bialy.jpg") || !img.src) {
+				res.push(img);
+			}
+		}
+
+		return res;
+	}
+
 	function getTile(x, y) {
 		return getTiles()[y * mapW + x];
 	}
