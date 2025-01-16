@@ -91,15 +91,10 @@ window.addEventListener("load", () => {
 		img.src = cherryImg;
 	}
 
-	window.addEventListener("keydown", (e) => {
-		let dx = 0;
-		let dy = 0;
-		
-		if(e.key == "ArrowLeft") dx = -1;
-		if(e.key == "ArrowRight") dx = 1;
-		if(e.key == "ArrowUp") dy = -1;
-		if(e.key == "ArrowDown") dy = 1;
+	let dx = 0;
+	let dy = 0;
 
+	function move() {
 		if(dx != 0 || dy != 0) {
 			const x = pacman.x + dx;
 			const y = pacman.y + dy;
@@ -119,8 +114,26 @@ window.addEventListener("load", () => {
 			setPacman(x, y);
 
 			if(cherry) setCherryRandom();
+		}		
+	}
+	
+	window.addEventListener("keydown", (e) => {
+		const directions = {
+			"ArrowLeft": [-1, 0],
+			"ArrowRight": [1, 0],
+			"ArrowUp": [0, -1],
+			"ArrowDown": [0, 1]
+		};
+
+		const dir = directions[e.key];
+
+		if(dir) {
+			dx = dir[0];
+			dy = dir[1];
 		}
 	});
+
+	setInterval(move, 200);
 
 	initMap();
 	setPacman(pacman.x, pacman.y);
