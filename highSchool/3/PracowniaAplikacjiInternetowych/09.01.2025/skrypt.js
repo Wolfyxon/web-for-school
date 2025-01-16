@@ -136,6 +136,6 @@ window.addEventListener("load", () => {
 	setInterval(move, 200);
 
 	initMap();
-	setPacman(pacman.x, pacman.y);
+	setPacman(randi(0, mapW), randi(0, mapH));
 	setCherryRandom();
 });
