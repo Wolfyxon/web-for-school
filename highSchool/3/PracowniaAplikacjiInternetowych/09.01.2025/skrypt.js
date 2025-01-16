@@ -2,8 +2,8 @@ window.addEventListener("load", () => {
 	const map = document.getElementById("mapa");
 	const pointsDisp = document.getElementById("points");
 
-	const mapW = 5;
-	const mapH = 5;
+	const mapW = 10;
+	const mapH = 10;
 
 	const emptyImg = "bialy.jpg";
 	const cherryImg = "wisnie.jpg";
