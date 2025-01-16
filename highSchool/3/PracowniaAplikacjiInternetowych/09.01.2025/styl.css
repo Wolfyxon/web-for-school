@@ -7,14 +7,15 @@ img {
 	box-shadow: 3px 3px 4px 0px #aaa;
 }
 
-table {
-	margin: 20px auto 0 auto;
-	border-spacing: 5px;
-}
-
 body {
 	background: linear-gradient(to right,#eee,#ccc);
 	font-family: sans-serif;
+}
+
+#mapa {
+	width: fit-content;
+	margin: 20px auto 0 auto;
+	border-spacing: 5px;
 }
 
 .info {
