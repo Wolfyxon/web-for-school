@@ -81,8 +81,11 @@ window.addEventListener("load", () => {
 		pacman.y = y;
 	}
 
-	function setCherry(x, y) {
-		getTile(x, y).src = cherryImg;
+	function setCherryRandom() {
+		const free = getFreeTiles();
+		const img = free[randi(0, free.length - 1)];
+
+		img.src = cherryImg;
 	}
 
 	window.addEventListener("keydown", (e) => {
@@ -107,4 +110,5 @@ window.addEventListener("load", () => {
 
 	initMap();
 	setPacman(pacman.x, pacman.y);
+	setCherryRandom();
 });
