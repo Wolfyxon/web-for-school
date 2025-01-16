@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
 	}
 
 	function isSrc(img, src) {
-		return img.src && img.src.indexOf(src);
+		return img.src && img.src.indexOf(src) != -1;
 	}
 
 	function initMap() {
