@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
 	const map = document.getElementById("mapa");
+	const pointsDisp = document.getElementById("points");
 
 	const mapW = 5;
 	const mapH = 5;
@@ -7,6 +8,8 @@ window.addEventListener("load", () => {
 	const emptyImg = "bialy.jpg";
 	const cherryImg = "wisnie.jpg";
 	const pacmanImg = "pacman.jpg";
+
+	let points = 0;
 
 	let pacman = {
 		x: 0,
@@ -104,6 +107,13 @@ window.addEventListener("load", () => {
 			if(x >= mapW || x < 0) return;
 			if(y >= mapH || y < 0) return;
 			
+			const newTile = getTile(x, y);
+			
+			if(isSrc(newTile, cherryImg)) {
+				points++;
+				pointsDisp.innerText = points;
+			}
+
 			setPacman(x, y);
 		}
 	});
