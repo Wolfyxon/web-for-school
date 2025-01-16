@@ -108,13 +108,17 @@ window.addEventListener("load", () => {
 			if(y >= mapH || y < 0) return;
 			
 			const newTile = getTile(x, y);
-			
+			let cherry = false;
+
 			if(isSrc(newTile, cherryImg)) {
 				points++;
+				cherry = true;
 				pointsDisp.innerText = points;
 			}
 
 			setPacman(x, y);
+
+			if(cherry) setCherryRandom();
 		}
 	});
 
