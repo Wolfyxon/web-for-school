@@ -59,6 +59,15 @@ window.addEventListener("load", () => {
 		return getTiles()[y * mapW + x];
 	}
 
+	function getTilePos(img) {
+		const idx = getTiles().indexOf(img);
+
+		return {
+			x: idx % mapW,
+			y: idx / mapW
+		}
+	}
+
 	function setPacman(x, y) {
 		for(const tile of getTiles()) {
 			if(isSrc(tile, pacmanImg)) {
