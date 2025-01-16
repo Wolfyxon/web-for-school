@@ -13,6 +13,10 @@ window.addEventListener("load", () => {
 		y: 0
 	};
 	
+	function randf(min, max) {
+		return min + Math.random() * (max - min);
+	}
+
 	function isSrc(img, src) {
 		return img.src && img.src.indexOf(src);
 	}
