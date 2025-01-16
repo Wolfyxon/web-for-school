@@ -17,6 +17,10 @@ window.addEventListener("load", () => {
 		return min + Math.random() * (max - min);
 	}
 
+	function randi(min, max) {
+		return Math.floor(randf(min, max));
+	}
+
 	function isSrc(img, src) {
 		return img.src && img.src.indexOf(src);
 	}
