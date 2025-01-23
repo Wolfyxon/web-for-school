@@ -71,14 +71,18 @@ window.addEventListener("load", () => {
 		}
 	}
 
-	function setPacman(x, y) {
+	function setPacman(x, y, rotation) {
 		for(const tile of getTiles()) {
 			if(isSrc(tile, pacmanImg)) {
 				tile.src = emptyImg;
+				tile.style.transform = "";
 			}
 		}
 
-		getTile(x, y).src = pacmanImg;
+		const tile = getTile(x, y);
+
+		tile.src = pacmanImg;
+		tile.style.transform = `rotate(${rotation ?? 0}deg)`;
 		
 		pacman.x = x;
 		pacman.y = y;
@@ -93,6 +97,7 @@ window.addEventListener("load", () => {
 
 	let dx = 0;
 	let dy = 0;
+	let rot = 0;
 
 	function move() {
 		if(dx != 0 || dy != 0) {
@@ -111,7 +116,7 @@ window.addEventListener("load", () => {
 				pointsDisp.innerText = points;
 			}
 
-			setPacman(x, y);
+			setPacman(x, y, rot);
 
 			if(cherry) setCherryRandom();
 		}		
@@ -119,10 +124,10 @@ window.addEventListener("load", () => {
 	
 	window.addEventListener("keydown", (e) => {
 		const directions = {
-			"ArrowLeft": [-1, 0],
-			"ArrowRight": [1, 0],
-			"ArrowUp": [0, -1],
-			"ArrowDown": [0, 1]
+			"ArrowLeft": [-1, 0, 180],
+			"ArrowRight": [1, 0, 0],
+			"ArrowUp": [0, -1, -90],
+			"ArrowDown": [0, 1, 90]
 		};
 
 		const dir = directions[e.key];
@@ -130,6 +135,7 @@ window.addEventListener("load", () => {
 		if(dir) {
 			dx = dir[0];
 			dy = dir[1];
+			rot = dir[2];
 		}
 	});
 
