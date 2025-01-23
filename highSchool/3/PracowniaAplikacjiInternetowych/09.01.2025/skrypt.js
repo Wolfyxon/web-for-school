@@ -80,9 +80,15 @@ window.addEventListener("load", () => {
 		}
 
 		const tile = getTile(x, y);
+		let style = `rotate(${rotation ?? 0}deg)`;
+
+		if(rotation == 180) {
+			style += " scaleY(-1)";
+		}
 
 		tile.src = pacmanImg;
-		tile.style.transform = `rotate(${rotation ?? 0}deg)`;
+		tile.style.transform = style; 
+
 		
 		pacman.x = x;
 		pacman.y = y;
