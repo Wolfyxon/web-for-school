@@ -5,26 +5,26 @@ function image(id, callback) {
     
     for(const btn of main.getElementsByTagName("button")) {
         btn.addEventListener("click", () => {
-            callback(img, btn);
+            callback(img, main, btn);
         });
     }
     
 }
 
 window.addEventListener("load", () => {
-    image("bee", (img) => {
+    image("bee", (img, main) => {
 
     });
 
-    image("orange", (img) => {
+    image("orange", (img, main) => {
 
     });
 
-    image("fruits", (img, btn) => {
+    image("fruits", (img, main, btn) => {
 
     });
     
-    image("tutel", (img) => {
+    image("tutel", (img, main) => {
         
     });
 });
