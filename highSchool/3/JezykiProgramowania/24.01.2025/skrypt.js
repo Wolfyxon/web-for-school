@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
 
         for(const opt of main.getElementsByTagName("input")) {
             if(opt.type == "radio" && opt.checked) {
-                img.style.filter = opt.value + "()";
+                img.style.filter = opt.value;
                 break;
             }
         }
