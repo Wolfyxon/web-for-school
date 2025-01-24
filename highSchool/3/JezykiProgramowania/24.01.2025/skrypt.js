@@ -22,8 +22,8 @@ window.addEventListener("load", () => {
         }
     });
 
-    image("orange", (img, main) => {
-
+    image("orange", (img, main, btn) => {
+        img.style.filter = btn.getAttribute("data-effect");
     });
 
     image("fruits", (img, main, btn) => {
