@@ -33,6 +33,8 @@ window.addEventListener("load", () => {
     });
     
     image("tutel", (img, main) => {
-        
+        const val = document.getElementById("tutel-brightness").value;
+
+        img.style.filter = `brightness(${val}%)`;
     });
 });
