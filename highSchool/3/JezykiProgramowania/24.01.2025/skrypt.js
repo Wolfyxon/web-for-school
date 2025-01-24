@@ -27,7 +27,9 @@ window.addEventListener("load", () => {
     });
 
     image("fruits", (img, main, btn) => {
+        const val = document.getElementById("fruits-transparency").value;
 
+        img.style.opacity = `${100 - val}%`;
     });
     
     image("tutel", (img, main) => {
