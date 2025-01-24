@@ -1,0 +1,55 @@
+body {
+    font-family: serif;
+    text-align: center;
+}
+
+#banner, footer {
+    background-color: indigo;
+    color: white;
+    padding: 2px;
+    font-style: italic;
+    width: 100%;
+}
+
+button {
+    background-color: slateblue;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+}
+
+button:hover {
+    background-color: indigo;
+}
+
+img {
+    padding: 3px;
+    margin: 10px;
+    border: 2px dashed slateblue;
+}
+
+a {
+    color: white;
+}
+
+input[type="range"] {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#gallery > * {
+    flex: 50%;
+    height: 470px;
+}
+
+.center {
+    margin: 0 auto;
+    width: fit-content;
+}
