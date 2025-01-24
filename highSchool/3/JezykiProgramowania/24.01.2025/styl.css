@@ -13,6 +13,7 @@ body {
 
 button {
     background-color: slateblue;
+    color: white;
     padding: 10px 20px;
     margin-top: 10px;
     border: none;
