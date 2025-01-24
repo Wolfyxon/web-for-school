@@ -3,10 +3,79 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styl.css">
+        <script type="text/javascript" src="skrypt.js"></script>
 
         <title>Efekty obrazu</title>
     </head>
     <body>
-        
+        <div id="banner">
+            <h2>Efekty na obrazach</h2>
+        </div>
+
+        <div id="gallery">
+            <div id="bee">
+                <img src="img/pszczola.jpg">
+                
+                <div id="bee-effects">
+                    <div>
+                        <input id="bee-blur" type="radio" value="blur" name="bee-effect">
+                        <label for="bee-blur">Blur</label>
+                    </div>
+
+                    <div>
+                        <input id="bee-sepia" type="radio" value="sepia" name="bee-effect">
+                        <label for="bee-sepia">Sepia</label>
+                    </div>
+
+                    <div>
+                        <input id="bee-invert" type="radio" value="invert" name="bee-effect">
+                        <label for="bee-invert">Negatyw</label>
+                    </div>
+                </div>    
+                
+                <div class="center">
+                    <button>Zastosuj</button>
+                </div>
+            </div>
+
+            <div id="orange">
+                <img src="img/pomarancza.jpg">
+
+                <div class="center">
+                    <button>Kolorowy</button>
+                    <button>Czarno biały</button>
+                </div>
+            <div>
+
+            <div id="fruits">
+                <img src="img/owoce.jpg">
+
+                <input type="range">
+                <div class="center">
+                    <button>Zastosuj</button>
+                </div>
+            <div>
+
+            <div id="tutel"> <!-- :D -->
+                <img src="img/zolw.jpg">
+
+                <input type="range">
+                <div class="center">
+                    <button>Zastosuj</button>
+                </div>
+            <div>
+
+            </div>
+        </div>
+        <footer>
+            <p>
+                <a href="https://css.com" target="_blank">
+                    Zobacz inne  efekty obrazu
+                </a>
+            </p>
+            <p>
+                Stronę wykonał: Panzerkamfwagen VII Maus
+            </p>
+        </footer>
     </body>
 </html>
