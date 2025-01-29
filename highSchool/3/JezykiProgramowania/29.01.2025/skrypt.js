@@ -17,5 +17,21 @@ window.addEventListener("load", () => {
         });
     }
 
-    selectTab("tab-1")
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const pass1 = document.getElementById("pass1-input").value;
+        const pass2 = document.getElementById("pass2-input").value;
+
+        if(pass1 != pass2) {
+            return alert("Podane hasła różnią się");
+        }
+
+        const name = document.getElementById("name-input").value;
+        const surname = document.getElementById("surname-input").value;
+        
+        console.log(`Witaj ${name} ${surname}`);
+    })
+
+    selectTab("tab-1");
 });
