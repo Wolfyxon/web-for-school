@@ -3,10 +3,10 @@ window.addEventListener("load", () => {
     
     function selectTab(id) {
         for(const tab of form.children) {
-            tab.style.display = "none";
+            tab.style.removeProperty("visibility");
         }
 
-        document.getElementById(id).style.removeProperty("display");
+        document.getElementById(id).style.visibility = "visible";
     }
 
     for(const btn of document.querySelectorAll("input[type=button]")) {
