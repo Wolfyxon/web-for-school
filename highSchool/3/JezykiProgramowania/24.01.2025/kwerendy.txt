@@ -1,0 +1,14 @@
+1.  
+SELECT imie, pensja FROM pracownicy WHERE staz < 5;
+
+2.
+SELECT stanowiska.nazwa, AVG(pensja) as `Średnia pensja` 
+FROM pracownicy 
+INNER JOIN stanowiska ON pracownicy.stanowiska_id = stanowiska.id
+GROUP BY stanowiska.nazwa;
+
+3. 
+SELECT imie, nazwisko, pensja FROM pracownicy ORDER BY pensja DESC LIMIT 1;
+
+4.
+UPDATE pracownicy SET staz = staz + 1;
