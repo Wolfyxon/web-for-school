@@ -1,0 +1,10 @@
+* {
+    font-family: Cambria;
+}
+
+#banner {
+    background-color: #C2185B;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
