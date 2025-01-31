@@ -1,0 +1,25 @@
+1. 
+SELECT imie, nazwisko FROM uczestnicy WHERE NOT zaplacono;
+
+2.
+SELECT 
+	AVG(koszt) AS `Średni koszt`,
+    COUNT(id) AS `Liczba uczestników`
+FROM uczestnicy;
+
+3.
+SELECT 
+	wyklady.nazwa,
+    GROUP_CONCAT(
+        imie SEPARATOR ", "
+    ) AS `Nazwiska`,
+    GROUP_CONCAT(
+        email SEPARATOR ", "
+    ) AS `E-maile`
+FROM uczestnicy
+INNER JOIN wyklady ON uczestnicy.wyklady_id = wyklady.id
+WHERE zaplacono
+GROUP BY wyklady.id
+
+4.
+ALTER TABLE uczestnicy DROP COLUMN haslo
