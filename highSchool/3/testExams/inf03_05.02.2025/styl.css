@@ -1,0 +1,67 @@
+body, html {
+    white-space: nowrap;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #824555;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    float: inline-start;
+    width: 100%;
+}
+
+section {
+    float: left;
+    height: 350px;
+}
+
+#sys-table td, #sys-table th {
+    border: 3px solid #824555;
+    padding: 5px;
+}
+
+img {
+    float: left;
+    width: 50px;
+}
+
+#sys-table-container {
+    background-color: #A26475;
+    width: 30%;
+}
+
+#convertion {
+    background-color: #824555;
+    width: 30%;
+}
+
+#dictionary {
+    overflow: scroll;
+    background-color: #A26470;
+    width: 40%;
+}
+
+#dictionary h3 {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#dictionary p {
+    width: 100%;
+    text-wrap: wrap;
+}
+
+#dictionary p, table {
+    margin: 10px;
+}
+
+#dictionary h3 {
+    padding-top: 20px;
+}
