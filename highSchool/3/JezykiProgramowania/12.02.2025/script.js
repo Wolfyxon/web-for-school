@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
         new RN("Niemowlę", 0, "#90ff36"),
         new RN("Dziecko", 2, "#366fff"),
         new RN("Nastolatek", 11, "#132c6e"),
-        new RN("Student", 18, "#841fff"),
+        new RN("Student", 18, "#160be6"),
         new RN("Średni", 26, "#ffbf00"),
         new RN("Podeszły", 50, "#ff7700"),
         new RN("Stary", 70, "#9e1800")
