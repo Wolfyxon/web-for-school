@@ -48,7 +48,13 @@ window.addEventListener("load", () => {
     });
 
     document.querySelector("input[type='submit']").addEventListener("click", () => {
-        let values = inputs.map((inp) => inp.value);
+        let values = inputs.map((inp) => {
+            if(inp.type == "checkbox") {
+                return inp.checked;
+            }
+            
+            return inp.value;
+        });
 
         console.log(values.join(", "));
     });
