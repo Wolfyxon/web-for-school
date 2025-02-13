@@ -62,16 +62,19 @@ input[type=button]:hover {
 	display: none;
 }
 
-#pasek1 {
-	background-color: Navy;
-	width: 4%;
-	height: 30px;
-}
+
 table {
 	width: 100%;
 	border: 1px dotted navy;
 }
-#pasek{
+
+#bar-val {
+	background-color: Navy;
+	width: 4%;
+	height: 30px;
+}
+
+#bar {
 	background-color: LightGrey;
 	width: 73%;
 	margin-bottom: 10px;
