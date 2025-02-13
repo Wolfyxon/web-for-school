@@ -6,13 +6,13 @@ body {
 	background-color: Linen;
 }
 
-#boczny, #baner, #stopka {
+#side, #banner, footer {
 	background-color: steelblue;
 	color: white;
 	text-align: center;
 }
 
-#boczny {
+#side {
 	width: 25%;
 	height: 510px;
 	margin-top: 0;
@@ -23,7 +23,7 @@ body {
 	float: left;
 }
 
-#baner {
+#banner {
 	width: 73%;
 	height: 80px;
 	float: right;
@@ -35,7 +35,7 @@ body {
 	float: right;
 }
 
-#stopka {
+footer {
 	clear: both;
 
 }
