@@ -33,14 +33,24 @@ window.addEventListener("load", () => {
         "button",
         "submit"
     ];
+
+    let inputs = [];
     
     document.querySelectorAll("input").forEach((inp) => {
         if(!typeBlacklist.includes(inp.type)) {
+            inputs.push(inp);
+
             inp.addEventListener("blur", () => {
                 barWidth += 12;
                 updateBar();
             });
         }
+    });
+
+    document.querySelector("input[type='submit']").addEventListener("click", () => {
+        let values = inputs.map((inp) => inp.value);
+
+        console.log(values.join(", "));
     });
 
     showTab(tabs[0]);
