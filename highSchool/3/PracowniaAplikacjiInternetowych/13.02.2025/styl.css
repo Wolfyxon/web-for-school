@@ -6,6 +6,34 @@ body {
 	background-color: Linen;
 }
 
+footer {
+	clear: both;
+
+}
+
+table {
+	width: 100%;
+	border: 1px dotted navy;
+}
+
+label {
+	display: block;
+}
+
+input[type=button] {
+	background-color: steelblue;
+	color: white;
+	width: 20%;
+	padding: 15px;
+	margin-top: 30px;
+	font-size: 130%;
+	border: 0;
+}
+
+input[type=button]:hover {
+	background-color: navy;
+}
+
 #side, #banner, footer {
 	background-color: steelblue;
 	color: white;
@@ -35,38 +63,10 @@ body {
 	float: right;
 }
 
-footer {
-	clear: both;
-
-}
-
-input[type=button] {
-	background-color: steelblue;
-	color: white;
-	width: 20%;
-	padding: 15px;
-	margin-top: 30px;
-	font-size: 130%;
-	border: 0;
-}
-
-input[type=button]:hover {
-	background-color: navy;
-}
-
 #tabs > * {
 	background-color: lightblue;
 	margin-right: 80px;
 	padding: 10px;
-}
-
-table {
-	width: 100%;
-	border: 1px dotted navy;
-}
-
-label {
-	display: block;
 }
 
 #bar-val {
