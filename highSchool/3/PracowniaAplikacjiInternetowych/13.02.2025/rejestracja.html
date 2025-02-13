@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang='pl-PL'>
+	<head> 
+		<meta charset='UTF-8'>
+		<title>Sklep - rejestracja</title>
+		<link rel='stylesheet' href='styl.css' type='text/css'>
+	</head>
+	<body>
+		<section id='boczny'>
+			<img src='obraz.png'>
+			<h2> Sprawdź promocje </h2>
+			<table>
+				<tr>
+					<th>Co?</th>
+					<th>Ile taniej?</th>
+				</tr>
+				
+				<tr>
+					<td>Ubrania</td>
+					<td>15%</td>
+				</tr>
+				
+				<tr>
+					<td>Buty</td>
+					<td>25%</td>
+				</tr>
+			</table>
+		</section>
+		
+		<section id='baner'>
+			<h1>Zarejestruj się w sklepie</h1>
+		</section>
+		
+		<section id='glowny'>
+			<input type='button' value='Klient' onclick='aktywuj1()'>
+			<input type='button' value='Adres' onclick='aktywuj2()'>
+			<input type='button' value='Kontakt' onclick='aktywuj3()'>
+			
+			<div id='blok1'>	
+				<p>Imię</p>
+				<input type='text' placeholder='Wpisz dane...' onblur='zmien()' id='imie'>
+
+				<p>Naziwsko</p> 
+				<input type='text' onblur='zmien()' id='nazwisko'>
+					
+				<p>Data urodzenia</p>
+				<input type='date' id='data' >
+			</div>
+				
+			<div id='blok2'>
+				<p>Ulica</p>
+				<input type='text' onblur='zmien()' id='ulica'>
+				<p>Numer</p>
+				<input type='number' onblur='zmien()' id='numer'>
+				<p>Miasto</p>
+				<input type='text' onblur='zmien()' id='miasto'>
+			</div>
+			
+			<div id='blok3'>
+				<p>Numer komorkowy<p>
+				<input type='tel' onblur='zmien()' id='telefon'><br />
+				<input type='checkbox' id='akceptacja'> Akceptuję RODO<br />
+				<input type='button' value='Zatwierdź dane' onclick='zatwierdz()'> 
+			</div>
+			
+		</section>
+
+		<section id='pasek'>
+			<section id='pasek1'></section>
+		</section>
+		
+		<section id='stopka'>
+			<h4>Rejestrację do sklepu wykonał:00000000000</h4>
+		</section>
+		<script src='skrypt.js'></script>
+	</body>
+</html>
