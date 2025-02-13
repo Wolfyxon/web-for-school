@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
     ];
     
     document.querySelectorAll("input").forEach((inp) => {
-        if(!typeBlacklist.includes(inp)) {
+        if(!typeBlacklist.includes(inp.type)) {
             inp.addEventListener("blur", () => {
                 barWidth += 12;
                 updateBar();
