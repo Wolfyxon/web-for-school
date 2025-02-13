@@ -41,29 +41,36 @@
 			
 			<div id="tabs">
 				<div id='client'>	
-					<p>Imię</p>
+					<label for="name-inp">Imię</label>
 					<input type='text' placeholder='Wpisz dane...' id='name-inp'>
 
-					<p>Naziwsko</p> 
+					<label for="surname-inp">Naziwsko</label> 
 					<input type='text' id='surname-inp'>
 						
-					<p>Data urodzenia</p>
+					<label for="birthday-inp">Data urodzenia</label>
 					<input type='date' id='birthday-inp' >
 				</div>
 					
 				<div id='address'>
-					<p>Ulica</p>
+					<label for="street-inp">Ulica</label>
 					<input type='text' id='street-inp'>
-					<p>Numer</p>
+					
+					<label for="street-num-inp">Numer</label>
 					<input type='number' id='street-num-inp'>
-					<p>Miasto</p>
+					
+					<label for="city">Miasto</label>
 					<input type='text' id='city'>
 				</div>
 				
 				<div id='contact'>
-					<p>Numer komorkowy<p>
+					<label for="phone-inp">Numer komorkowy<label>
 					<input type='tel' id='phone-inp'><br />
-					<input type='checkbox' id='accept'> Akceptuję RODO<br />
+
+					<div>
+						<input type='checkbox' id='accept'>
+						<label for="accept" style="display: inline-block;">Akceptuję RODO</label>
+					</div>
+					
 					<input type='submit' value='Zatwierdź dane'>
 				</div>
 			</div>

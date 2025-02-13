@@ -65,6 +65,10 @@ table {
 	border: 1px dotted navy;
 }
 
+label {
+	display: block;
+}
+
 #bar-val {
 	background-color: Navy;
 	width: 4%;
