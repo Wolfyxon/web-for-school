@@ -29,7 +29,7 @@ body {
 	float: right;
 }
 
-#glowny {
+#main {
 	width: 73%;
 	height: 400px;
 	float: right;
@@ -39,6 +39,7 @@ body {
 	clear: both;
 
 }
+
 input[type=button] {
 	background-color: steelblue;
 	color: white;
@@ -53,15 +54,11 @@ input[type=button]:hover {
 	background-color: navy;
 }
 
-#blok1, #blok2, #blok3 {
+#tabs > * {
 	background-color: lightblue;
-	margin: 80px;
+	margin-right: 80px;
 	padding: 10px;
 }
-#blok2, #blok3 {
-	display: none;
-}
-
 
 table {
 	width: 100%;
