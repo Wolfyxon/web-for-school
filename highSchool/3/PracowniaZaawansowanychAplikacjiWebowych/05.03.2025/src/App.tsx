@@ -1,8 +1,12 @@
+import Felgi from "./components/Felgi"
+import Opony from "./components/Opony"
+
 function App() {
 
   return (
     <>
-      hi
+      <Opony />
+      <Felgi />
     </>
   )
 }
