@@ -4,11 +4,11 @@ window.addEventListener("load", () => {
     const link = document.getElementById("link");
 
     linkBtn.addEventListener("click", () => {
-        window.location.href = linkBtn.innerText;
+        window.location.href = link.href;
     })
 
     document.getElementById("btn-set").addEventListener("click", () => {
-        linkBtn.innerText = urlInp.value;
+        linkBtn.disabled = false;
         link.href = urlInp.value;
         link.innerText = urlInp.value;
     });
