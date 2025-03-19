@@ -1,4 +1,3 @@
-import './App.css'
 import Form from './components/Form'
 import Link from './components/Link'
 import Title from './components/Title'
