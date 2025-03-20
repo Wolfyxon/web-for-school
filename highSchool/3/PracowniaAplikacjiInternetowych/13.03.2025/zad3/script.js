@@ -14,9 +14,10 @@ window.addEventListener("load", () => {
         hideAll();
 
         for(const ch of chks) {
+            if(!ch.checked) continue;
+
             const idx = chks.indexOf(ch);
-            
-            blocks[idx].style.removeProperty(idx);
+            blocks[idx].style.removeProperty("display");
         }
     });
 
