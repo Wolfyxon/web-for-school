@@ -1,0 +1,7 @@
+#result > * {
+    background-color: red;
+    display: inline-block;
+    margin-right: 5px;
+    width: 100px;
+    height: 100px;
+}
