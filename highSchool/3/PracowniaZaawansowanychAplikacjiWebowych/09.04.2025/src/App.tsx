@@ -16,7 +16,9 @@ function App() {
     <>
       <Hello name="Wolfyxon" />
       <RadioButton />
-      <Object car={car} />
+
+      <Object car={car} i={0} /> <hr />
+      <Object car={car} i={1} />
     </>
   )
 }

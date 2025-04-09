@@ -5,11 +5,18 @@ export type Car = {
     cena: number
 }
 
-export default function Object({car}: {car: Car}) {
-    return (
-        <div>
-            {car.marka} {car.rocznik} <hr />
-            {car.cena}
-        </div>
-    )
+export default function Object({car, i}: {car: Car, i: number}) {
+    if(i == 0) {
+        return (
+            <div>
+                {car.marka} {car.rocznik}
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                {car.cena}
+            </div>
+        );
+    }
 }
