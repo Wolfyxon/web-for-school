@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Hello text="Witaj" />
+      <Hello name="Wolfyxon" />
       <RadioButton />
       <Object car={car} />
     </>

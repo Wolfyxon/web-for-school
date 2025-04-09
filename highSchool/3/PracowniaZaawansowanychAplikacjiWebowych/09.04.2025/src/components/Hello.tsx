@@ -1,3 +1,3 @@
-export default function Hello(data: {text: string}) {
-    return <h1>{data.text}</h1>
+export default function Hello(data: {name: string}) {
+    return <h1>Witaj {data.name}</h1>
 }
