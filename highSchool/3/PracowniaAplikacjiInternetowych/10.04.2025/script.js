@@ -17,6 +17,12 @@ window.addEventListener("load", () => {
         }
 
         res.innerText = sum;
+
+        if(sum > 50) {
+            res.style.backgroundColor = "red";
+        } else {
+            res.style.removeProperty("background-color");
+        }
     }
 
     for(const n of nums) {
