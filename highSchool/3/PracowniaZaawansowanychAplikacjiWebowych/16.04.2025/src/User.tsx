@@ -18,8 +18,8 @@ export default function User({user}: {user: UserData}) {
             
             <b>Adres</b>:
             <div>Ulica: {user.address.street}</div>
-            <div>Ulica: {user.address.city}</div>
-            <div>Ulica: {user.address.zip}</div>
+            <div>Miasto: {user.address.city}</div>
+            <div>Kod pocztowy: {user.address.zip}</div>
         </div>
     )
 }
