@@ -1,4 +1,5 @@
 import './App.css'
+import Link from './Link'
 import User, { UserData } from './User'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <User user={user}></User>
+      <Link>Jakiś link</Link>
     </>
   )
 }
