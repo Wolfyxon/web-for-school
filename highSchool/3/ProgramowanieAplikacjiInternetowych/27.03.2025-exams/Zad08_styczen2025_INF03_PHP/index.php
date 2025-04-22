@@ -4,6 +4,7 @@
         <title>Mieszalnia farb</title>
 
         <meta charset="utf-8">
+        <link rel="icon" href="fav.png">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
