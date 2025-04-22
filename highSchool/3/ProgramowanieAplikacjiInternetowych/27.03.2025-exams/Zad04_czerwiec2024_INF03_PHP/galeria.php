@@ -51,14 +51,12 @@
                         echo sprintf("
                             <img src='%s' alt='zdjecie'>
 
-                            <div class='image-meta'>
-                                <h3>%s</h3>
-                                <p>%s</p>
-                                
-                                <a href='%s' class='image-download' download>
-                                    Pobierz
-                                </a>
-                            </div>
+                            <h3 class='image-title'>%s</h3>
+                            <p class='image-description'>%s</p>
+                            
+                            <a href='%s' class='image-download' download>
+                                Pobierz
+                            </a>
                             
                         ",
                             $img["plik"], $img["tytul"], $p_content, $img["plik"]
