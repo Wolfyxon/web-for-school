@@ -1,8 +1,3 @@
-<?php 
-    $db = mysqli_connect("localhost", "root", null, "mieszalnia");
-    mysqli_set_charset($db, "utf8");
-?>
-
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -37,6 +32,9 @@
                     <th>Data odbioru</th>
                 </tr>
                 <?php
+                    $db = mysqli_connect("localhost", "root", null, "mieszalnia");
+                    mysqli_set_charset($db, "utf8");
+
                     $from = $_POST["date-from"];
                     $to = $_POST["date-to"];
 
@@ -96,6 +94,8 @@
                             $row["data_odbioru"]
                         );
                     }
+
+                    mysqli_close($db);
                 ?>
             </table>
         </div>
@@ -106,7 +106,3 @@
         </footer>
     </body>
 </html>
-
-<?php 
-    mysqli_close($db);
-?>
