@@ -1,5 +1,6 @@
 <?php 
     $db = mysqli_connect("localhost", "root", null, "galeria");
+    mysqli_set_charset($db, "utf8");
 ?>
 
 <!DOCTYPE html>
