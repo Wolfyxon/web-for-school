@@ -72,7 +72,14 @@
             <section id="right">
             <h2>Najbardziej lubiane</h2>
                 <?php
-                    echo "TODO"
+                    $query2 = "SELECT tytul, plik FROM zdjecia WHERE polubienia >= 100";
+
+                    foreach(mysqli_query($db, $query2) as $img) {
+                        echo sprintf(
+                            "<img src='%s' alt='%s'>",
+                            $img["plik"], $img["tytul"]
+                        );
+                    }
                 ?>
                 <strong>Zobacz wszystkie nasze zdjęcia</strong>
             </section>
