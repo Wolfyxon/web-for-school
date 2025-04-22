@@ -12,11 +12,16 @@
         </header>
 
         <form target="_self" method="post">
+            <?php 
+                $from = $_POST["date-from"];
+                $to = $_POST["date-to"];
+            ?>
+
             <label for="date-from">Data odbioru od: </label>
-            <input type="date" name="date-from" id="date-from">
+            <input type="date" name="date-from" id="date-from" <?php echo sprintf("value='%s'", $from) ?>>
 
             <label for="date-to">do: </label>
-            <input type="date" name="date-to" id="date-to">
+            <input type="date" name="date-to" id="date-to" <?php echo sprintf("value='%s'", $to) ?>>
 
             <input type="submit" value="Wyszukaj">
         </form>
@@ -34,9 +39,6 @@
                 <?php
                     $db = mysqli_connect("localhost", "root", null, "mieszalnia");
                     mysqli_set_charset($db, "utf8");
-
-                    $from = $_POST["date-from"];
-                    $to = $_POST["date-to"];
 
                     $res = null;
                     
