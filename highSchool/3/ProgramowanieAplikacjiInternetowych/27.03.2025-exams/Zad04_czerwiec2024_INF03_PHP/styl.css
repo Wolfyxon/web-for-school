@@ -1,0 +1,26 @@
+* {
+    font-family: Helvetica;
+}
+
+header, footer {
+    color: white;
+    background-color: sienna;
+    padding: 10px;
+    text-align: center;
+}
+
+#main {
+    display: flex;
+}
+
+#left, #right {
+    background-color: navajowhite;
+    width: 15%;
+    height: 700px;
+}
+
+#center {
+    overflow: scroll;
+    width: 70%;
+    height: 700px;
+}
