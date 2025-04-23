@@ -1,7 +1,0 @@
-/*
-    Description
-*/
-
-window.addEventListener("load", () => {
-    
-});
