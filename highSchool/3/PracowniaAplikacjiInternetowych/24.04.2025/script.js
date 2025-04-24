@@ -2,6 +2,9 @@ window.addEventListener("load", () => {
     const img = document.getElementById("img");
     const caption = document.getElementById("caption");
 
+    const imgPrev = document.getElementById("img-prev");
+    const imgNext = document.getElementById("img-next");
+
     const btnPrev = document.getElementById("btn-prev");
     const btnNext = document.getElementById("btn-next");
     const btnRandom = document.getElementById("btn-random");
@@ -25,23 +28,40 @@ window.addEventListener("load", () => {
         ]
     ];
 
-    let idx = 0;
+    let currentIdx = 0;
+
+    function getImg(idx) {
+        if(idx < 0) {
+            idx = imgs.length -1;
+        }
+
+        idx = idx % imgs.length;
+        
+        return imgs[idx];
+    }
 
     function setImg(idx) {
-        const array = imgs[idx];
+        const prev = getImg(idx - 1);
+        const next = getImg(idx + 1);
+        const current = getImg(idx);
 
-        img.src = "img/" + array[0];
-        caption.innerText = array[1];
+        img.src = "img/" + current[0];
+        caption.innerText = current[1];
+
+        imgPrev.src = "img/" + prev[0];
+        imgNext.src = "img/" + next[0];
+
+        currentIdx = currentIdx;
     }
 
     function shift(offset) {
-        idx = (idx + offset) % imgs.length;
+        currentIdx = (currentIdx + offset) % imgs.length;
         
-        if(idx < 0) {
-            idx = imgs.length - 1;
+        if(currentIdx < 0) {
+            currentIdx = imgs.length - 1;
         }
 
-        setImg(idx);
+        setImg(currentIdx);
     }
 
     btnPrev.addEventListener("click", () => {
@@ -56,5 +76,5 @@ window.addEventListener("load", () => {
         setImg(Math.floor(Math.random() * imgs.length));
     });
 
-    setImg(idx);
+    setImg(currentIdx);
 });
