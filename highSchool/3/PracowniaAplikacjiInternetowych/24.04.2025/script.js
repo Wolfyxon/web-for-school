@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
 
     const btnPrev = document.getElementById("btn-prev");
     const btnNext = document.getElementById("btn-next");
+    const btnRandom = document.getElementById("btn-random");
 
     const imgs = [
         [
@@ -26,7 +27,9 @@ window.addEventListener("load", () => {
 
     let idx = 0;
 
-    function setImg(array) {
+    function setImg(idx) {
+        const array = imgs[idx];
+
         img.src = "img/" + array[0];
         caption.innerText = array[1];
     }
@@ -38,7 +41,7 @@ window.addEventListener("load", () => {
             idx = imgs.length - 1;
         }
 
-        setImg(imgs[idx]);
+        setImg(idx);
     }
 
     btnPrev.addEventListener("click", () => {
@@ -49,5 +52,9 @@ window.addEventListener("load", () => {
         shift(1);
     });
 
-    setImg(imgs[0]);
+    btnRandom.addEventListener("click", () => {
+        setImg(Math.floor(Math.random() * imgs.length));
+    });
+
+    setImg(idx);
 });
