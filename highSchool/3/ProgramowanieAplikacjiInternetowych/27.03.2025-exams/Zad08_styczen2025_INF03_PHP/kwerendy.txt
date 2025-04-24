@@ -1,0 +1,27 @@
+1.
+    SELECT COUNT(*) FROM klienci
+2.
+    SELECT 
+        nazwisko, 
+        imie, 
+        zamowienia.id as id_zamowienia, 
+        data_odbioru,
+        pojemnosc,
+        kod_koloru
+    FROM klienci
+    INNER JOIN zamowienia ON zamowienia.id_klienta = klienci.id
+    ORDER BY data_odbioru ASC
+3.
+    SELECT 
+        nazwisko, 
+        imie, 
+        zamowienia.id as id_zamowienia, 
+        data_odbioru,
+        pojemnosc,
+        kod_koloru
+    FROM klienci
+    INNER JOIN zamowienia ON zamowienia.id_klienta = klienci.id
+    WHERE data_odbioru > "2021-11-07"
+    ORDER BY data_odbioru ASC
+4.
+    SELECT imie, nazwisko FROM klienci WHERE plec = "k"
