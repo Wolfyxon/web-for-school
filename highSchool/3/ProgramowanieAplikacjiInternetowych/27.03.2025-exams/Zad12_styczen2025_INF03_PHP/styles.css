@@ -49,6 +49,7 @@ table {
     margin: auto;
     width: 70%;
     background-color: sienna;
+    border-collapse: collapse;
 }
 
 table, table td {
