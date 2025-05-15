@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <img src="wypieki.png" alt="Produkty naszej piekarni">
+        <img id="banner" src="wypieki.png" alt="Produkty naszej piekarni">
         <nav>
             <?php
                 for($i = 1; $i <= 4; $i++) {
