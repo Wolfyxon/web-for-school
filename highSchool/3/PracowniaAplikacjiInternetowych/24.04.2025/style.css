@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+#imgs {
+    display: flex;
+    justify-content: center;
+}
+
+#img-prev, #img-next {
+    opacity: 0.7;
+    height: 190px;
+}
+
+#img {
+    height: 200px;
+}
