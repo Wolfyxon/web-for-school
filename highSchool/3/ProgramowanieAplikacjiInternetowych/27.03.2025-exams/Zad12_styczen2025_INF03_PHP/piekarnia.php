@@ -57,6 +57,27 @@
                         <th>Gramatura</th>
                         <th>Cena</th>
                     </tr>
+                    <?php
+                        $type = $_POST["type"] ?? null;
+                        
+                        if(isset($type)) {
+                            $stm = $db->prepare("SELECT Rodzaj, Nazwa, Gramatura, Cena FROM wyroby WHERE Rodzaj = ?");
+                            $stm->execute([$type]);
+                            $res = $stm->get_result();
+
+                            while($row = $res->fetch_array(MYSQLI_ASSOC)) {
+                                echo "<tr>";
+
+                                foreach($row as $field) {
+                                    echo "
+                                        <td>$field</td>
+                                    ";
+                                }
+
+                                echo "</tr>";
+                            }
+                        }
+                    ?>
                 </table>
         </div>
         
