@@ -20,7 +20,53 @@
                 <label>powtórz hasło: <input type="password" name="powtorzHaslo"></label>
                 <button type="submit">Zapisz</button>
             </form>
-            <!--skrypt-->
+            
+            <?php
+                $db = new mysqli("localhost", "root", null, "psy");
+
+                function user_exists($login) {
+                    global $db;
+
+                    $stm = $db->prepare("SELECT login FROM uzytkownicy WHERE login=?");
+                    $stm->execute([$login]);
+
+                    return $stm->get_result()->fetch_assoc() != null;
+                }
+
+                function get_status() {
+                    global $db;
+
+                    $login = $_POST["login"] ?? null;
+                    $pass1 = $_POST["haslo"] ?? null;
+                    $pass2 = $_POST["powtorzHaslo"] ?? null;
+                    
+                    if(!$login || !$pass1 || !$pass2) {
+                        return "wypełnij wszystkie pola";
+                    }
+
+                    if(user_exists($login)) {
+                        return "login występuje w bazie danych, konto nie zostało dodane";
+                    }
+
+                    if($pass1 != $pass2) {
+                        return "hasła nie są takie same, konto nie zostało dodane";
+                    }
+
+                    $stm = $db->prepare("INSERT INTO uzytkownicy (login, haslo) VALUES (?, ?)");
+                    $stm->execute([$login, sha1($pass1)]);
+
+                    return "Konto zostało dodane";
+                }
+
+                $status = get_status();
+
+                if($status) {
+                    echo("<p>$status</p>");
+                }
+
+                $db->close();
+            ?>
+
         </section>
         <section class="prawy2">
             <h2>Zapraszamy wszystkich</h2>
