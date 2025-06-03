@@ -1,3 +1,28 @@
+<?php 
+
+$db = new mysqli("localhost", "root", null, "kalendarz");
+
+function get_imieniny($date) {
+    global $db;
+
+    $timestamp = strtotime($date);
+    $year_date = date("m-d", $timestamp);
+
+    $stm = $db->prepare("SELECT imiona FROM imieniny WHERE data=?");
+    $stm->execute([$year_date]);
+    $row = $stm->get_result()->fetch_assoc();
+
+    $imiona = "brak danych";
+
+    if($row) {
+        $imiona = $row["imiona"];
+    }
+
+    return $imiona;
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl-PL">
     <head>
@@ -11,7 +36,12 @@
         </header>
         <section class="napis">
             <p>
-                <!--skrypt1-->
+                <?php
+                    $date = date("d-m-Y");
+
+                    $imiona = get_imieniny($date);
+                    echo("Dzisiaj jest czwartek, $date, imieniny: $imiona");
+                ?>
             </p>
         </section>
         <section class="lewy">
@@ -67,7 +97,17 @@
                 <input name="date" value="05-04" type="date" min="2024-01-01" max="2024-12-31"><!--tylko rok 2024-->
                 <button type="submit">wyślij</button>
             </form>
-            <!--skrypt 2-->
+            
+            <?php
+                $date = $_POST["date"] ?? null;
+
+                if($date) {
+                    $imiona = get_imieniny($date);
+
+                    echo("Dnia $date są imieniny $imiona");
+                }
+            ?>
+
         </section>
         <section class="prawy">
             <a target="_blank" href="https://pl.wikipedia.org/wiki/Kalendarz_Majów"><img src="Kalendarz.gif" alt="Kalendarz Majów"></a>
@@ -93,3 +133,9 @@
         </footer>
     </body>
 </html>
+
+<?php
+
+$db->close();
+
+?>

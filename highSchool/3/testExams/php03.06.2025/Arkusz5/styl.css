@@ -1,12 +1,14 @@
 body {
     font-family: serif;
 }
+
 header, footer {
     background-color: indigo;
     color: white;
     padding: 10px;
     text-align: center;
 }
+
 .napis {
     background-color: blueviolet;
     padding: 10px;
@@ -16,38 +18,47 @@ header, footer {
     background-color: lavender;
     height: 500px;
 }
+
 .lewy {
     width: 25%;
 }
+
 .prawy {
     width: 35%;
 }
+
 .srodkowy {
     background-color: ghostwhite;
     text-align: center;
     height: 500px;
     width: 40%;
 }
+
 .lewy, .srodkowy, .prawy {
     float: left;
 }
+
 img {
     float: right;
     width: 50%;
     padding: 10px;
 }
+
 p {
     color: white;
     font-size: 150%;
     font-style: oblique;
 }
+
 table, form {
     margin: 30px;
 }
+
 table, td {
     border-collapse: collapse;
     border: solid 1px indigo;
 }
+
 td, th {
     padding: 3px;
 }
