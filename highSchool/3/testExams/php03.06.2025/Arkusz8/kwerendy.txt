@@ -1,0 +1,6 @@
+1.
+	CREATE TABLE uzytkownicy (
+		id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+		login VARCHAR(50),
+		haslo VARCHAR(50)
+	)
