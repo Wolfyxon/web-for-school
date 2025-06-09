@@ -48,7 +48,7 @@
         <?php 
             $res = $db->query("SELECT nazwa, model, rocznik, cena, zdjecie FROM marki
                                       JOIN samochody ON marki_id = marki.id
-                                      WHERE wyrozniony = 1");
+                                      WHERE wyrozniony = 1 LIMIT 4");
 
             while($row = $res->fetch_assoc()) {
                 echo "<div class='offer'>";

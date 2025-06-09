@@ -7,7 +7,7 @@
 3.
     SELECT nazwa, model, rocznik, cena, zdjecie FROM marki
     JOIN samochody ON marki_id = marki.id
-    WHERE wyrozniony = 1
+    WHERE wyrozniony = 1 LIMIT 4
 4.
     SELECT nazwa, model, cena, zdjecie FROM samochody
     JOIN marki ON marki.id = samochody.marki_id
