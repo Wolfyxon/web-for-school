@@ -1,15 +1,62 @@
-header {
-    float: left;
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#left {
-    clear: left;
+header {
+    float: left;
+    background-color: #519657;
+    color: white;
+    text-align: center;
+    height: 150px;
+}
+
+footer {
+    clear: both;
+    background-color: #80C683;
+}
+
+table {
+    border: 1px solid #80C683;    
+}
+
+table td {
+    padding: 2px;
+}
+
+table tr:hover {
+    background-color: #80C683;
+}
+
+table tr:last-child {
+    background-color: red;
+}
+
+#text-header {
+    width: 70%;
+}
+
+#img-header {
+    width: 30%;
 }
 
 #left, #middle, #right {
     float: left;
 }
 
-footer {
-    clear: both;
+#left, #right {
+    width: 25%;
+}
+
+#middle {
+    width: 50%;
+    overflow: scroll;
+}
+
+#left {
+    clear: left;
+}
+
+#img-tir {
+    width: 100%;
+    padding: 100px 0;
 }
