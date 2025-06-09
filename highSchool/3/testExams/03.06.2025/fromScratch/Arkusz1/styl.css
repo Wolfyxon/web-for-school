@@ -31,6 +31,8 @@ header {
     margin: 1%;
     text-align: center;
     border: 1px solid crimson;
+    display: inline-block;
+    vertical-align: top;
 }
 
 footer {
