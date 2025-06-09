@@ -16,16 +16,16 @@
         <h1><i>KupAuto!</i> Internetowy Komis Samochodowy</h1>
     </header>
 
-    <section>
+    <section id="day-offer-container">
         <!-- TODO: skrypt 1 -->
     </section>
 
-    <section>
+    <section id="special-offers-container">
         <h2>Oferty Wyróżnione</h2>
         <!-- TODO: skrypt 2 -->
     </section>
     
-    <section>
+    <section id="search-container">
         <h2>Wybierz markę</h2>
         
         <form method="post">
