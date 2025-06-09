@@ -1,0 +1,15 @@
+header {
+    float: left;
+}
+
+#left {
+    clear: left;
+}
+
+#left, #middle, #right {
+    float: left;
+}
+
+footer {
+    clear: both;
+}
