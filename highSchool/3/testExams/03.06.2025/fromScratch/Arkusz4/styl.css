@@ -41,6 +41,8 @@ table tr:last-child {
 
 #left, #middle, #right {
     float: left;
+    background-color: #E1E1E1;
+    height: 450px;
 }
 
 #left, #right {
