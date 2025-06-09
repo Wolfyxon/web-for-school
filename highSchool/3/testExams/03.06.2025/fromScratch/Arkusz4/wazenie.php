@@ -1,3 +1,10 @@
+<?php 
+
+$db = new mysqli("localhost", "root", null, "wazenietirow");
+$db->set_charset("utf8");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
@@ -18,7 +25,13 @@
     <section id="left">
         <h2>Lokalizacje wag</h2>
         <ol>
-            <!-- TODO: skrypt 1 -->
+            <?php 
+                $res = $db->query("SELECT ulica FROM lokalizacje");
+
+                while($row = $res->fetch_assoc()) {
+                    echo "<li> ulica " . $row["ulica"] . "</fli>";
+                }
+            ?>
         </ol>
 
         <h2>Kontakt</h2>
@@ -36,10 +49,28 @@
                 <th>dzień</th>
                 <th>czas</th>
             </tr>
-            <!-- TODO: skrypt 2 -->
+            
+            <?php 
+                $res = $db->query("SELECT rejestracja, waga, dzien, czas, lokalizacje.ulica FROM wagi
+                                          JOIN lokalizacje ON wagi.lokalizacje_id = lokalizacje.id
+                                          WHERE waga > 5");
+
+                while($row = $res->fetch_array()) {
+                    echo "<tr>";
+
+                    foreach($row as $column) {
+                        echo "<td>" . $column . "</td>";
+                    }
+
+                    echo "</tr>";
+                }
+            
+            ?>
         </table>
 
-        <!-- TODO: skrypt 3 -->
+        <?php 
+            header("Refresh: 5");
+        ?>
     </section>
     
     <section id="right">
@@ -51,3 +82,9 @@
     </footer>
 </body>
 </html>
+
+<?php 
+
+$db->close();
+
+?>
