@@ -14,7 +14,7 @@
         </h2>
     </header>
     <header id="img-header">
-        <img src="obraz1.png" alt="waga">
+        <img src="obraz1.png" alt="waga" id="img-sign">
     </header>
 
     <section id="left">
@@ -45,7 +45,7 @@
     </section>
     
     <section id="right">
-        <img src="obraz2.jpg" alt="tir">
+        <img src="obraz2.jpg" alt="tir" id="img-tir">
     </section>
     
     <footer>
