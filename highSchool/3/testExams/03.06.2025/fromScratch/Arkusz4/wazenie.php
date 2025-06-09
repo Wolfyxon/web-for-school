@@ -9,9 +9,7 @@
 </head>
 <body>
     <header id="text-header">
-        <h2>
-        Ważenie pojazdów we Wrocławiu
-        </h2>
+        <h1>Ważenie pojazdów we Wrocławiu</h1>
     </header>
     <header id="img-header">
         <img src="obraz1.png" alt="waga" id="img-sign">
