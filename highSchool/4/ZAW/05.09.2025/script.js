@@ -6,6 +6,9 @@ $(document).ready(() => {
     function addRandomCat() {
         const img = $(`<img 
             src="https://cataas.com/cat?type=square&nocache=${Math.random()}"
+            width="200px"
+            height="200px"
+            class="col h-25"
             crossorigin="annonymous"
         >`);
 
@@ -16,6 +19,10 @@ $(document).ready(() => {
         gallery.empty();
 
         for(let i = 0; i < count; i++) {
+            if(i % 3 == 0) {
+                gallery.append($(`<div class="w-100"></div>`))
+            }
+
             addRandomCat();
         }
     }
