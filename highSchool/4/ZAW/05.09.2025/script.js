@@ -3,20 +3,29 @@ $(document).ready(() => {
     const cols = 3;
 
     const gallery = $("#gallery");
+    const imgs = [];
 
     function genRow() {
         const row = $("<div class='row'></div>");
 
         for(let i = 0; i < cols; i++) {
-            row.append(getRandomCat())
-        }
+            const img = genImg();
 
+            updateImg(img);
+
+            imgs.push(img);
+            row.append(img);
+        }
+        
         return row;
     }
 
-    function getRandomCat() {
-        const img = $(`<img 
-            src="https://cataas.com/cat?type=square&nocache=${Math.random()}"
+    function updateImg(img) {
+        img.attr("src", `https://cataas.com/cat?type=square&nocache=${Math.random()}`);
+    }
+
+    function genImg() {
+        const img = $(`<img
             class="col h-25"
             crossorigin="annonymous"
         >`);
@@ -25,11 +34,13 @@ $(document).ready(() => {
     }
 
     function load() {
-        gallery.empty();
-
-        for(let i = 0; i < rows; i++) {
-            gallery.append(genRow());
+        for(const img of imgs) {
+            updateImg(img);
         }
+    }
+
+    for(let i = 0; i < rows; i++) {
+        gallery.append(genRow());
     }
 
     $("#btn-reload").click(load);
