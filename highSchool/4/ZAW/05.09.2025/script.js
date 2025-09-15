@@ -1,27 +1,34 @@
 $(document).ready(() => {
-    const count = 9;
+    const rows = 3;
+    const cols = 3;
 
     const gallery = $("#gallery");
 
-    function addRandomCat() {
+    function genRow() {
+        const row = $("<div class='row'></div>");
+
+        for(let i = 0; i < cols; i++) {
+            row.append(getRandomCat())
+        }
+
+        return row;
+    }
+
+    function getRandomCat() {
         const img = $(`<img 
             src="https://cataas.com/cat?type=square&nocache=${Math.random()}"
             class="col h-25"
             crossorigin="annonymous"
         >`);
 
-        gallery.append(img);
+        return img
     }
 
     function load() {
         gallery.empty();
 
-        for(let i = 0; i < count; i++) {
-            if(i % 3 == 0) {
-                gallery.append($(`<div class="w-100"></div>`))
-            }
-
-            addRandomCat();
+        for(let i = 0; i < rows; i++) {
+            gallery.append(genRow());
         }
     }
 

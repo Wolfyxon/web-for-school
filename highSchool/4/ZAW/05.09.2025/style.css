@@ -1,7 +1,11 @@
 #gallery {
+    --bs-gutter-y: 0;
     margin: auto;
-    width: 40%;
-    height: 900px;
+    max-width: 600px;
+}
+
+#gallery img {
+    object-fit: contain;
 }
 
 #btn-container {
