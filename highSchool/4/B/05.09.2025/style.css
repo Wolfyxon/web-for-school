@@ -1,0 +1,13 @@
+#gallery {
+    --bs-gutter-y: 0;
+    margin: auto;
+    max-width: 600px;
+}
+
+#gallery img {
+    object-fit: contain;
+}
+
+#btn-container {
+    margin-top: 10px;
+}
