@@ -12,12 +12,25 @@ const io = new Server(server, {
     }
 });
 
+function sendMsg(client, author, text) {
+    const msg = {
+        name: author,
+        text: text
+    };
+
+    logMsg(msg);
+    client.emit("message", msg);
+}
+
+function logMsg(msg) {
+    console.log(`${msg.name}: ${msg.text}`);
+}
+
 io.on("connection", (client) => {
     console.log("New connection");
-    
-    client.on('event', (data) => {
-        console.log(data);
-    });
+
+    sendMsg(client, "Server", "hello there");
+    client.on("message", logMsg);
 });
 
 app.use(express.static("."));

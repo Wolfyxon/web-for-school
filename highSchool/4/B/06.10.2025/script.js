@@ -23,14 +23,22 @@ window.addEventListener("load", () => {
         e.preventDefault();
 
         addMsg(name, input.value);
-        socket.emit(input.value);
+
+        socket.emit("message", {
+            name: name,
+            text: input.value
+        });
     });
 
     socket.on("connect", () => {
         addMsg("System", "Connected");
-    })
+    });
+
+    socket.on("message", (msg) => {
+        addMsg(msg.name, msg.text);
+    });
 
     socket.on("error", (err) => {
         addMsg("System", `Socket error: ${err}`);
-    })
+    });
 });
