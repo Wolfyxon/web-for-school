@@ -2,10 +2,14 @@ const { Server } = require('socket.io');
 const express = require('express');
 
 const SOCKET_PORT = 2137;
-const HTTP_PORT = 8080;
+const HTTP_PORT = 3000;
 
 const app = express();
-const io = new Server();
+const io = new Server({
+    cors: {
+        origin: '*',
+    }
+});
 
 io.on("sonnection", (client) => {
     console.log("New connection");
