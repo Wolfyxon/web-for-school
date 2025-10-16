@@ -3,15 +3,16 @@ window.addEventListener("load", () => {
     const form = document.getElementById("input-container");
     const input = document.getElementById("chat-input");
 
-    const socket = io("ws://localhost:2137");
+    const socket = io("ws://localhost:3000");
+
     let name = "client";
 
     function addMsg(author, message) {
         const msg  = document.createElement("div");
-        const authorElm = document.createElement("div");
-        const textElm = document.createElement("div");
+        const authorElm = document.createElement("span");
+        const textElm = document.createElement("span");
         
-        authorElm.textContent = author;
+        authorElm.textContent = author + ": ";
         textElm.textContent = message;
 
         msg.append(authorElm, textElm);
@@ -24,4 +25,12 @@ window.addEventListener("load", () => {
         addMsg(name, input.value);
         socket.emit(input.value);
     });
+
+    socket.on("connect", () => {
+        addMsg("System", "Connected");
+    })
+
+    socket.on("error", (err) => {
+        addMsg("System", `Socket error: ${err}`);
+    })
 });

@@ -1,17 +1,18 @@
 const { Server } = require('socket.io');
+const { createServer } = require("node:http");
 const express = require('express');
 
-const SOCKET_PORT = 2137;
-const HTTP_PORT = 3000;
+const PORT = 3000;
 
 const app = express();
-const io = new Server({
+const server = createServer(app);
+const io = new Server(server, {
     cors: {
         origin: '*',
     }
 });
 
-io.on("sonnection", (client) => {
+io.on("connection", (client) => {
     console.log("New connection");
     
     client.on('event', (data) => {
@@ -20,6 +21,4 @@ io.on("sonnection", (client) => {
 });
 
 app.use(express.static("."));
-
-io.listen(SOCKET_PORT);
-app.listen(HTTP_PORT);
+server.listen(PORT);
