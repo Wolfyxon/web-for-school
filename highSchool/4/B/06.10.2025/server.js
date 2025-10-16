@@ -1,6 +1,10 @@
 const { Server } = require('socket.io');
+const express = require('express');
 
-const PORT = 2137;
+const SOCKET_PORT = 2137;
+const HTTP_PORT = 8080;
+
+const app = express();
 const io = new Server();
 
 io.on("sonnection", (client) => {
@@ -11,4 +15,7 @@ io.on("sonnection", (client) => {
     });
 });
 
-io.listen(PORT);
+app.use(express.static("."));
+
+io.listen(SOCKET_PORT);
+app.listen(HTTP_PORT);
