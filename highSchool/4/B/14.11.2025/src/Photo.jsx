@@ -7,7 +7,7 @@ export default function Photo(props) {
         <div className="photo">
             <img src={path} />
             <h4>Pobrań: {props.downloads}</h4>
-            <Button href={path} variant="success" download>
+            <Button href={path} alt={props.alt} variant="success" download>
                 Pobierz
             </Button>
         </div>
