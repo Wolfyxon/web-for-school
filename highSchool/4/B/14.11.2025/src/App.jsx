@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Photo from './Photo';
+import { Button, Form } from 'react-bootstrap';
 
 const photos = [
     {id: 0, alt: "Mak", filename: "obraz1.jpg", category:1, downloads: 35},
@@ -17,13 +19,67 @@ const photos = [
     {id: 11, alt:"Garbus", filename: "obraz12.jpg", category:3, downloads: 321}
 ];
 
+const categories = {
+  "Kwiaty": 1,
+  "Zwierzęta": 2,
+  "Samochody": 3
+}
+
 function App() {
+  const [enabledCategories, setEnabledCategories] = useState([true, true, true]);
+  const [photoComps, setPhotoComps] = useState([]);
+
+  function setCategoryEnabled(id, enabled) {
+    enabledCategories[id - 1] = enabled;
+    setEnabledCategories(enabledCategories);
+  }
+
+  function isCategoryEnabled(id) {
+    return enabledCategories[id - 1];
+  }
+
+  function loadPhotos() {
+    setPhotoComps(
+      photos.map((photo) => {
+        if(isCategoryEnabled(photo.category)) {
+          return Photo({...photo, key: photo.id});
+        }
+      })
+    );
+  }
+
+  useEffect(loadPhotos, [enabledCategories]);
+
   return (
     <>
-      <div id="gallery">
+      <div id="switches">
         {
-          photos.map(Photo)
+          (() => {
+            const switches = [];
+            
+            Object.entries(categories).forEach(([name, id]) => {
+              switches.push((
+                <Form.Check 
+                  type="switch"
+                  label={name}
+                  key={name}
+                  onChange={(e) => {
+                    setCategoryEnabled(id, e.target.checked);
+                    loadPhotos();
+                  }}
+
+                  defaultChecked
+                />
+              ));
+            });
+
+            return switches;
+          })()
         }
+      </div>
+
+      <div id="gallery">
+        {photoComps}
       </div>
     </>
   );
