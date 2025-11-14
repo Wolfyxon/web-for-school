@@ -25,8 +25,10 @@ const categories = {
   "Samochody": 3
 }
 
+const categoryCount = Object.keys(categories).length;
+
 function App() {
-  const [enabledCategories, setEnabledCategories] = useState([true, true, true]);
+  const [enabledCategories, setEnabledCategories] = useState(new Array(categoryCount).fill(true));
   const [photoComps, setPhotoComps] = useState([]);
 
   function setCategoryEnabled(id, enabled) {
