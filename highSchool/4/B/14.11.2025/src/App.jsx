@@ -65,7 +65,7 @@ function App() {
                   key={name}
                   onChange={(e) => {
                     setCategoryEnabled(id, e.target.checked);
-                    loadPhotos();
+                    loadPhotos(); // useEffect doesn't auto-reload. I hate Vite smh 
                   }}
 
                   defaultChecked
