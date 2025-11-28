@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import TabContainer from './TabContainer'
 import Tab from './Tab'
 
@@ -8,8 +7,9 @@ export default function App() {
   return (
     <>
       <TabContainer>
-        <Tab title='a'>hi</Tab>
-        <Tab title='b'>ho</Tab>
+        <Tab title='aaaa'>hi</Tab>
+        <Tab title='bbbb'>ho</Tab>
+        <Tab title='cccc'>hooihohihoi</Tab>
       </TabContainer>
     </>
   )

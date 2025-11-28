@@ -1,4 +1,4 @@
-import React, { Children, useState, type ReactNode } from "react";
+import React, { useState, type ReactNode } from "react";
 import type { TabComponent, TabProps } from "./Tab";
 
 export default function TabContainer(props: {children: TabComponent[]}) {
@@ -34,6 +34,7 @@ export default function TabContainer(props: {children: TabComponent[]}) {
                             return tab;
                         }
                     }
+                    
                     return null;
                 })()}
             </div>
