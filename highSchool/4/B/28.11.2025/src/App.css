@@ -1,0 +1,17 @@
+.tab-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tab-container-buttons {
+  display: flex;
+  justify-items: stretch;
+  gap: 5px;
+  height: 25px;
+}
+
+.tab-container-buttons > * {
+  flex: 1;
+}
