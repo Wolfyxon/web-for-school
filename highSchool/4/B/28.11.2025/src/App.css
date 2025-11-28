@@ -12,6 +12,11 @@
   height: 25px;
 }
 
-.tab-container-buttons > * {
+.tab-container-buttons button {
   flex: 1;
+}
+
+
+.tab-container-buttons button.current {
+  background-color: green;
 }

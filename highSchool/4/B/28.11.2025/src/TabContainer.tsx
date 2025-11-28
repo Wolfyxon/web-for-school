@@ -15,7 +15,7 @@ export default function TabContainer(props: {children: TabComponent[]}) {
                             const tProps = tab.props as TabProps;
 
                             res.push(
-                                <button onClick={() => setCurrentIdx(i)}>
+                                <button onClick={() => setCurrentIdx(i)} className={i == currentIdx ? "current" : undefined}>
                                     {tProps.title}
                                 </button>
                             )
