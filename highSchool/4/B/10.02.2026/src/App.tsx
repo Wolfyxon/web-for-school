@@ -34,7 +34,11 @@ function App() {
       <div className="form-group">
         <label htmlFor="sel-genre">Rodzaj</label>
         <select id="sel-genre" className="form-control" ref={refGenre}>
-          {GENRES.map((v, i) => <option value={i}>{v}</option>)}
+          {
+            GENRES.map((v, i) => 
+              <option value={i} key={`${i}-${v}`}>{v}</option>
+            )
+          }
         </select>
       </div>
 
