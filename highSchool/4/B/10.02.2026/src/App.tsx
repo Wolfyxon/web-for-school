@@ -1,5 +1,7 @@
 import { useRef, type SubmitEventHandler } from "react";
 
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
 const GENRES = [
   "",
   "Komedia",
@@ -23,16 +25,19 @@ function App() {
   
   return (
     <form onSubmit={submit}>
-      <label htmlFor="inp-title">Tytuł filmu</label>
-      <input type="text" id="inp-title" ref={refTitle} />
+      <div className="form-group"> 
+        <label htmlFor="inp-title">Tytuł filmu</label>
+        <input type="text" id="inp-title" className="form-control" ref={refTitle} />
+      </div>
 
-      <label htmlFor="sel-genre">Rodzaj</label>
+      <div className="form-group">
+        <label htmlFor="sel-genre">Rodzaj</label>
+        <select id="sel-genre" className="form-control" ref={refGenre}>
+          {GENRES.map((v, i) => <option value={i}>{v}</option>)}
+        </select>
+      </div>
 
-      <select id="sel-genre" ref={refGenre}>
-        {GENRES.map((v, i) => <option value={i}>{v}</option>)}
-      </select>
-
-      <input type="submit" value="Dodaj" />
+      <input type="submit" value="Dodaj" className="btn btn-primary" />
     </form>
   )
 }
