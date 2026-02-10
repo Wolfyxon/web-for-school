@@ -38,7 +38,7 @@ function App() {
         </select>
       </div>
 
-      <input type="submit" value="Dodaj" className="btn btn-primary" />
+      <input type="submit" value="Dodaj" className="btn btn-primary mt-2" />
     </form>
   )
 }
