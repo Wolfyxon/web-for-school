@@ -1,6 +1,7 @@
 import { useRef, type SubmitEventHandler } from "react";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./style.css";
 
 const GENRES = [
   "",
