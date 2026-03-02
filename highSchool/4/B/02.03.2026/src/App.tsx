@@ -9,6 +9,13 @@ const COURSES = [
 export default function App() {
   return (
     <>
+      <h2>Liczba kursów: {COURSES.length}</h2>
+      <ol>
+        {
+          COURSES.map(v => <li>{v}</li>)
+        }
+      </ol>
+
       <form>
         <div className="form-group">
           <label htmlFor="inp-name">Imię i nazwisko:</label>
