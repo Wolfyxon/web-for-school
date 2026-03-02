@@ -23,7 +23,7 @@ export default function App() {
       <h2>Liczba kursów: {COURSES.length}</h2>
       <ol>
         {
-          COURSES.map(v => <li>{v}</li>)
+          COURSES.map(v => <li key={v}>{v}</li>)
         }
       </ol>
 
